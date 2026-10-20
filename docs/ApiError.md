@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Error** | **string** | Error text | 
-**ErrorID** | **string** | Error ID | 
-**OriginalError** | Pointer to **NullableString** | Upstream error description | [optional] 
+**Error** | **string** | Human-readable explanation of the error. | 
+**ErrorID** | **string** | Short machine-readable error name, for example &#x60;PermissionDenied&#x60; or &#x60;NotFound&#x60;. Use this, not &#x60;error&#x60;, to decide what to do in code. | 
+**OriginalError** | Pointer to **string** | When the platform failed while talking to another service, the error that service reported. Useful when reporting a problem to support. | [optional] 
 
 ## Methods
 
@@ -92,16 +92,6 @@ SetOriginalError sets OriginalError field to given value.
 
 HasOriginalError returns a boolean if a field has been set.
 
-### SetOriginalErrorNil
-
-`func (o *ApiError) SetOriginalErrorNil(b bool)`
-
- SetOriginalErrorNil sets the value for OriginalError to be an explicit nil
-
-### UnsetOriginalError
-`func (o *ApiError) UnsetOriginalError()`
-
-UnsetOriginalError ensures that no value is present for OriginalError, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

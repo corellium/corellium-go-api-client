@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]Activity**](Activity.md) | List of activities | [optional] 
+**Data** | Pointer to [**[]ActivityV1**](ActivityV1.md) | List of activities | [optional] 
 **Pagination** | Pointer to [**Pagination**](Pagination.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ActivityList) GetData() []Activity`
+`func (o *ActivityList) GetData() []ActivityV1`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ActivityList) GetDataOk() (*[]Activity, bool)`
+`func (o *ActivityList) GetDataOk() (*[]ActivityV1, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ActivityList) SetData(v []Activity)`
+`func (o *ActivityList) SetData(v []ActivityV1)`
 
 SetData sets Data field to given value.
 

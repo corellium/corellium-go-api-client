@@ -4,22 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | **string** |  | 
-**Id** | Pointer to **NullableString** | Image ID | [optional] 
-**Name** | Pointer to **NullableString** |  | [optional] 
-**Type** | Pointer to **NullableString** | Type of image | [optional] 
-**Filename** | Pointer to **NullableString** |  | [optional] 
-**Uniqueid** | Pointer to **NullableString** |  | [optional] 
-**Size** | Pointer to **NullableFloat32** |  | [optional] 
-**Project** | Pointer to **NullableString** | project ID | [optional] 
-**CreatedAt** | Pointer to **NullableTime** | When Image was created | [optional] 
-**UpdatedAt** | Pointer to **NullableTime** | When Image was last updated | [optional] 
+**Status** | **string** | Image status. | 
+**Id** | **string** | Image ID. | 
+**Name** | **string** | Name of the image, usually the original filename. Names are not unique: several images can share a name. | 
+**Type** | [**ImageType**](ImageType.md) |  | 
+**Size** | Pointer to **NullableFloat32** | Size in bytes; null until upload completes. | [optional] 
+**Checksum** | Pointer to **NullableString** | MD5 checksum; null until upload completes. | [optional] 
+**CorelliumChecksum** | Pointer to **NullableString** | Corellium checksum of the image; null until upload completes. | [optional] 
+**Encoding** | Pointer to [**ImageEncoding**](ImageEncoding.md) |  | [optional] 
+**Project** | Pointer to **NullableString** | ID of the project the image belongs to. Null for a domain-level image, which is available across your domain rather than to one project. | [optional] 
+**Instance** | Pointer to **NullableString** | ID of the instance (device) the image is attached to, or null if it is not attached to one. | [optional] 
+**CreatedAt** | Pointer to **time.Time** | When Image was created. | [optional] 
+**UpdatedAt** | Pointer to **time.Time** | When Image was last updated. | [optional] 
 
 ## Methods
 
 ### NewImage
 
-`func NewImage(status string, ) *Image`
+`func NewImage(status string, id string, name string, type_ ImageType, ) *Image`
 
 NewImage instantiates a new Image object
 This constructor will assign default values to properties that have it defined,
@@ -73,22 +75,7 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
 
-`func (o *Image) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### SetIdNil
-
-`func (o *Image) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *Image) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetName
 
 `func (o *Image) GetName() string`
@@ -108,127 +95,27 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
 
-`func (o *Image) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *Image) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *Image) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetType
 
-`func (o *Image) GetType() string`
+`func (o *Image) GetType() ImageType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Image) GetTypeOk() (*string, bool)`
+`func (o *Image) GetTypeOk() (*ImageType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Image) SetType(v string)`
+`func (o *Image) SetType(v ImageType)`
 
 SetType sets Type field to given value.
 
-### HasType
 
-`func (o *Image) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### SetTypeNil
-
-`func (o *Image) SetTypeNil(b bool)`
-
- SetTypeNil sets the value for Type to be an explicit nil
-
-### UnsetType
-`func (o *Image) UnsetType()`
-
-UnsetType ensures that no value is present for Type, not even an explicit nil
-### GetFilename
-
-`func (o *Image) GetFilename() string`
-
-GetFilename returns the Filename field if non-nil, zero value otherwise.
-
-### GetFilenameOk
-
-`func (o *Image) GetFilenameOk() (*string, bool)`
-
-GetFilenameOk returns a tuple with the Filename field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilename
-
-`func (o *Image) SetFilename(v string)`
-
-SetFilename sets Filename field to given value.
-
-### HasFilename
-
-`func (o *Image) HasFilename() bool`
-
-HasFilename returns a boolean if a field has been set.
-
-### SetFilenameNil
-
-`func (o *Image) SetFilenameNil(b bool)`
-
- SetFilenameNil sets the value for Filename to be an explicit nil
-
-### UnsetFilename
-`func (o *Image) UnsetFilename()`
-
-UnsetFilename ensures that no value is present for Filename, not even an explicit nil
-### GetUniqueid
-
-`func (o *Image) GetUniqueid() string`
-
-GetUniqueid returns the Uniqueid field if non-nil, zero value otherwise.
-
-### GetUniqueidOk
-
-`func (o *Image) GetUniqueidOk() (*string, bool)`
-
-GetUniqueidOk returns a tuple with the Uniqueid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUniqueid
-
-`func (o *Image) SetUniqueid(v string)`
-
-SetUniqueid sets Uniqueid field to given value.
-
-### HasUniqueid
-
-`func (o *Image) HasUniqueid() bool`
-
-HasUniqueid returns a boolean if a field has been set.
-
-### SetUniqueidNil
-
-`func (o *Image) SetUniqueidNil(b bool)`
-
- SetUniqueidNil sets the value for Uniqueid to be an explicit nil
-
-### UnsetUniqueid
-`func (o *Image) UnsetUniqueid()`
-
-UnsetUniqueid ensures that no value is present for Uniqueid, not even an explicit nil
 ### GetSize
 
 `func (o *Image) GetSize() float32`
@@ -264,6 +151,101 @@ HasSize returns a boolean if a field has been set.
 `func (o *Image) UnsetSize()`
 
 UnsetSize ensures that no value is present for Size, not even an explicit nil
+### GetChecksum
+
+`func (o *Image) GetChecksum() string`
+
+GetChecksum returns the Checksum field if non-nil, zero value otherwise.
+
+### GetChecksumOk
+
+`func (o *Image) GetChecksumOk() (*string, bool)`
+
+GetChecksumOk returns a tuple with the Checksum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecksum
+
+`func (o *Image) SetChecksum(v string)`
+
+SetChecksum sets Checksum field to given value.
+
+### HasChecksum
+
+`func (o *Image) HasChecksum() bool`
+
+HasChecksum returns a boolean if a field has been set.
+
+### SetChecksumNil
+
+`func (o *Image) SetChecksumNil(b bool)`
+
+ SetChecksumNil sets the value for Checksum to be an explicit nil
+
+### UnsetChecksum
+`func (o *Image) UnsetChecksum()`
+
+UnsetChecksum ensures that no value is present for Checksum, not even an explicit nil
+### GetCorelliumChecksum
+
+`func (o *Image) GetCorelliumChecksum() string`
+
+GetCorelliumChecksum returns the CorelliumChecksum field if non-nil, zero value otherwise.
+
+### GetCorelliumChecksumOk
+
+`func (o *Image) GetCorelliumChecksumOk() (*string, bool)`
+
+GetCorelliumChecksumOk returns a tuple with the CorelliumChecksum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCorelliumChecksum
+
+`func (o *Image) SetCorelliumChecksum(v string)`
+
+SetCorelliumChecksum sets CorelliumChecksum field to given value.
+
+### HasCorelliumChecksum
+
+`func (o *Image) HasCorelliumChecksum() bool`
+
+HasCorelliumChecksum returns a boolean if a field has been set.
+
+### SetCorelliumChecksumNil
+
+`func (o *Image) SetCorelliumChecksumNil(b bool)`
+
+ SetCorelliumChecksumNil sets the value for CorelliumChecksum to be an explicit nil
+
+### UnsetCorelliumChecksum
+`func (o *Image) UnsetCorelliumChecksum()`
+
+UnsetCorelliumChecksum ensures that no value is present for CorelliumChecksum, not even an explicit nil
+### GetEncoding
+
+`func (o *Image) GetEncoding() ImageEncoding`
+
+GetEncoding returns the Encoding field if non-nil, zero value otherwise.
+
+### GetEncodingOk
+
+`func (o *Image) GetEncodingOk() (*ImageEncoding, bool)`
+
+GetEncodingOk returns a tuple with the Encoding field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncoding
+
+`func (o *Image) SetEncoding(v ImageEncoding)`
+
+SetEncoding sets Encoding field to given value.
+
+### HasEncoding
+
+`func (o *Image) HasEncoding() bool`
+
+HasEncoding returns a boolean if a field has been set.
+
 ### GetProject
 
 `func (o *Image) GetProject() string`
@@ -299,6 +281,41 @@ HasProject returns a boolean if a field has been set.
 `func (o *Image) UnsetProject()`
 
 UnsetProject ensures that no value is present for Project, not even an explicit nil
+### GetInstance
+
+`func (o *Image) GetInstance() string`
+
+GetInstance returns the Instance field if non-nil, zero value otherwise.
+
+### GetInstanceOk
+
+`func (o *Image) GetInstanceOk() (*string, bool)`
+
+GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstance
+
+`func (o *Image) SetInstance(v string)`
+
+SetInstance sets Instance field to given value.
+
+### HasInstance
+
+`func (o *Image) HasInstance() bool`
+
+HasInstance returns a boolean if a field has been set.
+
+### SetInstanceNil
+
+`func (o *Image) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *Image) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *Image) GetCreatedAt() time.Time`
@@ -324,16 +341,6 @@ SetCreatedAt sets CreatedAt field to given value.
 
 HasCreatedAt returns a boolean if a field has been set.
 
-### SetCreatedAtNil
-
-`func (o *Image) SetCreatedAtNil(b bool)`
-
- SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-
-### UnsetCreatedAt
-`func (o *Image) UnsetCreatedAt()`
-
-UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetUpdatedAt
 
 `func (o *Image) GetUpdatedAt() time.Time`
@@ -359,16 +366,6 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 HasUpdatedAt returns a boolean if a field has been set.
 
-### SetUpdatedAtNil
-
-`func (o *Image) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *Image) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

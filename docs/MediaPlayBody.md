@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ImageId** | Pointer to **NullableString** | Image ID | [optional] 
-**Url** | Pointer to **NullableString** | URL to a media file | [optional] 
+**ImageId** | **string** | Image ID. | 
+**Url** | **string** | URL to a media file. | 
 
 ## Methods
 
 ### NewMediaPlayBody
 
-`func NewMediaPlayBody() *MediaPlayBody`
+`func NewMediaPlayBody(imageId string, url string, ) *MediaPlayBody`
 
 NewMediaPlayBody instantiates a new MediaPlayBody object
 This constructor will assign default values to properties that have it defined,
@@ -45,22 +45,7 @@ and a boolean to check if the value has been set.
 
 SetImageId sets ImageId field to given value.
 
-### HasImageId
 
-`func (o *MediaPlayBody) HasImageId() bool`
-
-HasImageId returns a boolean if a field has been set.
-
-### SetImageIdNil
-
-`func (o *MediaPlayBody) SetImageIdNil(b bool)`
-
- SetImageIdNil sets the value for ImageId to be an explicit nil
-
-### UnsetImageId
-`func (o *MediaPlayBody) UnsetImageId()`
-
-UnsetImageId ensures that no value is present for ImageId, not even an explicit nil
 ### GetUrl
 
 `func (o *MediaPlayBody) GetUrl() string`
@@ -80,22 +65,7 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
 
-`func (o *MediaPlayBody) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
-
-### SetUrlNil
-
-`func (o *MediaPlayBody) SetUrlNil(b bool)`
-
- SetUrlNil sets the value for Url to be an explicit nil
-
-### UnsetUrl
-`func (o *MediaPlayBody) UnsetUrl()`
-
-UnsetUrl ensures that no value is present for Url, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

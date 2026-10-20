@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ProviderType** | **string** | Provider Type | 
 **Enabled** | **bool** | Enabled/Disabled | 
 **Label** | Pointer to **NullableString** | Login Button Text | [optional] 
-**Config** | Pointer to [**OpenIDConfig**](OpenIDConfig.md) |  | [optional] 
+**Config** | Pointer to [**OpenIDConfigV1**](OpenIDConfigV1.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasLabel returns a boolean if a field has been set.
 UnsetLabel ensures that no value is present for Label, not even an explicit nil
 ### GetConfig
 
-`func (o *DomainAuthProviderRequest) GetConfig() OpenIDConfig`
+`func (o *DomainAuthProviderRequest) GetConfig() OpenIDConfigV1`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *DomainAuthProviderRequest) GetConfigOk() (*OpenIDConfig, bool)`
+`func (o *DomainAuthProviderRequest) GetConfigOk() (*OpenIDConfigV1, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *DomainAuthProviderRequest) SetConfig(v OpenIDConfig)`
+`func (o *DomainAuthProviderRequest) SetConfig(v OpenIDConfigV1)`
 
 SetConfig sets Config field to given value.
 

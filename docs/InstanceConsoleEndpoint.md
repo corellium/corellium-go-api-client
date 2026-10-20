@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | Pointer to **NullableString** | Console Websocket URL | [optional] 
+**Url** | **string** | Console WebSocket URL. | 
 
 ## Methods
 
 ### NewInstanceConsoleEndpoint
 
-`func NewInstanceConsoleEndpoint() *InstanceConsoleEndpoint`
+`func NewInstanceConsoleEndpoint(url string, ) *InstanceConsoleEndpoint`
 
 NewInstanceConsoleEndpoint instantiates a new InstanceConsoleEndpoint object
 This constructor will assign default values to properties that have it defined,
@@ -44,22 +44,7 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
 
-`func (o *InstanceConsoleEndpoint) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
-
-### SetUrlNil
-
-`func (o *InstanceConsoleEndpoint) SetUrlNil(b bool)`
-
- SetUrlNil sets the value for Url to be an explicit nil
-
-### UnsetUrl
-`func (o *InstanceConsoleEndpoint) UnsetUrl()`
-
-UnsetUrl ensures that no value is present for Url, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Model** | **string** | Device model | 
 **SharedOn** | **float32** | UNIX Date of when the snapshot was first shared with member | 
 **SharedWithMember** | Pointer to **NullableString** | The member who the snapshot was shared with. Only present in sharedWithUser | [optional] 
-**SharedBy** | Pointer to [**SnapshotOwner**](SnapshotOwner.md) |  | [optional] 
+**SharedBy** | Pointer to [**SnapshotOwnerV1**](SnapshotOwnerV1.md) |  | [optional] 
 
 ## Methods
 
@@ -147,20 +147,20 @@ HasSharedWithMember returns a boolean if a field has been set.
 UnsetSharedWithMember ensures that no value is present for SharedWithMember, not even an explicit nil
 ### GetSharedBy
 
-`func (o *SharedSnapshotsInfo) GetSharedBy() SnapshotOwner`
+`func (o *SharedSnapshotsInfo) GetSharedBy() SnapshotOwnerV1`
 
 GetSharedBy returns the SharedBy field if non-nil, zero value otherwise.
 
 ### GetSharedByOk
 
-`func (o *SharedSnapshotsInfo) GetSharedByOk() (*SnapshotOwner, bool)`
+`func (o *SharedSnapshotsInfo) GetSharedByOk() (*SnapshotOwnerV1, bool)`
 
 GetSharedByOk returns a tuple with the SharedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSharedBy
 
-`func (o *SharedSnapshotsInfo) SetSharedBy(v SnapshotOwner)`
+`func (o *SharedSnapshotsInfo) SetSharedBy(v SnapshotOwnerV1)`
 
 SetSharedBy sets SharedBy field to given value.
 

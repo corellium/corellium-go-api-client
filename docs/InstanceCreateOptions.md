@@ -17,10 +17,7 @@ Name | Type | Description | Notes
 **OrigFwPackageUrl** | Pointer to **NullableString** | URL that firmware package used to create this instance is available at | [optional] 
 **Encrypt** | Pointer to **NullableBool** |  | [optional] 
 **WifiMac** | Pointer to **NullableString** |  | [optional] 
-**Volume** | Pointer to [**VolumeOptions**](VolumeOptions.md) |  | [optional] 
-**Snapshot** | Pointer to **NullableString** | Snapshot ID for this instance to be cloned from if defined | [optional] 
-**BootOptions** | Pointer to [**InstanceBootOptions**](InstanceBootOptions.md) |  | [optional] 
-**Device** | Pointer to [**Model**](Model.md) |  | [optional] 
+**WanAccess** | Pointer to **NullableBool** | manages internet access | [optional] 
 
 ## Methods
 
@@ -451,116 +448,41 @@ HasWifiMac returns a boolean if a field has been set.
 `func (o *InstanceCreateOptions) UnsetWifiMac()`
 
 UnsetWifiMac ensures that no value is present for WifiMac, not even an explicit nil
-### GetVolume
+### GetWanAccess
 
-`func (o *InstanceCreateOptions) GetVolume() VolumeOptions`
+`func (o *InstanceCreateOptions) GetWanAccess() bool`
 
-GetVolume returns the Volume field if non-nil, zero value otherwise.
+GetWanAccess returns the WanAccess field if non-nil, zero value otherwise.
 
-### GetVolumeOk
+### GetWanAccessOk
 
-`func (o *InstanceCreateOptions) GetVolumeOk() (*VolumeOptions, bool)`
+`func (o *InstanceCreateOptions) GetWanAccessOk() (*bool, bool)`
 
-GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
+GetWanAccessOk returns a tuple with the WanAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVolume
+### SetWanAccess
 
-`func (o *InstanceCreateOptions) SetVolume(v VolumeOptions)`
+`func (o *InstanceCreateOptions) SetWanAccess(v bool)`
 
-SetVolume sets Volume field to given value.
+SetWanAccess sets WanAccess field to given value.
 
-### HasVolume
+### HasWanAccess
 
-`func (o *InstanceCreateOptions) HasVolume() bool`
+`func (o *InstanceCreateOptions) HasWanAccess() bool`
 
-HasVolume returns a boolean if a field has been set.
+HasWanAccess returns a boolean if a field has been set.
 
-### GetSnapshot
+### SetWanAccessNil
 
-`func (o *InstanceCreateOptions) GetSnapshot() string`
+`func (o *InstanceCreateOptions) SetWanAccessNil(b bool)`
 
-GetSnapshot returns the Snapshot field if non-nil, zero value otherwise.
+ SetWanAccessNil sets the value for WanAccess to be an explicit nil
 
-### GetSnapshotOk
+### UnsetWanAccess
+`func (o *InstanceCreateOptions) UnsetWanAccess()`
 
-`func (o *InstanceCreateOptions) GetSnapshotOk() (*string, bool)`
-
-GetSnapshotOk returns a tuple with the Snapshot field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSnapshot
-
-`func (o *InstanceCreateOptions) SetSnapshot(v string)`
-
-SetSnapshot sets Snapshot field to given value.
-
-### HasSnapshot
-
-`func (o *InstanceCreateOptions) HasSnapshot() bool`
-
-HasSnapshot returns a boolean if a field has been set.
-
-### SetSnapshotNil
-
-`func (o *InstanceCreateOptions) SetSnapshotNil(b bool)`
-
- SetSnapshotNil sets the value for Snapshot to be an explicit nil
-
-### UnsetSnapshot
-`func (o *InstanceCreateOptions) UnsetSnapshot()`
-
-UnsetSnapshot ensures that no value is present for Snapshot, not even an explicit nil
-### GetBootOptions
-
-`func (o *InstanceCreateOptions) GetBootOptions() InstanceBootOptions`
-
-GetBootOptions returns the BootOptions field if non-nil, zero value otherwise.
-
-### GetBootOptionsOk
-
-`func (o *InstanceCreateOptions) GetBootOptionsOk() (*InstanceBootOptions, bool)`
-
-GetBootOptionsOk returns a tuple with the BootOptions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBootOptions
-
-`func (o *InstanceCreateOptions) SetBootOptions(v InstanceBootOptions)`
-
-SetBootOptions sets BootOptions field to given value.
-
-### HasBootOptions
-
-`func (o *InstanceCreateOptions) HasBootOptions() bool`
-
-HasBootOptions returns a boolean if a field has been set.
-
-### GetDevice
-
-`func (o *InstanceCreateOptions) GetDevice() Model`
-
-GetDevice returns the Device field if non-nil, zero value otherwise.
-
-### GetDeviceOk
-
-`func (o *InstanceCreateOptions) GetDeviceOk() (*Model, bool)`
-
-GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDevice
-
-`func (o *InstanceCreateOptions) SetDevice(v Model)`
-
-SetDevice sets Device field to given value.
-
-### HasDevice
-
-`func (o *InstanceCreateOptions) HasDevice() bool`
-
-HasDevice returns a boolean if a field has been set.
-
+UnsetWanAccess ensures that no value is present for WanAccess, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

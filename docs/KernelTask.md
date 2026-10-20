@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KernelId** | Pointer to **NullableString** | Kernel Task ID | [optional] 
-**Name** | Pointer to **NullableString** | Thread name | [optional] 
-**Pid** | Pointer to **NullableFloat32** | Process ID of task | [optional] 
-**Threads** | Pointer to [**[]KernelThread**](KernelThread.md) |  | [optional] 
+**KernelId** | **string** | Kernel task ID (uint64_t). | 
+**Name** | **string** | Thread name. | 
+**ProcessId** | **float32** | Process ID of task. | 
+**Threads** | [**[]KernelThread**](KernelThread.md) | Threads belonging to this task. | 
 
 ## Methods
 
 ### NewKernelTask
 
-`func NewKernelTask() *KernelTask`
+`func NewKernelTask(kernelId string, name string, processId float32, threads []KernelThread, ) *KernelTask`
 
 NewKernelTask instantiates a new KernelTask object
 This constructor will assign default values to properties that have it defined,
@@ -47,22 +47,7 @@ and a boolean to check if the value has been set.
 
 SetKernelId sets KernelId field to given value.
 
-### HasKernelId
 
-`func (o *KernelTask) HasKernelId() bool`
-
-HasKernelId returns a boolean if a field has been set.
-
-### SetKernelIdNil
-
-`func (o *KernelTask) SetKernelIdNil(b bool)`
-
- SetKernelIdNil sets the value for KernelId to be an explicit nil
-
-### UnsetKernelId
-`func (o *KernelTask) UnsetKernelId()`
-
-UnsetKernelId ensures that no value is present for KernelId, not even an explicit nil
 ### GetName
 
 `func (o *KernelTask) GetName() string`
@@ -82,57 +67,27 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
 
-`func (o *KernelTask) HasName() bool`
+### GetProcessId
 
-HasName returns a boolean if a field has been set.
+`func (o *KernelTask) GetProcessId() float32`
 
-### SetNameNil
+GetProcessId returns the ProcessId field if non-nil, zero value otherwise.
 
-`func (o *KernelTask) SetNameNil(b bool)`
+### GetProcessIdOk
 
- SetNameNil sets the value for Name to be an explicit nil
+`func (o *KernelTask) GetProcessIdOk() (*float32, bool)`
 
-### UnsetName
-`func (o *KernelTask) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetPid
-
-`func (o *KernelTask) GetPid() float32`
-
-GetPid returns the Pid field if non-nil, zero value otherwise.
-
-### GetPidOk
-
-`func (o *KernelTask) GetPidOk() (*float32, bool)`
-
-GetPidOk returns a tuple with the Pid field if it's non-nil, zero value otherwise
+GetProcessIdOk returns a tuple with the ProcessId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPid
+### SetProcessId
 
-`func (o *KernelTask) SetPid(v float32)`
+`func (o *KernelTask) SetProcessId(v float32)`
 
-SetPid sets Pid field to given value.
+SetProcessId sets ProcessId field to given value.
 
-### HasPid
 
-`func (o *KernelTask) HasPid() bool`
-
-HasPid returns a boolean if a field has been set.
-
-### SetPidNil
-
-`func (o *KernelTask) SetPidNil(b bool)`
-
- SetPidNil sets the value for Pid to be an explicit nil
-
-### UnsetPid
-`func (o *KernelTask) UnsetPid()`
-
-UnsetPid ensures that no value is present for Pid, not even an explicit nil
 ### GetThreads
 
 `func (o *KernelTask) GetThreads() []KernelThread`
@@ -152,22 +107,7 @@ and a boolean to check if the value has been set.
 
 SetThreads sets Threads field to given value.
 
-### HasThreads
 
-`func (o *KernelTask) HasThreads() bool`
-
-HasThreads returns a boolean if a field has been set.
-
-### SetThreadsNil
-
-`func (o *KernelTask) SetThreadsNil(b bool)`
-
- SetThreadsNil sets the value for Threads to be an explicit nil
-
-### UnsetThreads
-`func (o *KernelTask) UnsetThreads()`
-
-UnsetThreads ensures that no value is present for Threads, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

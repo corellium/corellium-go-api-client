@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing CoreTraceApiService
+Testing CoreTraceAPIService
 
 */
 
@@ -14,34 +14,34 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_CoreTraceApiService(t *testing.T) {
+func Test_corellium_CoreTraceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CoreTraceApiService V1ClearCoreTrace", func(t *testing.T) {
+	t.Run("Test CoreTraceAPIService V3ClearCoreTrace", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.CoreTraceApi.V1ClearCoreTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.CoreTraceAPI.V3ClearCoreTrace(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CoreTraceApiService V1ListThreads", func(t *testing.T) {
+	t.Run("Test CoreTraceAPIService V3ListThreads", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.CoreTraceApi.V1ListThreads(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.CoreTraceAPI.V3ListThreads(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -49,28 +49,42 @@ func Test_corellium_CoreTraceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CoreTraceApiService V1StartCoreTrace", func(t *testing.T) {
+	t.Run("Test CoreTraceAPIService V3StartCoreTrace", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.CoreTraceApi.V1StartCoreTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.CoreTraceAPI.V3StartCoreTrace(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CoreTraceApiService V1StopCoreTrace", func(t *testing.T) {
+	t.Run("Test CoreTraceAPIService V3StopCoreTrace", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.CoreTraceApi.V1StopCoreTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.CoreTraceAPI.V3StopCoreTrace(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreTraceAPIService V3StracePreauthorize", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.CoreTraceAPI.V3StracePreauthorize(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

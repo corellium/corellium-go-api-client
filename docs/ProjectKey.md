@@ -4,19 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Identifier** | Pointer to **NullableString** | keyId | [optional] 
-**Kind** | **string** | kind of key | 
-**Project** | Pointer to **NullableString** | projectId | [optional] 
-**Key** | **string** | The public key | 
-**Fingerprint** | Pointer to **NullableString** | Key fingerprint | [optional] 
-**UpdatedAt** | Pointer to **NullableTime** | Time of last update | [optional] 
-**CreatedAt** | Pointer to **NullableTime** | Time of creation | [optional] 
+**Kind** | **string** | Kind of authorized key: an SSH key for SSH-based devices or an ADB key for Android. | 
+**Label** | Pointer to **NullableString** | Descriptive label for the key. | [optional] 
+**Key** | **string** | The public key authorized to access devices in the project, in OpenSSH authorized_keys format. | 
+**Id** | **string** | Project key identifier. | 
+**Project** | **string** | Identifier of the project the key belongs to. | 
+**Fingerprint** | **NullableString** | Public key fingerprint. | 
+**CreatedAt** | **time.Time** | Time the key was created. | 
+**UpdatedAt** | **time.Time** | Time the key was last updated. | 
 
 ## Methods
 
 ### NewProjectKey
 
-`func NewProjectKey(kind string, key string, ) *ProjectKey`
+`func NewProjectKey(kind string, key string, id string, project string, fingerprint NullableString, createdAt time.Time, updatedAt time.Time, ) *ProjectKey`
 
 NewProjectKey instantiates a new ProjectKey object
 This constructor will assign default values to properties that have it defined,
@@ -31,41 +32,6 @@ NewProjectKeyWithDefaults instantiates a new ProjectKey object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIdentifier
-
-`func (o *ProjectKey) GetIdentifier() string`
-
-GetIdentifier returns the Identifier field if non-nil, zero value otherwise.
-
-### GetIdentifierOk
-
-`func (o *ProjectKey) GetIdentifierOk() (*string, bool)`
-
-GetIdentifierOk returns a tuple with the Identifier field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdentifier
-
-`func (o *ProjectKey) SetIdentifier(v string)`
-
-SetIdentifier sets Identifier field to given value.
-
-### HasIdentifier
-
-`func (o *ProjectKey) HasIdentifier() bool`
-
-HasIdentifier returns a boolean if a field has been set.
-
-### SetIdentifierNil
-
-`func (o *ProjectKey) SetIdentifierNil(b bool)`
-
- SetIdentifierNil sets the value for Identifier to be an explicit nil
-
-### UnsetIdentifier
-`func (o *ProjectKey) UnsetIdentifier()`
-
-UnsetIdentifier ensures that no value is present for Identifier, not even an explicit nil
 ### GetKind
 
 `func (o *ProjectKey) GetKind() string`
@@ -84,6 +50,81 @@ and a boolean to check if the value has been set.
 `func (o *ProjectKey) SetKind(v string)`
 
 SetKind sets Kind field to given value.
+
+
+### GetLabel
+
+`func (o *ProjectKey) GetLabel() string`
+
+GetLabel returns the Label field if non-nil, zero value otherwise.
+
+### GetLabelOk
+
+`func (o *ProjectKey) GetLabelOk() (*string, bool)`
+
+GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLabel
+
+`func (o *ProjectKey) SetLabel(v string)`
+
+SetLabel sets Label field to given value.
+
+### HasLabel
+
+`func (o *ProjectKey) HasLabel() bool`
+
+HasLabel returns a boolean if a field has been set.
+
+### SetLabelNil
+
+`func (o *ProjectKey) SetLabelNil(b bool)`
+
+ SetLabelNil sets the value for Label to be an explicit nil
+
+### UnsetLabel
+`func (o *ProjectKey) UnsetLabel()`
+
+UnsetLabel ensures that no value is present for Label, not even an explicit nil
+### GetKey
+
+`func (o *ProjectKey) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *ProjectKey) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *ProjectKey) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+
+### GetId
+
+`func (o *ProjectKey) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ProjectKey) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ProjectKey) SetId(v string)`
+
+SetId sets Id field to given value.
 
 
 ### GetProject
@@ -105,41 +146,6 @@ and a boolean to check if the value has been set.
 
 SetProject sets Project field to given value.
 
-### HasProject
-
-`func (o *ProjectKey) HasProject() bool`
-
-HasProject returns a boolean if a field has been set.
-
-### SetProjectNil
-
-`func (o *ProjectKey) SetProjectNil(b bool)`
-
- SetProjectNil sets the value for Project to be an explicit nil
-
-### UnsetProject
-`func (o *ProjectKey) UnsetProject()`
-
-UnsetProject ensures that no value is present for Project, not even an explicit nil
-### GetKey
-
-`func (o *ProjectKey) GetKey() string`
-
-GetKey returns the Key field if non-nil, zero value otherwise.
-
-### GetKeyOk
-
-`func (o *ProjectKey) GetKeyOk() (*string, bool)`
-
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKey
-
-`func (o *ProjectKey) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
 
 ### GetFingerprint
 
@@ -160,11 +166,6 @@ and a boolean to check if the value has been set.
 
 SetFingerprint sets Fingerprint field to given value.
 
-### HasFingerprint
-
-`func (o *ProjectKey) HasFingerprint() bool`
-
-HasFingerprint returns a boolean if a field has been set.
 
 ### SetFingerprintNil
 
@@ -176,41 +177,6 @@ HasFingerprint returns a boolean if a field has been set.
 `func (o *ProjectKey) UnsetFingerprint()`
 
 UnsetFingerprint ensures that no value is present for Fingerprint, not even an explicit nil
-### GetUpdatedAt
-
-`func (o *ProjectKey) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *ProjectKey) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *ProjectKey) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-### HasUpdatedAt
-
-`func (o *ProjectKey) HasUpdatedAt() bool`
-
-HasUpdatedAt returns a boolean if a field has been set.
-
-### SetUpdatedAtNil
-
-`func (o *ProjectKey) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *ProjectKey) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *ProjectKey) GetCreatedAt() time.Time`
@@ -230,22 +196,27 @@ and a boolean to check if the value has been set.
 
 SetCreatedAt sets CreatedAt field to given value.
 
-### HasCreatedAt
 
-`func (o *ProjectKey) HasCreatedAt() bool`
+### GetUpdatedAt
 
-HasCreatedAt returns a boolean if a field has been set.
+`func (o *ProjectKey) GetUpdatedAt() time.Time`
 
-### SetCreatedAtNil
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
-`func (o *ProjectKey) SetCreatedAtNil(b bool)`
+### GetUpdatedAtOk
 
- SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+`func (o *ProjectKey) GetUpdatedAtOk() (*time.Time, bool)`
 
-### UnsetCreatedAt
-`func (o *ProjectKey) UnsetCreatedAt()`
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
 
-UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### SetUpdatedAt
+
+`func (o *ProjectKey) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

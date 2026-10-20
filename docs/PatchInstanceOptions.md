@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** | the name of the device | [optional] 
 **State** | Pointer to **NullableString** | the desired state of the device | [optional] 
-**BootOptions** | Pointer to [**InstanceBootOptions**](InstanceBootOptions.md) |  | [optional] 
+**BootOptions** | Pointer to [**InstanceBootOptionsV1**](InstanceBootOptionsV1.md) |  | [optional] 
 **Proxy** | Pointer to [**[]ProxyConfig**](ProxyConfig.md) |  | [optional] 
 
 ## Methods
@@ -100,20 +100,20 @@ HasState returns a boolean if a field has been set.
 UnsetState ensures that no value is present for State, not even an explicit nil
 ### GetBootOptions
 
-`func (o *PatchInstanceOptions) GetBootOptions() InstanceBootOptions`
+`func (o *PatchInstanceOptions) GetBootOptions() InstanceBootOptionsV1`
 
 GetBootOptions returns the BootOptions field if non-nil, zero value otherwise.
 
 ### GetBootOptionsOk
 
-`func (o *PatchInstanceOptions) GetBootOptionsOk() (*InstanceBootOptions, bool)`
+`func (o *PatchInstanceOptions) GetBootOptionsOk() (*InstanceBootOptionsV1, bool)`
 
 GetBootOptionsOk returns a tuple with the BootOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBootOptions
 
-`func (o *PatchInstanceOptions) SetBootOptions(v InstanceBootOptions)`
+`func (o *PatchInstanceOptions) SetBootOptions(v InstanceBootOptionsV1)`
 
 SetBootOptions sets BootOptions field to given value.
 

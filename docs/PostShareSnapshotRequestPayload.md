@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SharingType** | **string** |  | 
-**Password** | Pointer to **NullableString** | Password for passwordPublicLink. | [optional] 
+**Password** | Pointer to **NullableString** | Password to require from anyone accepting the snapshot. Required when sharingType is passwordPublicLink. | [optional] 
 
 ## Methods
 

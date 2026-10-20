@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Status** | **string** |  | 
+**Id** | **string** | Identifier of the assessment. | 
+**Status** | [**AssessmentStatus**](AssessmentStatus.md) |  | 
 
 ## Methods
 
 ### NewAssessmentIdStatus
 
-`func NewAssessmentIdStatus(status string, ) *AssessmentIdStatus`
+`func NewAssessmentIdStatus(id string, status AssessmentStatus, ) *AssessmentIdStatus`
 
 NewAssessmentIdStatus instantiates a new AssessmentIdStatus object
 This constructor will assign default values to properties that have it defined,
@@ -45,28 +45,23 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *AssessmentIdStatus) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *AssessmentIdStatus) GetStatus() string`
+`func (o *AssessmentIdStatus) GetStatus() AssessmentStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *AssessmentIdStatus) GetStatusOk() (*string, bool)`
+`func (o *AssessmentIdStatus) GetStatusOk() (*AssessmentStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *AssessmentIdStatus) SetStatus(v string)`
+`func (o *AssessmentIdStatus) SetStatus(v AssessmentStatus)`
 
 SetStatus sets Status field to given value.
 

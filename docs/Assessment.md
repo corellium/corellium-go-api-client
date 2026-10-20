@@ -4,24 +4,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **time.Time** |  | [optional] 
-**UpdatedAt** | Pointer to **time.Time** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
-**ReportId** | Pointer to **string** |  | [optional] 
-**Bundle** | Pointer to **map[string]interface{}** |  | [optional] 
-**Results** | Pointer to **map[string]interface{}** |  | [optional] 
-**Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
-**Wordlist** | Pointer to **map[string]interface{}** |  | [optional] 
-**InstanceId** | **string** |  | 
-**BundleId** | **string** |  | 
-**WordlistId** | Pointer to **string** |  | [optional] 
-**Status** | **string** |  | 
+**Id** | **string** | Identifier of the assessment. | 
+**Status** | [**AssessmentStatus**](AssessmentStatus.md) |  | 
+**InstanceId** | **string** | Identifier of the instance under assessment. | 
+**Bundle** | [**AssessmentBundle**](AssessmentBundle.md) |  | 
+**Wordlist** | [**NullableAssessmentWordlist**](AssessmentWordlist.md) |  | 
+**FridaScript** | [**NullableAssessmentFridaScript**](AssessmentFridaScript.md) |  | 
+**ReportId** | **NullableString** | Identifier of the generated report, or null if not yet available. | 
+**Results** | [**NullableAssessmentResults**](AssessmentResults.md) |  | 
+**Metadata** | [**NullableAssessmentMetadata**](AssessmentMetadata.md) |  | 
+**SeverityCounts** | [**NullableAssessmentSeverityCounts**](AssessmentSeverityCounts.md) |  | 
+**Error** | **NullableString** | Why the assessment failed, or null. Set only when monitoring fails, to one of: \&quot;Insufficient memory; increase device&#39;s RAM.\&quot;, \&quot;App closed too soon; keep open until report has generated.\&quot;, \&quot;App unable to launch; check compatibility.\&quot;, or \&quot;Unknown error.\&quot;. An assessment that fails while tests run has status &#x60;failed&#x60; with &#x60;error&#x60; null. | 
+**CreatedBy** | **NullableString** | Identifier of the user that created the assessment, or null. | 
+**CreatedAt** | **NullableTime** | Creation timestamp. | 
+**UpdatedAt** | **NullableTime** | Last-update timestamp. | 
 
 ## Methods
 
 ### NewAssessment
 
-`func NewAssessment(instanceId string, bundleId string, status string, ) *Assessment`
+`func NewAssessment(id string, status AssessmentStatus, instanceId string, bundle AssessmentBundle, wordlist NullableAssessmentWordlist, fridaScript NullableAssessmentFridaScript, reportId NullableString, results NullableAssessmentResults, metadata NullableAssessmentMetadata, severityCounts NullableAssessmentSeverityCounts, error_ NullableString, createdBy NullableString, createdAt NullableTime, updatedAt NullableTime, ) *Assessment`
 
 NewAssessment instantiates a new Assessment object
 This constructor will assign default values to properties that have it defined,
@@ -36,205 +38,45 @@ NewAssessmentWithDefaults instantiates a new Assessment object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCreatedAt
+### GetId
 
-`func (o *Assessment) GetCreatedAt() time.Time`
+`func (o *Assessment) GetId() string`
 
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetCreatedAtOk
+### GetIdOk
 
-`func (o *Assessment) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *Assessment) GetIdOk() (*string, bool)`
 
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedAt
+### SetId
 
-`func (o *Assessment) SetCreatedAt(v time.Time)`
+`func (o *Assessment) SetId(v string)`
 
-SetCreatedAt sets CreatedAt field to given value.
+SetId sets Id field to given value.
 
-### HasCreatedAt
 
-`func (o *Assessment) HasCreatedAt() bool`
+### GetStatus
 
-HasCreatedAt returns a boolean if a field has been set.
+`func (o *Assessment) GetStatus() AssessmentStatus`
 
-### GetUpdatedAt
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-`func (o *Assessment) GetUpdatedAt() time.Time`
+### GetStatusOk
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+`func (o *Assessment) GetStatusOk() (*AssessmentStatus, bool)`
 
-### GetUpdatedAtOk
-
-`func (o *Assessment) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetStatus
 
-`func (o *Assessment) SetUpdatedAt(v time.Time)`
+`func (o *Assessment) SetStatus(v AssessmentStatus)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetStatus sets Status field to given value.
 
-### HasUpdatedAt
-
-`func (o *Assessment) HasUpdatedAt() bool`
-
-HasUpdatedAt returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *Assessment) GetCreatedBy() string`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *Assessment) GetCreatedByOk() (*string, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *Assessment) SetCreatedBy(v string)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *Assessment) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### GetReportId
-
-`func (o *Assessment) GetReportId() string`
-
-GetReportId returns the ReportId field if non-nil, zero value otherwise.
-
-### GetReportIdOk
-
-`func (o *Assessment) GetReportIdOk() (*string, bool)`
-
-GetReportIdOk returns a tuple with the ReportId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReportId
-
-`func (o *Assessment) SetReportId(v string)`
-
-SetReportId sets ReportId field to given value.
-
-### HasReportId
-
-`func (o *Assessment) HasReportId() bool`
-
-HasReportId returns a boolean if a field has been set.
-
-### GetBundle
-
-`func (o *Assessment) GetBundle() map[string]interface{}`
-
-GetBundle returns the Bundle field if non-nil, zero value otherwise.
-
-### GetBundleOk
-
-`func (o *Assessment) GetBundleOk() (*map[string]interface{}, bool)`
-
-GetBundleOk returns a tuple with the Bundle field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBundle
-
-`func (o *Assessment) SetBundle(v map[string]interface{})`
-
-SetBundle sets Bundle field to given value.
-
-### HasBundle
-
-`func (o *Assessment) HasBundle() bool`
-
-HasBundle returns a boolean if a field has been set.
-
-### GetResults
-
-`func (o *Assessment) GetResults() map[string]interface{}`
-
-GetResults returns the Results field if non-nil, zero value otherwise.
-
-### GetResultsOk
-
-`func (o *Assessment) GetResultsOk() (*map[string]interface{}, bool)`
-
-GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResults
-
-`func (o *Assessment) SetResults(v map[string]interface{})`
-
-SetResults sets Results field to given value.
-
-### HasResults
-
-`func (o *Assessment) HasResults() bool`
-
-HasResults returns a boolean if a field has been set.
-
-### GetMetadata
-
-`func (o *Assessment) GetMetadata() map[string]interface{}`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *Assessment) GetMetadataOk() (*map[string]interface{}, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *Assessment) SetMetadata(v map[string]interface{})`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *Assessment) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
-
-### GetWordlist
-
-`func (o *Assessment) GetWordlist() map[string]interface{}`
-
-GetWordlist returns the Wordlist field if non-nil, zero value otherwise.
-
-### GetWordlistOk
-
-`func (o *Assessment) GetWordlistOk() (*map[string]interface{}, bool)`
-
-GetWordlistOk returns a tuple with the Wordlist field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWordlist
-
-`func (o *Assessment) SetWordlist(v map[string]interface{})`
-
-SetWordlist sets Wordlist field to given value.
-
-### HasWordlist
-
-`func (o *Assessment) HasWordlist() bool`
-
-HasWordlist returns a boolean if a field has been set.
 
 ### GetInstanceId
 
@@ -256,71 +98,326 @@ and a boolean to check if the value has been set.
 SetInstanceId sets InstanceId field to given value.
 
 
-### GetBundleId
+### GetBundle
 
-`func (o *Assessment) GetBundleId() string`
+`func (o *Assessment) GetBundle() AssessmentBundle`
 
-GetBundleId returns the BundleId field if non-nil, zero value otherwise.
+GetBundle returns the Bundle field if non-nil, zero value otherwise.
 
-### GetBundleIdOk
+### GetBundleOk
 
-`func (o *Assessment) GetBundleIdOk() (*string, bool)`
+`func (o *Assessment) GetBundleOk() (*AssessmentBundle, bool)`
 
-GetBundleIdOk returns a tuple with the BundleId field if it's non-nil, zero value otherwise
+GetBundleOk returns a tuple with the Bundle field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBundleId
+### SetBundle
 
-`func (o *Assessment) SetBundleId(v string)`
+`func (o *Assessment) SetBundle(v AssessmentBundle)`
 
-SetBundleId sets BundleId field to given value.
+SetBundle sets Bundle field to given value.
 
 
-### GetWordlistId
+### GetWordlist
 
-`func (o *Assessment) GetWordlistId() string`
+`func (o *Assessment) GetWordlist() AssessmentWordlist`
 
-GetWordlistId returns the WordlistId field if non-nil, zero value otherwise.
+GetWordlist returns the Wordlist field if non-nil, zero value otherwise.
 
-### GetWordlistIdOk
+### GetWordlistOk
 
-`func (o *Assessment) GetWordlistIdOk() (*string, bool)`
+`func (o *Assessment) GetWordlistOk() (*AssessmentWordlist, bool)`
 
-GetWordlistIdOk returns a tuple with the WordlistId field if it's non-nil, zero value otherwise
+GetWordlistOk returns a tuple with the Wordlist field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWordlistId
+### SetWordlist
 
-`func (o *Assessment) SetWordlistId(v string)`
+`func (o *Assessment) SetWordlist(v AssessmentWordlist)`
 
-SetWordlistId sets WordlistId field to given value.
+SetWordlist sets Wordlist field to given value.
 
-### HasWordlistId
 
-`func (o *Assessment) HasWordlistId() bool`
+### SetWordlistNil
 
-HasWordlistId returns a boolean if a field has been set.
+`func (o *Assessment) SetWordlistNil(b bool)`
 
-### GetStatus
+ SetWordlistNil sets the value for Wordlist to be an explicit nil
 
-`func (o *Assessment) GetStatus() string`
+### UnsetWordlist
+`func (o *Assessment) UnsetWordlist()`
 
-GetStatus returns the Status field if non-nil, zero value otherwise.
+UnsetWordlist ensures that no value is present for Wordlist, not even an explicit nil
+### GetFridaScript
 
-### GetStatusOk
+`func (o *Assessment) GetFridaScript() AssessmentFridaScript`
 
-`func (o *Assessment) GetStatusOk() (*string, bool)`
+GetFridaScript returns the FridaScript field if non-nil, zero value otherwise.
 
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+### GetFridaScriptOk
+
+`func (o *Assessment) GetFridaScriptOk() (*AssessmentFridaScript, bool)`
+
+GetFridaScriptOk returns a tuple with the FridaScript field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStatus
+### SetFridaScript
 
-`func (o *Assessment) SetStatus(v string)`
+`func (o *Assessment) SetFridaScript(v AssessmentFridaScript)`
 
-SetStatus sets Status field to given value.
+SetFridaScript sets FridaScript field to given value.
 
 
+### SetFridaScriptNil
+
+`func (o *Assessment) SetFridaScriptNil(b bool)`
+
+ SetFridaScriptNil sets the value for FridaScript to be an explicit nil
+
+### UnsetFridaScript
+`func (o *Assessment) UnsetFridaScript()`
+
+UnsetFridaScript ensures that no value is present for FridaScript, not even an explicit nil
+### GetReportId
+
+`func (o *Assessment) GetReportId() string`
+
+GetReportId returns the ReportId field if non-nil, zero value otherwise.
+
+### GetReportIdOk
+
+`func (o *Assessment) GetReportIdOk() (*string, bool)`
+
+GetReportIdOk returns a tuple with the ReportId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReportId
+
+`func (o *Assessment) SetReportId(v string)`
+
+SetReportId sets ReportId field to given value.
+
+
+### SetReportIdNil
+
+`func (o *Assessment) SetReportIdNil(b bool)`
+
+ SetReportIdNil sets the value for ReportId to be an explicit nil
+
+### UnsetReportId
+`func (o *Assessment) UnsetReportId()`
+
+UnsetReportId ensures that no value is present for ReportId, not even an explicit nil
+### GetResults
+
+`func (o *Assessment) GetResults() AssessmentResults`
+
+GetResults returns the Results field if non-nil, zero value otherwise.
+
+### GetResultsOk
+
+`func (o *Assessment) GetResultsOk() (*AssessmentResults, bool)`
+
+GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResults
+
+`func (o *Assessment) SetResults(v AssessmentResults)`
+
+SetResults sets Results field to given value.
+
+
+### SetResultsNil
+
+`func (o *Assessment) SetResultsNil(b bool)`
+
+ SetResultsNil sets the value for Results to be an explicit nil
+
+### UnsetResults
+`func (o *Assessment) UnsetResults()`
+
+UnsetResults ensures that no value is present for Results, not even an explicit nil
+### GetMetadata
+
+`func (o *Assessment) GetMetadata() AssessmentMetadata`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *Assessment) GetMetadataOk() (*AssessmentMetadata, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *Assessment) SetMetadata(v AssessmentMetadata)`
+
+SetMetadata sets Metadata field to given value.
+
+
+### SetMetadataNil
+
+`func (o *Assessment) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *Assessment) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetSeverityCounts
+
+`func (o *Assessment) GetSeverityCounts() AssessmentSeverityCounts`
+
+GetSeverityCounts returns the SeverityCounts field if non-nil, zero value otherwise.
+
+### GetSeverityCountsOk
+
+`func (o *Assessment) GetSeverityCountsOk() (*AssessmentSeverityCounts, bool)`
+
+GetSeverityCountsOk returns a tuple with the SeverityCounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverityCounts
+
+`func (o *Assessment) SetSeverityCounts(v AssessmentSeverityCounts)`
+
+SetSeverityCounts sets SeverityCounts field to given value.
+
+
+### SetSeverityCountsNil
+
+`func (o *Assessment) SetSeverityCountsNil(b bool)`
+
+ SetSeverityCountsNil sets the value for SeverityCounts to be an explicit nil
+
+### UnsetSeverityCounts
+`func (o *Assessment) UnsetSeverityCounts()`
+
+UnsetSeverityCounts ensures that no value is present for SeverityCounts, not even an explicit nil
+### GetError
+
+`func (o *Assessment) GetError() string`
+
+GetError returns the Error field if non-nil, zero value otherwise.
+
+### GetErrorOk
+
+`func (o *Assessment) GetErrorOk() (*string, bool)`
+
+GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetError
+
+`func (o *Assessment) SetError(v string)`
+
+SetError sets Error field to given value.
+
+
+### SetErrorNil
+
+`func (o *Assessment) SetErrorNil(b bool)`
+
+ SetErrorNil sets the value for Error to be an explicit nil
+
+### UnsetError
+`func (o *Assessment) UnsetError()`
+
+UnsetError ensures that no value is present for Error, not even an explicit nil
+### GetCreatedBy
+
+`func (o *Assessment) GetCreatedBy() string`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *Assessment) GetCreatedByOk() (*string, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *Assessment) SetCreatedBy(v string)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+
+### SetCreatedByNil
+
+`func (o *Assessment) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *Assessment) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
+### GetCreatedAt
+
+`func (o *Assessment) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *Assessment) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *Assessment) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+
+### SetCreatedAtNil
+
+`func (o *Assessment) SetCreatedAtNil(b bool)`
+
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+
+### UnsetCreatedAt
+`func (o *Assessment) UnsetCreatedAt()`
+
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *Assessment) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *Assessment) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *Assessment) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
+### SetUpdatedAtNil
+
+`func (o *Assessment) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *Assessment) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

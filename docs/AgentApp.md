@@ -4,19 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Tags** | Pointer to **[]string** |  | [optional] 
-**Running** | Pointer to **NullableBool** |  | [optional] 
-**DiskUsage** | Pointer to **NullableFloat32** |  | [optional] 
-**Date** | Pointer to **NullableFloat32** |  | [optional] 
-**ApplicationType** | Pointer to **NullableString** |  | [optional] 
-**Name** | Pointer to **NullableString** |  | [optional] 
-**BundleID** | Pointer to **NullableString** |  | [optional] 
+**Tags** | Pointer to **[]string** | App tags (iOS only). | [optional] 
+**Running** | Pointer to **bool** | Whether the app is currently running. | [optional] 
+**DiskUsage** | Pointer to **float32** | Disk usage in bytes. | [optional] 
+**Date** | Pointer to **float32** | Unix timestamp (seconds) of when the app was installed. | [optional] 
+**ApplicationType** | **string** | Application type. | 
+**Name** | Pointer to **string** | App display name (not present for all Android apps). | [optional] 
+**BundleId** | **string** | App bundle identifier. | 
+**BundlePath** | Pointer to **string** | Path to the app bundle (iOS only). | [optional] 
+**BundleDataPath** | Pointer to **string** | Path to the app bundle data (iOS only). | [optional] 
+**IsLaunchable** | Pointer to **bool** | Whether the app is launchable (Android only). | [optional] 
+**Icon** | Pointer to **string** | Base64-encoded app icon when loadIcons is enabled. | [optional] 
 
 ## Methods
 
 ### NewAgentApp
 
-`func NewAgentApp() *AgentApp`
+`func NewAgentApp(applicationType string, bundleId string, ) *AgentApp`
 
 NewAgentApp instantiates a new AgentApp object
 This constructor will assign default values to properties that have it defined,
@@ -56,16 +60,6 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
-### SetTagsNil
-
-`func (o *AgentApp) SetTagsNil(b bool)`
-
- SetTagsNil sets the value for Tags to be an explicit nil
-
-### UnsetTags
-`func (o *AgentApp) UnsetTags()`
-
-UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetRunning
 
 `func (o *AgentApp) GetRunning() bool`
@@ -91,16 +85,6 @@ SetRunning sets Running field to given value.
 
 HasRunning returns a boolean if a field has been set.
 
-### SetRunningNil
-
-`func (o *AgentApp) SetRunningNil(b bool)`
-
- SetRunningNil sets the value for Running to be an explicit nil
-
-### UnsetRunning
-`func (o *AgentApp) UnsetRunning()`
-
-UnsetRunning ensures that no value is present for Running, not even an explicit nil
 ### GetDiskUsage
 
 `func (o *AgentApp) GetDiskUsage() float32`
@@ -126,16 +110,6 @@ SetDiskUsage sets DiskUsage field to given value.
 
 HasDiskUsage returns a boolean if a field has been set.
 
-### SetDiskUsageNil
-
-`func (o *AgentApp) SetDiskUsageNil(b bool)`
-
- SetDiskUsageNil sets the value for DiskUsage to be an explicit nil
-
-### UnsetDiskUsage
-`func (o *AgentApp) UnsetDiskUsage()`
-
-UnsetDiskUsage ensures that no value is present for DiskUsage, not even an explicit nil
 ### GetDate
 
 `func (o *AgentApp) GetDate() float32`
@@ -161,16 +135,6 @@ SetDate sets Date field to given value.
 
 HasDate returns a boolean if a field has been set.
 
-### SetDateNil
-
-`func (o *AgentApp) SetDateNil(b bool)`
-
- SetDateNil sets the value for Date to be an explicit nil
-
-### UnsetDate
-`func (o *AgentApp) UnsetDate()`
-
-UnsetDate ensures that no value is present for Date, not even an explicit nil
 ### GetApplicationType
 
 `func (o *AgentApp) GetApplicationType() string`
@@ -190,22 +154,7 @@ and a boolean to check if the value has been set.
 
 SetApplicationType sets ApplicationType field to given value.
 
-### HasApplicationType
 
-`func (o *AgentApp) HasApplicationType() bool`
-
-HasApplicationType returns a boolean if a field has been set.
-
-### SetApplicationTypeNil
-
-`func (o *AgentApp) SetApplicationTypeNil(b bool)`
-
- SetApplicationTypeNil sets the value for ApplicationType to be an explicit nil
-
-### UnsetApplicationType
-`func (o *AgentApp) UnsetApplicationType()`
-
-UnsetApplicationType ensures that no value is present for ApplicationType, not even an explicit nil
 ### GetName
 
 `func (o *AgentApp) GetName() string`
@@ -231,51 +180,126 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
+### GetBundleId
 
-`func (o *AgentApp) SetNameNil(b bool)`
+`func (o *AgentApp) GetBundleId() string`
 
- SetNameNil sets the value for Name to be an explicit nil
+GetBundleId returns the BundleId field if non-nil, zero value otherwise.
 
-### UnsetName
-`func (o *AgentApp) UnsetName()`
+### GetBundleIdOk
 
-UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetBundleID
+`func (o *AgentApp) GetBundleIdOk() (*string, bool)`
 
-`func (o *AgentApp) GetBundleID() string`
-
-GetBundleID returns the BundleID field if non-nil, zero value otherwise.
-
-### GetBundleIDOk
-
-`func (o *AgentApp) GetBundleIDOk() (*string, bool)`
-
-GetBundleIDOk returns a tuple with the BundleID field if it's non-nil, zero value otherwise
+GetBundleIdOk returns a tuple with the BundleId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBundleID
+### SetBundleId
 
-`func (o *AgentApp) SetBundleID(v string)`
+`func (o *AgentApp) SetBundleId(v string)`
 
-SetBundleID sets BundleID field to given value.
+SetBundleId sets BundleId field to given value.
 
-### HasBundleID
 
-`func (o *AgentApp) HasBundleID() bool`
+### GetBundlePath
 
-HasBundleID returns a boolean if a field has been set.
+`func (o *AgentApp) GetBundlePath() string`
 
-### SetBundleIDNil
+GetBundlePath returns the BundlePath field if non-nil, zero value otherwise.
 
-`func (o *AgentApp) SetBundleIDNil(b bool)`
+### GetBundlePathOk
 
- SetBundleIDNil sets the value for BundleID to be an explicit nil
+`func (o *AgentApp) GetBundlePathOk() (*string, bool)`
 
-### UnsetBundleID
-`func (o *AgentApp) UnsetBundleID()`
+GetBundlePathOk returns a tuple with the BundlePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
 
-UnsetBundleID ensures that no value is present for BundleID, not even an explicit nil
+### SetBundlePath
+
+`func (o *AgentApp) SetBundlePath(v string)`
+
+SetBundlePath sets BundlePath field to given value.
+
+### HasBundlePath
+
+`func (o *AgentApp) HasBundlePath() bool`
+
+HasBundlePath returns a boolean if a field has been set.
+
+### GetBundleDataPath
+
+`func (o *AgentApp) GetBundleDataPath() string`
+
+GetBundleDataPath returns the BundleDataPath field if non-nil, zero value otherwise.
+
+### GetBundleDataPathOk
+
+`func (o *AgentApp) GetBundleDataPathOk() (*string, bool)`
+
+GetBundleDataPathOk returns a tuple with the BundleDataPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBundleDataPath
+
+`func (o *AgentApp) SetBundleDataPath(v string)`
+
+SetBundleDataPath sets BundleDataPath field to given value.
+
+### HasBundleDataPath
+
+`func (o *AgentApp) HasBundleDataPath() bool`
+
+HasBundleDataPath returns a boolean if a field has been set.
+
+### GetIsLaunchable
+
+`func (o *AgentApp) GetIsLaunchable() bool`
+
+GetIsLaunchable returns the IsLaunchable field if non-nil, zero value otherwise.
+
+### GetIsLaunchableOk
+
+`func (o *AgentApp) GetIsLaunchableOk() (*bool, bool)`
+
+GetIsLaunchableOk returns a tuple with the IsLaunchable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsLaunchable
+
+`func (o *AgentApp) SetIsLaunchable(v bool)`
+
+SetIsLaunchable sets IsLaunchable field to given value.
+
+### HasIsLaunchable
+
+`func (o *AgentApp) HasIsLaunchable() bool`
+
+HasIsLaunchable returns a boolean if a field has been set.
+
+### GetIcon
+
+`func (o *AgentApp) GetIcon() string`
+
+GetIcon returns the Icon field if non-nil, zero value otherwise.
+
+### GetIconOk
+
+`func (o *AgentApp) GetIconOk() (*string, bool)`
+
+GetIconOk returns a tuple with the Icon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIcon
+
+`func (o *AgentApp) SetIcon(v string)`
+
+SetIcon sets Icon field to given value.
+
+### HasIcon
+
+`func (o *AgentApp) HasIcon() bool`
+
+HasIcon returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

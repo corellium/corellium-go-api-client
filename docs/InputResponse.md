@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Eta** | Pointer to **NullableFloat32** | Expected time to complete | [optional] 
+**Eta** | **float32** | Expected time to complete (ms). | 
 
 ## Methods
 
 ### NewInputResponse
 
-`func NewInputResponse() *InputResponse`
+`func NewInputResponse(eta float32, ) *InputResponse`
 
 NewInputResponse instantiates a new InputResponse object
 This constructor will assign default values to properties that have it defined,
@@ -44,22 +44,7 @@ and a boolean to check if the value has been set.
 
 SetEta sets Eta field to given value.
 
-### HasEta
 
-`func (o *InputResponse) HasEta() bool`
-
-HasEta returns a boolean if a field has been set.
-
-### SetEtaNil
-
-`func (o *InputResponse) SetEtaNil(b bool)`
-
- SetEtaNil sets the value for Eta to be an explicit nil
-
-### UnsetEta
-`func (o *InputResponse) UnsetEta()`
-
-UnsetEta ensures that no value is present for Eta, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

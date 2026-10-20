@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Identifier** | **string** | New Session Identifier | 
-**Token** | **string** | Session Token | 
-**Expiration** | **float32** | Expiration in ISO-8601 format e.g. 2022-05-06T02:39:23.000Z | 
+**Identifier** | **string** | Session identifier. | 
+**Token** | **string** | Session token to hand to the Web Player in your page. It grants access only to this one device and only to the enabled features, until &#x60;expiration&#x60;. | 
+**Expiration** | **time.Time** | Session expiration timestamp. | 
 
 ## Methods
 
 ### NewWebPlayerSession
 
-`func NewWebPlayerSession(identifier string, token string, expiration float32, ) *WebPlayerSession`
+`func NewWebPlayerSession(identifier string, token string, expiration time.Time, ) *WebPlayerSession`
 
 NewWebPlayerSession instantiates a new WebPlayerSession object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetToken sets Token field to given value.
 
 ### GetExpiration
 
-`func (o *WebPlayerSession) GetExpiration() float32`
+`func (o *WebPlayerSession) GetExpiration() time.Time`
 
 GetExpiration returns the Expiration field if non-nil, zero value otherwise.
 
 ### GetExpirationOk
 
-`func (o *WebPlayerSession) GetExpirationOk() (*float32, bool)`
+`func (o *WebPlayerSession) GetExpirationOk() (*time.Time, bool)`
 
 GetExpirationOk returns a tuple with the Expiration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpiration
 
-`func (o *WebPlayerSession) SetExpiration(v float32)`
+`func (o *WebPlayerSession) SetExpiration(v time.Time)`
 
 SetExpiration sets Expiration field to given value.
 

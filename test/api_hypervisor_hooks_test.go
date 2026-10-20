@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing HypervisorHooksApiService
+Testing HypervisorHooksAPIService
 
 */
 
@@ -14,34 +14,34 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_HypervisorHooksApiService(t *testing.T) {
+func Test_corellium_HypervisorHooksAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test HypervisorHooksApiService V1ClearHyperTraceHooks", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3ClearHyperTraceHooks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.HypervisorHooksApi.V1ClearHyperTraceHooks(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.HypervisorHooksAPI.V3ClearHyperTraceHooks(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test HypervisorHooksApiService V1CreateHook", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3CreateHook", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.HypervisorHooksApi.V1CreateHook(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.HypervisorHooksAPI.V3CreateHook(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -49,39 +49,39 @@ func Test_corellium_HypervisorHooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HypervisorHooksApiService V1DeleteHook", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3DeleteHook", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var hookId string
 
-		httpRes, err := apiClient.HypervisorHooksApi.V1DeleteHook(context.Background(), hookId).Execute()
+		httpRes, err := apiClient.HypervisorHooksAPI.V3DeleteHook(context.Background(), hookId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test HypervisorHooksApiService V1ExecuteHyperTraceHooks", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3ExecuteHyperTraceHooks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.HypervisorHooksApi.V1ExecuteHyperTraceHooks(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.HypervisorHooksAPI.V3ExecuteHyperTraceHooks(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test HypervisorHooksApiService V1GetHookById", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3GetHook", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var hookId string
 
-		resp, httpRes, err := apiClient.HypervisorHooksApi.V1GetHookById(context.Background(), hookId).Execute()
+		resp, httpRes, err := apiClient.HypervisorHooksAPI.V3GetHook(context.Background(), hookId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -89,13 +89,13 @@ func Test_corellium_HypervisorHooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HypervisorHooksApiService V1GetHooks", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3ListHooks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.HypervisorHooksApi.V1GetHooks(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.HypervisorHooksAPI.V3ListHooks(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -103,13 +103,13 @@ func Test_corellium_HypervisorHooksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HypervisorHooksApiService V1UpdateHook", func(t *testing.T) {
+	t.Run("Test HypervisorHooksAPIService V3UpdateHook", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var hookId string
 
-		resp, httpRes, err := apiClient.HypervisorHooksApi.V1UpdateHook(context.Background(), hookId).Execute()
+		resp, httpRes, err := apiClient.HypervisorHooksAPI.V3UpdateHook(context.Background(), hookId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

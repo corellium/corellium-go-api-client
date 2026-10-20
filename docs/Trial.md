@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultDuration** | Pointer to **NullableFloat32** | Maintenance message | [optional] 
-**DefaultHours** | Pointer to **NullableFloat32** | Maintenance header | [optional] 
-**DefaultDevices** | Pointer to **NullableFloat32** | Maintenance header | [optional] 
-**DefaultCores** | Pointer to **NullableFloat32** | Maintenance header | [optional] 
+**DefaultDuration** | **float32** | Default trial duration. | 
+**DefaultHours** | **float32** | Default trial hours. | 
+**DefaultDevices** | **float32** | Default trial devices. | 
+**DefaultCores** | **float32** | Default trial cores. | 
 
 ## Methods
 
 ### NewTrial
 
-`func NewTrial() *Trial`
+`func NewTrial(defaultDuration float32, defaultHours float32, defaultDevices float32, defaultCores float32, ) *Trial`
 
 NewTrial instantiates a new Trial object
 This constructor will assign default values to properties that have it defined,
@@ -47,22 +47,7 @@ and a boolean to check if the value has been set.
 
 SetDefaultDuration sets DefaultDuration field to given value.
 
-### HasDefaultDuration
 
-`func (o *Trial) HasDefaultDuration() bool`
-
-HasDefaultDuration returns a boolean if a field has been set.
-
-### SetDefaultDurationNil
-
-`func (o *Trial) SetDefaultDurationNil(b bool)`
-
- SetDefaultDurationNil sets the value for DefaultDuration to be an explicit nil
-
-### UnsetDefaultDuration
-`func (o *Trial) UnsetDefaultDuration()`
-
-UnsetDefaultDuration ensures that no value is present for DefaultDuration, not even an explicit nil
 ### GetDefaultHours
 
 `func (o *Trial) GetDefaultHours() float32`
@@ -82,22 +67,7 @@ and a boolean to check if the value has been set.
 
 SetDefaultHours sets DefaultHours field to given value.
 
-### HasDefaultHours
 
-`func (o *Trial) HasDefaultHours() bool`
-
-HasDefaultHours returns a boolean if a field has been set.
-
-### SetDefaultHoursNil
-
-`func (o *Trial) SetDefaultHoursNil(b bool)`
-
- SetDefaultHoursNil sets the value for DefaultHours to be an explicit nil
-
-### UnsetDefaultHours
-`func (o *Trial) UnsetDefaultHours()`
-
-UnsetDefaultHours ensures that no value is present for DefaultHours, not even an explicit nil
 ### GetDefaultDevices
 
 `func (o *Trial) GetDefaultDevices() float32`
@@ -117,22 +87,7 @@ and a boolean to check if the value has been set.
 
 SetDefaultDevices sets DefaultDevices field to given value.
 
-### HasDefaultDevices
 
-`func (o *Trial) HasDefaultDevices() bool`
-
-HasDefaultDevices returns a boolean if a field has been set.
-
-### SetDefaultDevicesNil
-
-`func (o *Trial) SetDefaultDevicesNil(b bool)`
-
- SetDefaultDevicesNil sets the value for DefaultDevices to be an explicit nil
-
-### UnsetDefaultDevices
-`func (o *Trial) UnsetDefaultDevices()`
-
-UnsetDefaultDevices ensures that no value is present for DefaultDevices, not even an explicit nil
 ### GetDefaultCores
 
 `func (o *Trial) GetDefaultCores() float32`
@@ -152,22 +107,7 @@ and a boolean to check if the value has been set.
 
 SetDefaultCores sets DefaultCores field to given value.
 
-### HasDefaultCores
 
-`func (o *Trial) HasDefaultCores() bool`
-
-HasDefaultCores returns a boolean if a field has been set.
-
-### SetDefaultCoresNil
-
-`func (o *Trial) SetDefaultCoresNil(b bool)`
-
- SetDefaultCoresNil sets the value for DefaultCores to be an explicit nil
-
-### UnsetDefaultCores
-`func (o *Trial) UnsetDefaultCores()`
-
-UnsetDefaultCores ensures that no value is present for DefaultCores, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

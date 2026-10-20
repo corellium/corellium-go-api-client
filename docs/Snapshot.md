@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Snapshot ID | 
-**Name** | **string** | Snapshot name | 
-**Instance** | **string** | Instance that this snapshot is of | 
+**Id** | **string** | The snapshot identifier. | 
+**Name** | **string** | The snapshot name. | 
+**Instance** | **string** | The UUID of the instance that this snapshot is of. | 
 **Status** | [**SnapshotStatus**](SnapshotStatus.md) |  | 
-**Date** | **float32** | UNIX Date that the snapshot was created | 
-**Fresh** | **bool** |  | 
-**Live** | **bool** | Live snapshot (included state and memory) | 
-**Local** | **bool** |  | 
-**Model** | Pointer to **NullableString** | The device model | [optional] 
-**Sharing** | Pointer to [**SnapshotSharing**](SnapshotSharing.md) |  | [optional] 
+**Date** | **float32** | Date that the snapshot was created (UNIX epoch milliseconds). | 
+**Fresh** | Pointer to **bool** | Denotes whether snapshot was created immediately after the device was restored. | [optional] 
+**Live** | Pointer to **bool** | Live snapshot (included state and memory). | [optional] 
+**Local** | **bool** | Denotes whether the snapshot has a local storage type. | 
+**Model** | Pointer to **string** | The device model. | [optional] 
+**Sharing** | [**SnapshotSharing**](SnapshotSharing.md) |  | 
 
 ## Methods
 
 ### NewSnapshot
 
-`func NewSnapshot(id string, name string, instance string, status SnapshotStatus, date float32, fresh bool, live bool, local bool, ) *Snapshot`
+`func NewSnapshot(id string, name string, instance string, status SnapshotStatus, date float32, local bool, sharing SnapshotSharing, ) *Snapshot`
 
 NewSnapshot instantiates a new Snapshot object
 This constructor will assign default values to properties that have it defined,
@@ -153,6 +153,11 @@ and a boolean to check if the value has been set.
 
 SetFresh sets Fresh field to given value.
 
+### HasFresh
+
+`func (o *Snapshot) HasFresh() bool`
+
+HasFresh returns a boolean if a field has been set.
 
 ### GetLive
 
@@ -173,6 +178,11 @@ and a boolean to check if the value has been set.
 
 SetLive sets Live field to given value.
 
+### HasLive
+
+`func (o *Snapshot) HasLive() bool`
+
+HasLive returns a boolean if a field has been set.
 
 ### GetLocal
 
@@ -219,16 +229,6 @@ SetModel sets Model field to given value.
 
 HasModel returns a boolean if a field has been set.
 
-### SetModelNil
-
-`func (o *Snapshot) SetModelNil(b bool)`
-
- SetModelNil sets the value for Model to be an explicit nil
-
-### UnsetModel
-`func (o *Snapshot) UnsetModel()`
-
-UnsetModel ensures that no value is present for Model, not even an explicit nil
 ### GetSharing
 
 `func (o *Snapshot) GetSharing() SnapshotSharing`
@@ -248,11 +248,6 @@ and a boolean to check if the value has been set.
 
 SetSharing sets Sharing field to given value.
 
-### HasSharing
-
-`func (o *Snapshot) HasSharing() bool`
-
-HasSharing returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

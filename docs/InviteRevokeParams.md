@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ids** | Pointer to [**NullableInviteRevokeParamsIds**](InviteRevokeParamsIds.md) |  | [optional] 
+**Ids** | Pointer to **[]string** | Array of invite ids to revoke (a bare string id is also accepted by the server) | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIds
 
-`func (o *InviteRevokeParams) GetIds() InviteRevokeParamsIds`
+`func (o *InviteRevokeParams) GetIds() []string`
 
 GetIds returns the Ids field if non-nil, zero value otherwise.
 
 ### GetIdsOk
 
-`func (o *InviteRevokeParams) GetIdsOk() (*InviteRevokeParamsIds, bool)`
+`func (o *InviteRevokeParams) GetIdsOk() (*[]string, bool)`
 
 GetIdsOk returns a tuple with the Ids field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIds
 
-`func (o *InviteRevokeParams) SetIds(v InviteRevokeParamsIds)`
+`func (o *InviteRevokeParams) SetIds(v []string)`
 
 SetIds sets Ids field to given value.
 

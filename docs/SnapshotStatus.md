@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Task** | Pointer to **NullableString** | The current task being performed on the snapshot | [optional] 
-**Created** | Pointer to **NullableBool** | Indicates if the snapshot has been successfully created | [optional] 
+**Task** | Pointer to **string** | The current task being performed on the snapshot. | [optional] 
+**Created** | Pointer to **bool** | Indicates if the snapshot has been successfully created. | [optional] 
 
 ## Methods
 
@@ -51,16 +51,6 @@ SetTask sets Task field to given value.
 
 HasTask returns a boolean if a field has been set.
 
-### SetTaskNil
-
-`func (o *SnapshotStatus) SetTaskNil(b bool)`
-
- SetTaskNil sets the value for Task to be an explicit nil
-
-### UnsetTask
-`func (o *SnapshotStatus) UnsetTask()`
-
-UnsetTask ensures that no value is present for Task, not even an explicit nil
 ### GetCreated
 
 `func (o *SnapshotStatus) GetCreated() bool`
@@ -86,16 +76,6 @@ SetCreated sets Created field to given value.
 
 HasCreated returns a boolean if a field has been set.
 
-### SetCreatedNil
-
-`func (o *SnapshotStatus) SetCreatedNil(b bool)`
-
- SetCreatedNil sets the value for Created to be an explicit nil
-
-### UnsetCreated
-`func (o *SnapshotStatus) UnsetCreated()`
-
-UnsetCreated ensures that no value is present for Created, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

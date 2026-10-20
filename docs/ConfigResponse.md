@@ -4,46 +4,49 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OnSite** | Pointer to **NullableBool** | Denotes whether it&#39;s an on-site install | [optional] 
-**NetworkTypes** | Pointer to **[]string** | Valid network types (e.g. \&quot;nat\&quot;, \&quot;bridged\&quot;, \&quot;routed\&quot;) | [optional] 
-**NetworkType** | Pointer to **NullableString** | Current network type setting | [optional] 
-**ShowDomainSettings** | Pointer to **NullableBool** | Denotes whether to show domain settings | [optional] 
-**Version** | Pointer to **NullableString** | Denotes the version | [optional] 
-**InvalidBuild** | Pointer to **NullableBool** | Denotes whether the build is invalid | [optional] 
-**SepSim** | Pointer to **NullableBool** | Denotes whether sepSim is enabled | [optional] 
-**InstallerAvailable** | Pointer to **NullableBool** | Denotes whether installer is available | [optional] 
-**InvoicedPublishableKey** | Pointer to **NullableString** | API publishable key to use for Invoiced | [optional] 
-**StripePublicKey** | Pointer to **NullableString** | Stripe public key | [optional] 
-**IntercomId** | Pointer to **NullableString** | Intercom app ID, also known as workspace ID | [optional] 
-**AuxWebhook** | Pointer to **NullableString** | Webhook URL for aux | [optional] 
-**GtmId** | Pointer to **NullableString** | Google Tag Manager | [optional] 
-**ZapierFeedbackWebhook** | Pointer to **NullableString** | Webhook URL to send feedback into Productboard automatically | [optional] 
-**ZapierBugsWebhook** | Pointer to **NullableString** | Webhook URL to send frontend errors to Jira automatically | [optional] 
-**BillingBackend** | Pointer to **NullableString** | Default backend billing api name for new subscriptions (e.g. \&quot;stripe\&quot;) | [optional] 
+**OnSite** | **bool** | Denotes whether it&#39;s an on-site install. | 
+**NetworkTypes** | **[]string** | Valid network types (e.g. \&quot;nat\&quot;, \&quot;bridged\&quot;, \&quot;routed\&quot;). | 
+**NetworkType** | **string** | Current network type setting. | 
+**ShowDomainSettings** | **bool** | Denotes whether to show domain settings. | 
+**Version** | **string** | Denotes the version. | 
+**InvalidBuild** | Pointer to **bool** | Denotes whether the build is invalid. | [optional] 
+**SepSim** | **bool** | Denotes whether sepSim is enabled. | 
+**InstallerAvailable** | **bool** | Denotes whether installer is available. | 
+**StripePublicKey** | Pointer to **string** | Stripe public key. | [optional] 
+**IntercomId** | Pointer to **string** | Intercom app ID, also known as workspace ID. | [optional] 
+**GtmId** | Pointer to **string** | Google Tag Manager ID. | [optional] 
+**BillingBackend** | Pointer to **NullableString** | Default backend billing API name for new subscriptions (e.g. \&quot;stripe\&quot;). | [optional] 
 **Maintenance** | Pointer to [**NullableConfigResponseMaintenance**](ConfigResponseMaintenance.md) |  | [optional] 
 **Logging** | Pointer to [**Logging**](Logging.md) |  | [optional] 
-**CloudAdmin** | Pointer to **NullableString** | URL for cloud admin login | [optional] 
-**FilesAdmin** | Pointer to **NullableString** | URL for files admin login | [optional] 
-**CloudDomain** | Pointer to **NullableString** | Cloud domain name (usually corellium.com or staging.corellium.com) | [optional] 
-**BillingDomain** | Pointer to **NullableString** | Billing domain name | [optional] 
-**AppDomain** | Pointer to **NullableString** | App domain name (usually app.corellium.com or app.staging.corellium.com) | [optional] 
-**MaxNetworkMonitorFileSize** | Pointer to **NullableString** | Maximum network monitor file size | [optional] 
-**EnableFirmwareImageUpload** | Pointer to **NullableBool** | Denotes whether users can upload firmware images | [optional] 
-**AuthProviders** | Pointer to [**[]AuthProvider**](AuthProvider.md) | Auth providers | [optional] 
-**SnapshotLimit** | Pointer to **NullableFloat32** | Maximum number of snapshots to allow | [optional] 
-**MaxKernelSize** | Pointer to **NullableFloat32** | The maximum size, in bytes, (default: 100 MB) that an uploaded kernel should be | [optional] 
-**MaxRamdiskSize** | Pointer to **NullableFloat32** | The maximum size, in bytes, (default: 500 MB) that an uploaded ramdisk should be | [optional] 
-**CharmSDK** | Pointer to **NullableString** | Denotes whether charmSDK is enabled | [optional] 
-**Trial** | Pointer to [**Trial**](Trial.md) |  | [optional] 
-**SentryUrl** | Pointer to **NullableString** | Sentry URL | [optional] 
-**DomainAuthenticationProviders** | Pointer to **NullableBool** | If enabled, adds the default providers in their current configuration | [optional] 
-**DefaultSsid** | Pointer to **NullableString** | The configured Default SSID from /etc/corellium/setup.json | [optional] 
+**CloudAdmin** | **string** | URL for cloud admin login. | 
+**FilesAdmin** | **string** | URL for files admin login. | 
+**CloudDomain** | Pointer to **string** | Cloud domain name (usually corellium.com or staging.corellium.com). | [optional] 
+**BillingDomain** | Pointer to **string** | Billing domain name. | [optional] 
+**AppDomain** | Pointer to **string** | App domain name (usually app.corellium.com or app.staging.corellium.com). | [optional] 
+**MaxNetworkMonitorFileSize** | **string** | Maximum network monitor file size. | 
+**EnableFirmwareImageUpload** | **bool** | Denotes whether users can upload firmware images. | 
+**AuthProviders** | [**[]ConfigAuthProvider**](ConfigAuthProvider.md) | Auth providers. | 
+**WelcomeMessage** | Pointer to **string** | Domain welcome message, when enabled. | [optional] 
+**SnapshotLimit** | **float32** | Maximum number of snapshots to allow. | 
+**MaxKernelSize** | **float32** | The maximum size, in bytes, (default: 100 MiB) that an uploaded kernel should be. | 
+**MaxRamdiskSize** | **float32** | The maximum size, in bytes, (default: 500 MiB) that an uploaded ramdisk should be. | 
+**CharmSdk** | Pointer to **bool** | Denotes whether charmSDK is enabled. | [optional] 
+**Trial** | [**Trial**](Trial.md) |  | 
+**SentryUrl** | Pointer to **string** | Sentry URL. | [optional] 
+**DomainAuthenticationProviders** | Pointer to **bool** | If enabled, adds the default providers in their current configuration. | [optional] 
+**RemoteGpu** | Pointer to **bool** | Whether remote GPU is enabled. | [optional] 
+**DefaultSsid** | **string** | The configured default SSID from /etc/corellium/setup.json. | 
+**AwsMarketplace** | Pointer to **bool** | Whether this is an AWS Marketplace deployment. | [optional] 
+**OpenGAppsBinary** | Pointer to **string** | OpenGApps binary location. | [optional] 
+**AirGapped** | Pointer to **bool** | Whether the deployment is airgapped. | [optional] 
+**CoordinatorConfig** | [**CoordinatorConfig**](CoordinatorConfig.md) | Partial coordinator configuration. | 
+**AiToolsConfig** | Pointer to [**ConfigResponseAiToolsConfig**](ConfigResponseAiToolsConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewConfigResponse
 
-`func NewConfigResponse() *ConfigResponse`
+`func NewConfigResponse(onSite bool, networkTypes []string, networkType string, showDomainSettings bool, version string, sepSim bool, installerAvailable bool, cloudAdmin string, filesAdmin string, maxNetworkMonitorFileSize string, enableFirmwareImageUpload bool, authProviders []ConfigAuthProvider, snapshotLimit float32, maxKernelSize float32, maxRamdiskSize float32, trial Trial, defaultSsid string, coordinatorConfig CoordinatorConfig, ) *ConfigResponse`
 
 NewConfigResponse instantiates a new ConfigResponse object
 This constructor will assign default values to properties that have it defined,
@@ -77,22 +80,7 @@ and a boolean to check if the value has been set.
 
 SetOnSite sets OnSite field to given value.
 
-### HasOnSite
 
-`func (o *ConfigResponse) HasOnSite() bool`
-
-HasOnSite returns a boolean if a field has been set.
-
-### SetOnSiteNil
-
-`func (o *ConfigResponse) SetOnSiteNil(b bool)`
-
- SetOnSiteNil sets the value for OnSite to be an explicit nil
-
-### UnsetOnSite
-`func (o *ConfigResponse) UnsetOnSite()`
-
-UnsetOnSite ensures that no value is present for OnSite, not even an explicit nil
 ### GetNetworkTypes
 
 `func (o *ConfigResponse) GetNetworkTypes() []string`
@@ -112,11 +100,6 @@ and a boolean to check if the value has been set.
 
 SetNetworkTypes sets NetworkTypes field to given value.
 
-### HasNetworkTypes
-
-`func (o *ConfigResponse) HasNetworkTypes() bool`
-
-HasNetworkTypes returns a boolean if a field has been set.
 
 ### SetNetworkTypesNil
 
@@ -147,22 +130,7 @@ and a boolean to check if the value has been set.
 
 SetNetworkType sets NetworkType field to given value.
 
-### HasNetworkType
 
-`func (o *ConfigResponse) HasNetworkType() bool`
-
-HasNetworkType returns a boolean if a field has been set.
-
-### SetNetworkTypeNil
-
-`func (o *ConfigResponse) SetNetworkTypeNil(b bool)`
-
- SetNetworkTypeNil sets the value for NetworkType to be an explicit nil
-
-### UnsetNetworkType
-`func (o *ConfigResponse) UnsetNetworkType()`
-
-UnsetNetworkType ensures that no value is present for NetworkType, not even an explicit nil
 ### GetShowDomainSettings
 
 `func (o *ConfigResponse) GetShowDomainSettings() bool`
@@ -182,22 +150,7 @@ and a boolean to check if the value has been set.
 
 SetShowDomainSettings sets ShowDomainSettings field to given value.
 
-### HasShowDomainSettings
 
-`func (o *ConfigResponse) HasShowDomainSettings() bool`
-
-HasShowDomainSettings returns a boolean if a field has been set.
-
-### SetShowDomainSettingsNil
-
-`func (o *ConfigResponse) SetShowDomainSettingsNil(b bool)`
-
- SetShowDomainSettingsNil sets the value for ShowDomainSettings to be an explicit nil
-
-### UnsetShowDomainSettings
-`func (o *ConfigResponse) UnsetShowDomainSettings()`
-
-UnsetShowDomainSettings ensures that no value is present for ShowDomainSettings, not even an explicit nil
 ### GetVersion
 
 `func (o *ConfigResponse) GetVersion() string`
@@ -217,22 +170,7 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
-### HasVersion
 
-`func (o *ConfigResponse) HasVersion() bool`
-
-HasVersion returns a boolean if a field has been set.
-
-### SetVersionNil
-
-`func (o *ConfigResponse) SetVersionNil(b bool)`
-
- SetVersionNil sets the value for Version to be an explicit nil
-
-### UnsetVersion
-`func (o *ConfigResponse) UnsetVersion()`
-
-UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetInvalidBuild
 
 `func (o *ConfigResponse) GetInvalidBuild() bool`
@@ -258,16 +196,6 @@ SetInvalidBuild sets InvalidBuild field to given value.
 
 HasInvalidBuild returns a boolean if a field has been set.
 
-### SetInvalidBuildNil
-
-`func (o *ConfigResponse) SetInvalidBuildNil(b bool)`
-
- SetInvalidBuildNil sets the value for InvalidBuild to be an explicit nil
-
-### UnsetInvalidBuild
-`func (o *ConfigResponse) UnsetInvalidBuild()`
-
-UnsetInvalidBuild ensures that no value is present for InvalidBuild, not even an explicit nil
 ### GetSepSim
 
 `func (o *ConfigResponse) GetSepSim() bool`
@@ -287,22 +215,7 @@ and a boolean to check if the value has been set.
 
 SetSepSim sets SepSim field to given value.
 
-### HasSepSim
 
-`func (o *ConfigResponse) HasSepSim() bool`
-
-HasSepSim returns a boolean if a field has been set.
-
-### SetSepSimNil
-
-`func (o *ConfigResponse) SetSepSimNil(b bool)`
-
- SetSepSimNil sets the value for SepSim to be an explicit nil
-
-### UnsetSepSim
-`func (o *ConfigResponse) UnsetSepSim()`
-
-UnsetSepSim ensures that no value is present for SepSim, not even an explicit nil
 ### GetInstallerAvailable
 
 `func (o *ConfigResponse) GetInstallerAvailable() bool`
@@ -322,57 +235,7 @@ and a boolean to check if the value has been set.
 
 SetInstallerAvailable sets InstallerAvailable field to given value.
 
-### HasInstallerAvailable
 
-`func (o *ConfigResponse) HasInstallerAvailable() bool`
-
-HasInstallerAvailable returns a boolean if a field has been set.
-
-### SetInstallerAvailableNil
-
-`func (o *ConfigResponse) SetInstallerAvailableNil(b bool)`
-
- SetInstallerAvailableNil sets the value for InstallerAvailable to be an explicit nil
-
-### UnsetInstallerAvailable
-`func (o *ConfigResponse) UnsetInstallerAvailable()`
-
-UnsetInstallerAvailable ensures that no value is present for InstallerAvailable, not even an explicit nil
-### GetInvoicedPublishableKey
-
-`func (o *ConfigResponse) GetInvoicedPublishableKey() string`
-
-GetInvoicedPublishableKey returns the InvoicedPublishableKey field if non-nil, zero value otherwise.
-
-### GetInvoicedPublishableKeyOk
-
-`func (o *ConfigResponse) GetInvoicedPublishableKeyOk() (*string, bool)`
-
-GetInvoicedPublishableKeyOk returns a tuple with the InvoicedPublishableKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvoicedPublishableKey
-
-`func (o *ConfigResponse) SetInvoicedPublishableKey(v string)`
-
-SetInvoicedPublishableKey sets InvoicedPublishableKey field to given value.
-
-### HasInvoicedPublishableKey
-
-`func (o *ConfigResponse) HasInvoicedPublishableKey() bool`
-
-HasInvoicedPublishableKey returns a boolean if a field has been set.
-
-### SetInvoicedPublishableKeyNil
-
-`func (o *ConfigResponse) SetInvoicedPublishableKeyNil(b bool)`
-
- SetInvoicedPublishableKeyNil sets the value for InvoicedPublishableKey to be an explicit nil
-
-### UnsetInvoicedPublishableKey
-`func (o *ConfigResponse) UnsetInvoicedPublishableKey()`
-
-UnsetInvoicedPublishableKey ensures that no value is present for InvoicedPublishableKey, not even an explicit nil
 ### GetStripePublicKey
 
 `func (o *ConfigResponse) GetStripePublicKey() string`
@@ -398,16 +261,6 @@ SetStripePublicKey sets StripePublicKey field to given value.
 
 HasStripePublicKey returns a boolean if a field has been set.
 
-### SetStripePublicKeyNil
-
-`func (o *ConfigResponse) SetStripePublicKeyNil(b bool)`
-
- SetStripePublicKeyNil sets the value for StripePublicKey to be an explicit nil
-
-### UnsetStripePublicKey
-`func (o *ConfigResponse) UnsetStripePublicKey()`
-
-UnsetStripePublicKey ensures that no value is present for StripePublicKey, not even an explicit nil
 ### GetIntercomId
 
 `func (o *ConfigResponse) GetIntercomId() string`
@@ -433,51 +286,6 @@ SetIntercomId sets IntercomId field to given value.
 
 HasIntercomId returns a boolean if a field has been set.
 
-### SetIntercomIdNil
-
-`func (o *ConfigResponse) SetIntercomIdNil(b bool)`
-
- SetIntercomIdNil sets the value for IntercomId to be an explicit nil
-
-### UnsetIntercomId
-`func (o *ConfigResponse) UnsetIntercomId()`
-
-UnsetIntercomId ensures that no value is present for IntercomId, not even an explicit nil
-### GetAuxWebhook
-
-`func (o *ConfigResponse) GetAuxWebhook() string`
-
-GetAuxWebhook returns the AuxWebhook field if non-nil, zero value otherwise.
-
-### GetAuxWebhookOk
-
-`func (o *ConfigResponse) GetAuxWebhookOk() (*string, bool)`
-
-GetAuxWebhookOk returns a tuple with the AuxWebhook field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuxWebhook
-
-`func (o *ConfigResponse) SetAuxWebhook(v string)`
-
-SetAuxWebhook sets AuxWebhook field to given value.
-
-### HasAuxWebhook
-
-`func (o *ConfigResponse) HasAuxWebhook() bool`
-
-HasAuxWebhook returns a boolean if a field has been set.
-
-### SetAuxWebhookNil
-
-`func (o *ConfigResponse) SetAuxWebhookNil(b bool)`
-
- SetAuxWebhookNil sets the value for AuxWebhook to be an explicit nil
-
-### UnsetAuxWebhook
-`func (o *ConfigResponse) UnsetAuxWebhook()`
-
-UnsetAuxWebhook ensures that no value is present for AuxWebhook, not even an explicit nil
 ### GetGtmId
 
 `func (o *ConfigResponse) GetGtmId() string`
@@ -503,86 +311,6 @@ SetGtmId sets GtmId field to given value.
 
 HasGtmId returns a boolean if a field has been set.
 
-### SetGtmIdNil
-
-`func (o *ConfigResponse) SetGtmIdNil(b bool)`
-
- SetGtmIdNil sets the value for GtmId to be an explicit nil
-
-### UnsetGtmId
-`func (o *ConfigResponse) UnsetGtmId()`
-
-UnsetGtmId ensures that no value is present for GtmId, not even an explicit nil
-### GetZapierFeedbackWebhook
-
-`func (o *ConfigResponse) GetZapierFeedbackWebhook() string`
-
-GetZapierFeedbackWebhook returns the ZapierFeedbackWebhook field if non-nil, zero value otherwise.
-
-### GetZapierFeedbackWebhookOk
-
-`func (o *ConfigResponse) GetZapierFeedbackWebhookOk() (*string, bool)`
-
-GetZapierFeedbackWebhookOk returns a tuple with the ZapierFeedbackWebhook field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZapierFeedbackWebhook
-
-`func (o *ConfigResponse) SetZapierFeedbackWebhook(v string)`
-
-SetZapierFeedbackWebhook sets ZapierFeedbackWebhook field to given value.
-
-### HasZapierFeedbackWebhook
-
-`func (o *ConfigResponse) HasZapierFeedbackWebhook() bool`
-
-HasZapierFeedbackWebhook returns a boolean if a field has been set.
-
-### SetZapierFeedbackWebhookNil
-
-`func (o *ConfigResponse) SetZapierFeedbackWebhookNil(b bool)`
-
- SetZapierFeedbackWebhookNil sets the value for ZapierFeedbackWebhook to be an explicit nil
-
-### UnsetZapierFeedbackWebhook
-`func (o *ConfigResponse) UnsetZapierFeedbackWebhook()`
-
-UnsetZapierFeedbackWebhook ensures that no value is present for ZapierFeedbackWebhook, not even an explicit nil
-### GetZapierBugsWebhook
-
-`func (o *ConfigResponse) GetZapierBugsWebhook() string`
-
-GetZapierBugsWebhook returns the ZapierBugsWebhook field if non-nil, zero value otherwise.
-
-### GetZapierBugsWebhookOk
-
-`func (o *ConfigResponse) GetZapierBugsWebhookOk() (*string, bool)`
-
-GetZapierBugsWebhookOk returns a tuple with the ZapierBugsWebhook field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZapierBugsWebhook
-
-`func (o *ConfigResponse) SetZapierBugsWebhook(v string)`
-
-SetZapierBugsWebhook sets ZapierBugsWebhook field to given value.
-
-### HasZapierBugsWebhook
-
-`func (o *ConfigResponse) HasZapierBugsWebhook() bool`
-
-HasZapierBugsWebhook returns a boolean if a field has been set.
-
-### SetZapierBugsWebhookNil
-
-`func (o *ConfigResponse) SetZapierBugsWebhookNil(b bool)`
-
- SetZapierBugsWebhookNil sets the value for ZapierBugsWebhook to be an explicit nil
-
-### UnsetZapierBugsWebhook
-`func (o *ConfigResponse) UnsetZapierBugsWebhook()`
-
-UnsetZapierBugsWebhook ensures that no value is present for ZapierBugsWebhook, not even an explicit nil
 ### GetBillingBackend
 
 `func (o *ConfigResponse) GetBillingBackend() string`
@@ -697,22 +425,7 @@ and a boolean to check if the value has been set.
 
 SetCloudAdmin sets CloudAdmin field to given value.
 
-### HasCloudAdmin
 
-`func (o *ConfigResponse) HasCloudAdmin() bool`
-
-HasCloudAdmin returns a boolean if a field has been set.
-
-### SetCloudAdminNil
-
-`func (o *ConfigResponse) SetCloudAdminNil(b bool)`
-
- SetCloudAdminNil sets the value for CloudAdmin to be an explicit nil
-
-### UnsetCloudAdmin
-`func (o *ConfigResponse) UnsetCloudAdmin()`
-
-UnsetCloudAdmin ensures that no value is present for CloudAdmin, not even an explicit nil
 ### GetFilesAdmin
 
 `func (o *ConfigResponse) GetFilesAdmin() string`
@@ -732,22 +445,7 @@ and a boolean to check if the value has been set.
 
 SetFilesAdmin sets FilesAdmin field to given value.
 
-### HasFilesAdmin
 
-`func (o *ConfigResponse) HasFilesAdmin() bool`
-
-HasFilesAdmin returns a boolean if a field has been set.
-
-### SetFilesAdminNil
-
-`func (o *ConfigResponse) SetFilesAdminNil(b bool)`
-
- SetFilesAdminNil sets the value for FilesAdmin to be an explicit nil
-
-### UnsetFilesAdmin
-`func (o *ConfigResponse) UnsetFilesAdmin()`
-
-UnsetFilesAdmin ensures that no value is present for FilesAdmin, not even an explicit nil
 ### GetCloudDomain
 
 `func (o *ConfigResponse) GetCloudDomain() string`
@@ -773,16 +471,6 @@ SetCloudDomain sets CloudDomain field to given value.
 
 HasCloudDomain returns a boolean if a field has been set.
 
-### SetCloudDomainNil
-
-`func (o *ConfigResponse) SetCloudDomainNil(b bool)`
-
- SetCloudDomainNil sets the value for CloudDomain to be an explicit nil
-
-### UnsetCloudDomain
-`func (o *ConfigResponse) UnsetCloudDomain()`
-
-UnsetCloudDomain ensures that no value is present for CloudDomain, not even an explicit nil
 ### GetBillingDomain
 
 `func (o *ConfigResponse) GetBillingDomain() string`
@@ -808,16 +496,6 @@ SetBillingDomain sets BillingDomain field to given value.
 
 HasBillingDomain returns a boolean if a field has been set.
 
-### SetBillingDomainNil
-
-`func (o *ConfigResponse) SetBillingDomainNil(b bool)`
-
- SetBillingDomainNil sets the value for BillingDomain to be an explicit nil
-
-### UnsetBillingDomain
-`func (o *ConfigResponse) UnsetBillingDomain()`
-
-UnsetBillingDomain ensures that no value is present for BillingDomain, not even an explicit nil
 ### GetAppDomain
 
 `func (o *ConfigResponse) GetAppDomain() string`
@@ -843,16 +521,6 @@ SetAppDomain sets AppDomain field to given value.
 
 HasAppDomain returns a boolean if a field has been set.
 
-### SetAppDomainNil
-
-`func (o *ConfigResponse) SetAppDomainNil(b bool)`
-
- SetAppDomainNil sets the value for AppDomain to be an explicit nil
-
-### UnsetAppDomain
-`func (o *ConfigResponse) UnsetAppDomain()`
-
-UnsetAppDomain ensures that no value is present for AppDomain, not even an explicit nil
 ### GetMaxNetworkMonitorFileSize
 
 `func (o *ConfigResponse) GetMaxNetworkMonitorFileSize() string`
@@ -872,22 +540,7 @@ and a boolean to check if the value has been set.
 
 SetMaxNetworkMonitorFileSize sets MaxNetworkMonitorFileSize field to given value.
 
-### HasMaxNetworkMonitorFileSize
 
-`func (o *ConfigResponse) HasMaxNetworkMonitorFileSize() bool`
-
-HasMaxNetworkMonitorFileSize returns a boolean if a field has been set.
-
-### SetMaxNetworkMonitorFileSizeNil
-
-`func (o *ConfigResponse) SetMaxNetworkMonitorFileSizeNil(b bool)`
-
- SetMaxNetworkMonitorFileSizeNil sets the value for MaxNetworkMonitorFileSize to be an explicit nil
-
-### UnsetMaxNetworkMonitorFileSize
-`func (o *ConfigResponse) UnsetMaxNetworkMonitorFileSize()`
-
-UnsetMaxNetworkMonitorFileSize ensures that no value is present for MaxNetworkMonitorFileSize, not even an explicit nil
 ### GetEnableFirmwareImageUpload
 
 `func (o *ConfigResponse) GetEnableFirmwareImageUpload() bool`
@@ -907,57 +560,52 @@ and a boolean to check if the value has been set.
 
 SetEnableFirmwareImageUpload sets EnableFirmwareImageUpload field to given value.
 
-### HasEnableFirmwareImageUpload
 
-`func (o *ConfigResponse) HasEnableFirmwareImageUpload() bool`
-
-HasEnableFirmwareImageUpload returns a boolean if a field has been set.
-
-### SetEnableFirmwareImageUploadNil
-
-`func (o *ConfigResponse) SetEnableFirmwareImageUploadNil(b bool)`
-
- SetEnableFirmwareImageUploadNil sets the value for EnableFirmwareImageUpload to be an explicit nil
-
-### UnsetEnableFirmwareImageUpload
-`func (o *ConfigResponse) UnsetEnableFirmwareImageUpload()`
-
-UnsetEnableFirmwareImageUpload ensures that no value is present for EnableFirmwareImageUpload, not even an explicit nil
 ### GetAuthProviders
 
-`func (o *ConfigResponse) GetAuthProviders() []AuthProvider`
+`func (o *ConfigResponse) GetAuthProviders() []ConfigAuthProvider`
 
 GetAuthProviders returns the AuthProviders field if non-nil, zero value otherwise.
 
 ### GetAuthProvidersOk
 
-`func (o *ConfigResponse) GetAuthProvidersOk() (*[]AuthProvider, bool)`
+`func (o *ConfigResponse) GetAuthProvidersOk() (*[]ConfigAuthProvider, bool)`
 
 GetAuthProvidersOk returns a tuple with the AuthProviders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthProviders
 
-`func (o *ConfigResponse) SetAuthProviders(v []AuthProvider)`
+`func (o *ConfigResponse) SetAuthProviders(v []ConfigAuthProvider)`
 
 SetAuthProviders sets AuthProviders field to given value.
 
-### HasAuthProviders
 
-`func (o *ConfigResponse) HasAuthProviders() bool`
+### GetWelcomeMessage
 
-HasAuthProviders returns a boolean if a field has been set.
+`func (o *ConfigResponse) GetWelcomeMessage() string`
 
-### SetAuthProvidersNil
+GetWelcomeMessage returns the WelcomeMessage field if non-nil, zero value otherwise.
 
-`func (o *ConfigResponse) SetAuthProvidersNil(b bool)`
+### GetWelcomeMessageOk
 
- SetAuthProvidersNil sets the value for AuthProviders to be an explicit nil
+`func (o *ConfigResponse) GetWelcomeMessageOk() (*string, bool)`
 
-### UnsetAuthProviders
-`func (o *ConfigResponse) UnsetAuthProviders()`
+GetWelcomeMessageOk returns a tuple with the WelcomeMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
 
-UnsetAuthProviders ensures that no value is present for AuthProviders, not even an explicit nil
+### SetWelcomeMessage
+
+`func (o *ConfigResponse) SetWelcomeMessage(v string)`
+
+SetWelcomeMessage sets WelcomeMessage field to given value.
+
+### HasWelcomeMessage
+
+`func (o *ConfigResponse) HasWelcomeMessage() bool`
+
+HasWelcomeMessage returns a boolean if a field has been set.
+
 ### GetSnapshotLimit
 
 `func (o *ConfigResponse) GetSnapshotLimit() float32`
@@ -977,22 +625,7 @@ and a boolean to check if the value has been set.
 
 SetSnapshotLimit sets SnapshotLimit field to given value.
 
-### HasSnapshotLimit
 
-`func (o *ConfigResponse) HasSnapshotLimit() bool`
-
-HasSnapshotLimit returns a boolean if a field has been set.
-
-### SetSnapshotLimitNil
-
-`func (o *ConfigResponse) SetSnapshotLimitNil(b bool)`
-
- SetSnapshotLimitNil sets the value for SnapshotLimit to be an explicit nil
-
-### UnsetSnapshotLimit
-`func (o *ConfigResponse) UnsetSnapshotLimit()`
-
-UnsetSnapshotLimit ensures that no value is present for SnapshotLimit, not even an explicit nil
 ### GetMaxKernelSize
 
 `func (o *ConfigResponse) GetMaxKernelSize() float32`
@@ -1012,22 +645,7 @@ and a boolean to check if the value has been set.
 
 SetMaxKernelSize sets MaxKernelSize field to given value.
 
-### HasMaxKernelSize
 
-`func (o *ConfigResponse) HasMaxKernelSize() bool`
-
-HasMaxKernelSize returns a boolean if a field has been set.
-
-### SetMaxKernelSizeNil
-
-`func (o *ConfigResponse) SetMaxKernelSizeNil(b bool)`
-
- SetMaxKernelSizeNil sets the value for MaxKernelSize to be an explicit nil
-
-### UnsetMaxKernelSize
-`func (o *ConfigResponse) UnsetMaxKernelSize()`
-
-UnsetMaxKernelSize ensures that no value is present for MaxKernelSize, not even an explicit nil
 ### GetMaxRamdiskSize
 
 `func (o *ConfigResponse) GetMaxRamdiskSize() float32`
@@ -1047,57 +665,32 @@ and a boolean to check if the value has been set.
 
 SetMaxRamdiskSize sets MaxRamdiskSize field to given value.
 
-### HasMaxRamdiskSize
 
-`func (o *ConfigResponse) HasMaxRamdiskSize() bool`
+### GetCharmSdk
 
-HasMaxRamdiskSize returns a boolean if a field has been set.
+`func (o *ConfigResponse) GetCharmSdk() bool`
 
-### SetMaxRamdiskSizeNil
+GetCharmSdk returns the CharmSdk field if non-nil, zero value otherwise.
 
-`func (o *ConfigResponse) SetMaxRamdiskSizeNil(b bool)`
+### GetCharmSdkOk
 
- SetMaxRamdiskSizeNil sets the value for MaxRamdiskSize to be an explicit nil
+`func (o *ConfigResponse) GetCharmSdkOk() (*bool, bool)`
 
-### UnsetMaxRamdiskSize
-`func (o *ConfigResponse) UnsetMaxRamdiskSize()`
-
-UnsetMaxRamdiskSize ensures that no value is present for MaxRamdiskSize, not even an explicit nil
-### GetCharmSDK
-
-`func (o *ConfigResponse) GetCharmSDK() string`
-
-GetCharmSDK returns the CharmSDK field if non-nil, zero value otherwise.
-
-### GetCharmSDKOk
-
-`func (o *ConfigResponse) GetCharmSDKOk() (*string, bool)`
-
-GetCharmSDKOk returns a tuple with the CharmSDK field if it's non-nil, zero value otherwise
+GetCharmSdkOk returns a tuple with the CharmSdk field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCharmSDK
+### SetCharmSdk
 
-`func (o *ConfigResponse) SetCharmSDK(v string)`
+`func (o *ConfigResponse) SetCharmSdk(v bool)`
 
-SetCharmSDK sets CharmSDK field to given value.
+SetCharmSdk sets CharmSdk field to given value.
 
-### HasCharmSDK
+### HasCharmSdk
 
-`func (o *ConfigResponse) HasCharmSDK() bool`
+`func (o *ConfigResponse) HasCharmSdk() bool`
 
-HasCharmSDK returns a boolean if a field has been set.
+HasCharmSdk returns a boolean if a field has been set.
 
-### SetCharmSDKNil
-
-`func (o *ConfigResponse) SetCharmSDKNil(b bool)`
-
- SetCharmSDKNil sets the value for CharmSDK to be an explicit nil
-
-### UnsetCharmSDK
-`func (o *ConfigResponse) UnsetCharmSDK()`
-
-UnsetCharmSDK ensures that no value is present for CharmSDK, not even an explicit nil
 ### GetTrial
 
 `func (o *ConfigResponse) GetTrial() Trial`
@@ -1117,11 +710,6 @@ and a boolean to check if the value has been set.
 
 SetTrial sets Trial field to given value.
 
-### HasTrial
-
-`func (o *ConfigResponse) HasTrial() bool`
-
-HasTrial returns a boolean if a field has been set.
 
 ### GetSentryUrl
 
@@ -1148,16 +736,6 @@ SetSentryUrl sets SentryUrl field to given value.
 
 HasSentryUrl returns a boolean if a field has been set.
 
-### SetSentryUrlNil
-
-`func (o *ConfigResponse) SetSentryUrlNil(b bool)`
-
- SetSentryUrlNil sets the value for SentryUrl to be an explicit nil
-
-### UnsetSentryUrl
-`func (o *ConfigResponse) UnsetSentryUrl()`
-
-UnsetSentryUrl ensures that no value is present for SentryUrl, not even an explicit nil
 ### GetDomainAuthenticationProviders
 
 `func (o *ConfigResponse) GetDomainAuthenticationProviders() bool`
@@ -1183,16 +761,31 @@ SetDomainAuthenticationProviders sets DomainAuthenticationProviders field to giv
 
 HasDomainAuthenticationProviders returns a boolean if a field has been set.
 
-### SetDomainAuthenticationProvidersNil
+### GetRemoteGpu
 
-`func (o *ConfigResponse) SetDomainAuthenticationProvidersNil(b bool)`
+`func (o *ConfigResponse) GetRemoteGpu() bool`
 
- SetDomainAuthenticationProvidersNil sets the value for DomainAuthenticationProviders to be an explicit nil
+GetRemoteGpu returns the RemoteGpu field if non-nil, zero value otherwise.
 
-### UnsetDomainAuthenticationProviders
-`func (o *ConfigResponse) UnsetDomainAuthenticationProviders()`
+### GetRemoteGpuOk
 
-UnsetDomainAuthenticationProviders ensures that no value is present for DomainAuthenticationProviders, not even an explicit nil
+`func (o *ConfigResponse) GetRemoteGpuOk() (*bool, bool)`
+
+GetRemoteGpuOk returns a tuple with the RemoteGpu field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoteGpu
+
+`func (o *ConfigResponse) SetRemoteGpu(v bool)`
+
+SetRemoteGpu sets RemoteGpu field to given value.
+
+### HasRemoteGpu
+
+`func (o *ConfigResponse) HasRemoteGpu() bool`
+
+HasRemoteGpu returns a boolean if a field has been set.
+
 ### GetDefaultSsid
 
 `func (o *ConfigResponse) GetDefaultSsid() string`
@@ -1212,22 +805,127 @@ and a boolean to check if the value has been set.
 
 SetDefaultSsid sets DefaultSsid field to given value.
 
-### HasDefaultSsid
 
-`func (o *ConfigResponse) HasDefaultSsid() bool`
+### GetAwsMarketplace
 
-HasDefaultSsid returns a boolean if a field has been set.
+`func (o *ConfigResponse) GetAwsMarketplace() bool`
 
-### SetDefaultSsidNil
+GetAwsMarketplace returns the AwsMarketplace field if non-nil, zero value otherwise.
 
-`func (o *ConfigResponse) SetDefaultSsidNil(b bool)`
+### GetAwsMarketplaceOk
 
- SetDefaultSsidNil sets the value for DefaultSsid to be an explicit nil
+`func (o *ConfigResponse) GetAwsMarketplaceOk() (*bool, bool)`
 
-### UnsetDefaultSsid
-`func (o *ConfigResponse) UnsetDefaultSsid()`
+GetAwsMarketplaceOk returns a tuple with the AwsMarketplace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
 
-UnsetDefaultSsid ensures that no value is present for DefaultSsid, not even an explicit nil
+### SetAwsMarketplace
+
+`func (o *ConfigResponse) SetAwsMarketplace(v bool)`
+
+SetAwsMarketplace sets AwsMarketplace field to given value.
+
+### HasAwsMarketplace
+
+`func (o *ConfigResponse) HasAwsMarketplace() bool`
+
+HasAwsMarketplace returns a boolean if a field has been set.
+
+### GetOpenGAppsBinary
+
+`func (o *ConfigResponse) GetOpenGAppsBinary() string`
+
+GetOpenGAppsBinary returns the OpenGAppsBinary field if non-nil, zero value otherwise.
+
+### GetOpenGAppsBinaryOk
+
+`func (o *ConfigResponse) GetOpenGAppsBinaryOk() (*string, bool)`
+
+GetOpenGAppsBinaryOk returns a tuple with the OpenGAppsBinary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOpenGAppsBinary
+
+`func (o *ConfigResponse) SetOpenGAppsBinary(v string)`
+
+SetOpenGAppsBinary sets OpenGAppsBinary field to given value.
+
+### HasOpenGAppsBinary
+
+`func (o *ConfigResponse) HasOpenGAppsBinary() bool`
+
+HasOpenGAppsBinary returns a boolean if a field has been set.
+
+### GetAirGapped
+
+`func (o *ConfigResponse) GetAirGapped() bool`
+
+GetAirGapped returns the AirGapped field if non-nil, zero value otherwise.
+
+### GetAirGappedOk
+
+`func (o *ConfigResponse) GetAirGappedOk() (*bool, bool)`
+
+GetAirGappedOk returns a tuple with the AirGapped field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAirGapped
+
+`func (o *ConfigResponse) SetAirGapped(v bool)`
+
+SetAirGapped sets AirGapped field to given value.
+
+### HasAirGapped
+
+`func (o *ConfigResponse) HasAirGapped() bool`
+
+HasAirGapped returns a boolean if a field has been set.
+
+### GetCoordinatorConfig
+
+`func (o *ConfigResponse) GetCoordinatorConfig() CoordinatorConfig`
+
+GetCoordinatorConfig returns the CoordinatorConfig field if non-nil, zero value otherwise.
+
+### GetCoordinatorConfigOk
+
+`func (o *ConfigResponse) GetCoordinatorConfigOk() (*CoordinatorConfig, bool)`
+
+GetCoordinatorConfigOk returns a tuple with the CoordinatorConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCoordinatorConfig
+
+`func (o *ConfigResponse) SetCoordinatorConfig(v CoordinatorConfig)`
+
+SetCoordinatorConfig sets CoordinatorConfig field to given value.
+
+
+### GetAiToolsConfig
+
+`func (o *ConfigResponse) GetAiToolsConfig() ConfigResponseAiToolsConfig`
+
+GetAiToolsConfig returns the AiToolsConfig field if non-nil, zero value otherwise.
+
+### GetAiToolsConfigOk
+
+`func (o *ConfigResponse) GetAiToolsConfigOk() (*ConfigResponseAiToolsConfig, bool)`
+
+GetAiToolsConfigOk returns a tuple with the AiToolsConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiToolsConfig
+
+`func (o *ConfigResponse) SetAiToolsConfig(v ConfigResponseAiToolsConfig)`
+
+SetAiToolsConfig sets AiToolsConfig field to given value.
+
+### HasAiToolsConfig
+
+`func (o *ConfigResponse) HasAiToolsConfig() bool`
+
+HasAiToolsConfig returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

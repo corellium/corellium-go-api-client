@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Required** | **string** | text to type | 
-**KeyDuration** | Pointer to **NullableFloat32** | How long to take to type each key.  150ms if not defined. | [optional] 
+**Text** | Pointer to **NullableString** | text to type | [optional] 
 
 ## Methods
 
 ### NewTextInput
 
-`func NewTextInput(required string, ) *TextInput`
+`func NewTextInput() *TextInput`
 
 NewTextInput instantiates a new TextInput object
 This constructor will assign default values to properties that have it defined,
@@ -26,61 +25,41 @@ NewTextInputWithDefaults instantiates a new TextInput object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRequired
+### GetText
 
-`func (o *TextInput) GetRequired() string`
+`func (o *TextInput) GetText() string`
 
-GetRequired returns the Required field if non-nil, zero value otherwise.
+GetText returns the Text field if non-nil, zero value otherwise.
 
-### GetRequiredOk
+### GetTextOk
 
-`func (o *TextInput) GetRequiredOk() (*string, bool)`
+`func (o *TextInput) GetTextOk() (*string, bool)`
 
-GetRequiredOk returns a tuple with the Required field if it's non-nil, zero value otherwise
+GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRequired
+### SetText
 
-`func (o *TextInput) SetRequired(v string)`
+`func (o *TextInput) SetText(v string)`
 
-SetRequired sets Required field to given value.
+SetText sets Text field to given value.
 
+### HasText
 
-### GetKeyDuration
+`func (o *TextInput) HasText() bool`
 
-`func (o *TextInput) GetKeyDuration() float32`
+HasText returns a boolean if a field has been set.
 
-GetKeyDuration returns the KeyDuration field if non-nil, zero value otherwise.
+### SetTextNil
 
-### GetKeyDurationOk
+`func (o *TextInput) SetTextNil(b bool)`
 
-`func (o *TextInput) GetKeyDurationOk() (*float32, bool)`
+ SetTextNil sets the value for Text to be an explicit nil
 
-GetKeyDurationOk returns a tuple with the KeyDuration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
+### UnsetText
+`func (o *TextInput) UnsetText()`
 
-### SetKeyDuration
-
-`func (o *TextInput) SetKeyDuration(v float32)`
-
-SetKeyDuration sets KeyDuration field to given value.
-
-### HasKeyDuration
-
-`func (o *TextInput) HasKeyDuration() bool`
-
-HasKeyDuration returns a boolean if a field has been set.
-
-### SetKeyDurationNil
-
-`func (o *TextInput) SetKeyDurationNil(b bool)`
-
- SetKeyDurationNil sets the value for KeyDuration to be an explicit nil
-
-### UnsetKeyDuration
-`func (o *TextInput) UnsetKeyDuration()`
-
-UnsetKeyDuration ensures that no value is present for KeyDuration, not even an explicit nil
+UnsetText ensures that no value is present for Text, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

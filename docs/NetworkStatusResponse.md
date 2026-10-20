@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | Network Provider | 
-**Name** | **string** | User defined name | 
+**Type** | Pointer to **NullableString** | Network Provider. Omitted when no egress network is configured | [optional] 
+**Name** | Pointer to **NullableString** | User defined name. Omitted when no egress network is configured | [optional] 
 **State** | **string** | Current state of the network connection | 
-**Params** | **map[string]interface{}** | Additional state information | 
+**Params** | Pointer to **map[string]interface{}** | Additional state information. Omitted when no egress network is configured | [optional] 
 
 ## Methods
 
 ### NewNetworkStatusResponse
 
-`func NewNetworkStatusResponse(type_ string, name string, state string, params map[string]interface{}, ) *NetworkStatusResponse`
+`func NewNetworkStatusResponse(state string, ) *NetworkStatusResponse`
 
 NewNetworkStatusResponse instantiates a new NetworkStatusResponse object
 This constructor will assign default values to properties that have it defined,
@@ -47,7 +47,22 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
 
+`func (o *NetworkStatusResponse) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *NetworkStatusResponse) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *NetworkStatusResponse) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetName
 
 `func (o *NetworkStatusResponse) GetName() string`
@@ -67,7 +82,22 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
 
+`func (o *NetworkStatusResponse) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### SetNameNil
+
+`func (o *NetworkStatusResponse) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *NetworkStatusResponse) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetState
 
 `func (o *NetworkStatusResponse) GetState() string`
@@ -107,7 +137,22 @@ and a boolean to check if the value has been set.
 
 SetParams sets Params field to given value.
 
+### HasParams
 
+`func (o *NetworkStatusResponse) HasParams() bool`
+
+HasParams returns a boolean if a field has been set.
+
+### SetParamsNil
+
+`func (o *NetworkStatusResponse) SetParamsNil(b bool)`
+
+ SetParamsNil sets the value for Params to be an explicit nil
+
+### UnsetParams
+`func (o *NetworkStatusResponse) UnsetParams()`
+
+UnsetParams ensures that no value is present for Params, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

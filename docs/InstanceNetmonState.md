@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Hash** | Pointer to **NullableString** |  | [optional] 
-**Info** | Pointer to **NullableString** |  | [optional] 
-**Enabled** | Pointer to **NullableBool** |  | [optional] 
+**Hash** | Pointer to **string** | Hash for network monitor authentication. | [optional] 
+**Info** | Pointer to **string** | Encrypted info for network monitor authentication. | [optional] 
+**Enabled** | Pointer to **bool** | Whether network monitoring is enabled. | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetHash sets Hash field to given value.
 
 HasHash returns a boolean if a field has been set.
 
-### SetHashNil
-
-`func (o *InstanceNetmonState) SetHashNil(b bool)`
-
- SetHashNil sets the value for Hash to be an explicit nil
-
-### UnsetHash
-`func (o *InstanceNetmonState) UnsetHash()`
-
-UnsetHash ensures that no value is present for Hash, not even an explicit nil
 ### GetInfo
 
 `func (o *InstanceNetmonState) GetInfo() string`
@@ -87,16 +77,6 @@ SetInfo sets Info field to given value.
 
 HasInfo returns a boolean if a field has been set.
 
-### SetInfoNil
-
-`func (o *InstanceNetmonState) SetInfoNil(b bool)`
-
- SetInfoNil sets the value for Info to be an explicit nil
-
-### UnsetInfo
-`func (o *InstanceNetmonState) UnsetInfo()`
-
-UnsetInfo ensures that no value is present for Info, not even an explicit nil
 ### GetEnabled
 
 `func (o *InstanceNetmonState) GetEnabled() bool`
@@ -122,16 +102,6 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
-### SetEnabledNil
-
-`func (o *InstanceNetmonState) SetEnabledNil(b bool)`
-
- SetEnabledNil sets the value for Enabled to be an explicit nil
-
-### UnsetEnabled
-`func (o *InstanceNetmonState) UnsetEnabled()`
-
-UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

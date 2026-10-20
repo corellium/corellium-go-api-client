@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing AuthenticationApiService
+Testing AuthenticationAPIService
 
 */
 
@@ -14,22 +14,145 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_AuthenticationApiService(t *testing.T) {
+func Test_corellium_AuthenticationAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AuthenticationApiService V1AuthLogin", func(t *testing.T) {
+	t.Run("Test AuthenticationAPIService V3AuthLogin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.AuthenticationApi.V1AuthLogin(context.Background()).Execute()
+		resp, httpRes, err := apiClient.AuthenticationAPI.V3AuthLogin(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3AuthLogout", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.AuthenticationAPI.V3AuthLogout(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3DeleteApiToken", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.AuthenticationAPI.V3DeleteApiToken(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3FetchAuthProviderMetadata", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.AuthenticationAPI.V3FetchAuthProviderMetadata(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3GenerateApiToken", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.AuthenticationAPI.V3GenerateApiToken(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3GetAuthProviderAuthorizationUrl", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var providerId string
+
+		httpRes, err := apiClient.AuthenticationAPI.V3GetAuthProviderAuthorizationUrl(context.Background(), providerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3GetAuthProviderCallback", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var providerId string
+
+		httpRes, err := apiClient.AuthenticationAPI.V3GetAuthProviderCallback(context.Background(), providerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3GetAuthProviderSpMetadata", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var providerId string
+
+		resp, httpRes, err := apiClient.AuthenticationAPI.V3GetAuthProviderSpMetadata(context.Background(), providerId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3ListAuthProviderTypes", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.AuthenticationAPI.V3ListAuthProviderTypes(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3ListAuthProviders", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.AuthenticationAPI.V3ListAuthProviders(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AuthenticationAPIService V3PostAuthProviderCallback", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var providerId string
+
+		httpRes, err := apiClient.AuthenticationAPI.V3PostAuthProviderCallback(context.Background(), providerId).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

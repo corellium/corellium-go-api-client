@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Duration** | Pointer to **NullableFloat32** | how many additional days? | [optional] 
-**Reason** | Pointer to **NullableString** | why does the user want more time? | [optional] 
-**Denied** | Pointer to **NullableBool** |  | [optional] 
-**DeniedReason** | Pointer to **NullableString** | explanation for why the request was denied | [optional] 
+**Duration** | **float32** | Number of additional days requested. | 
+**Reason** | Pointer to **string** | Reason for the extension request. | [optional] 
+**Denied** | Pointer to **bool** | Whether the request was denied. | [optional] 
+**DeniedReason** | Pointer to **string** | Explanation for why the request was denied. | [optional] 
 
 ## Methods
 
 ### NewTrialExtension
 
-`func NewTrialExtension() *TrialExtension`
+`func NewTrialExtension(duration float32, ) *TrialExtension`
 
 NewTrialExtension instantiates a new TrialExtension object
 This constructor will assign default values to properties that have it defined,
@@ -47,22 +47,7 @@ and a boolean to check if the value has been set.
 
 SetDuration sets Duration field to given value.
 
-### HasDuration
 
-`func (o *TrialExtension) HasDuration() bool`
-
-HasDuration returns a boolean if a field has been set.
-
-### SetDurationNil
-
-`func (o *TrialExtension) SetDurationNil(b bool)`
-
- SetDurationNil sets the value for Duration to be an explicit nil
-
-### UnsetDuration
-`func (o *TrialExtension) UnsetDuration()`
-
-UnsetDuration ensures that no value is present for Duration, not even an explicit nil
 ### GetReason
 
 `func (o *TrialExtension) GetReason() string`
@@ -88,16 +73,6 @@ SetReason sets Reason field to given value.
 
 HasReason returns a boolean if a field has been set.
 
-### SetReasonNil
-
-`func (o *TrialExtension) SetReasonNil(b bool)`
-
- SetReasonNil sets the value for Reason to be an explicit nil
-
-### UnsetReason
-`func (o *TrialExtension) UnsetReason()`
-
-UnsetReason ensures that no value is present for Reason, not even an explicit nil
 ### GetDenied
 
 `func (o *TrialExtension) GetDenied() bool`
@@ -123,16 +98,6 @@ SetDenied sets Denied field to given value.
 
 HasDenied returns a boolean if a field has been set.
 
-### SetDeniedNil
-
-`func (o *TrialExtension) SetDeniedNil(b bool)`
-
- SetDeniedNil sets the value for Denied to be an explicit nil
-
-### UnsetDenied
-`func (o *TrialExtension) UnsetDenied()`
-
-UnsetDenied ensures that no value is present for Denied, not even an explicit nil
 ### GetDeniedReason
 
 `func (o *TrialExtension) GetDeniedReason() string`
@@ -158,16 +123,6 @@ SetDeniedReason sets DeniedReason field to given value.
 
 HasDeniedReason returns a boolean if a field has been set.
 
-### SetDeniedReasonNil
-
-`func (o *TrialExtension) SetDeniedReasonNil(b bool)`
-
- SetDeniedReasonNil sets the value for DeniedReason to be an explicit nil
-
-### UnsetDeniedReason
-`func (o *TrialExtension) UnsetDeniedReason()`
-
-UnsetDeniedReason ensures that no value is present for DeniedReason, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

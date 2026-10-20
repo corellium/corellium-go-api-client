@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Proxy** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Listeners** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Proxy** | Pointer to **[]map[string]interface{}** | VPN proxy definitions. | [optional] 
+**Listeners** | Pointer to **[]map[string]interface{}** | VPN listener definitions. | [optional] 
 
 ## Methods
 
@@ -51,16 +51,6 @@ SetProxy sets Proxy field to given value.
 
 HasProxy returns a boolean if a field has been set.
 
-### SetProxyNil
-
-`func (o *VpnDefinition) SetProxyNil(b bool)`
-
- SetProxyNil sets the value for Proxy to be an explicit nil
-
-### UnsetProxy
-`func (o *VpnDefinition) UnsetProxy()`
-
-UnsetProxy ensures that no value is present for Proxy, not even an explicit nil
 ### GetListeners
 
 `func (o *VpnDefinition) GetListeners() []map[string]interface{}`
@@ -86,16 +76,6 @@ SetListeners sets Listeners field to given value.
 
 HasListeners returns a boolean if a field has been set.
 
-### SetListenersNil
-
-`func (o *VpnDefinition) SetListenersNil(b bool)`
-
- SetListenersNil sets the value for Listeners to be an explicit nil
-
-### UnsetListeners
-`func (o *VpnDefinition) UnsetListeners()`
-
-UnsetListeners ensures that no value is present for Listeners, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

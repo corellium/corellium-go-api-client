@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BitCount** | **float32** | count of bits in members of this bank | 
-**Banks** | [**[][]Bit**]([]Bit.md) | bits for each bank of this name as an array of arrays | 
+**BitCount** | **float32** | Count of bits in members of this bank. | 
+**Banks** | [**[][]GpioStateDefinitionBanksInnerInner**]([]GpioStateDefinitionBanksInnerInner.md) | Bits for each bank of this name as an array of arrays. | 
 
 ## Methods
 
 ### NewGpioStateDefinition
 
-`func NewGpioStateDefinition(bitCount float32, banks [][]Bit, ) *GpioStateDefinition`
+`func NewGpioStateDefinition(bitCount float32, banks [][]GpioStateDefinitionBanksInnerInner, ) *GpioStateDefinition`
 
 NewGpioStateDefinition instantiates a new GpioStateDefinition object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetBitCount sets BitCount field to given value.
 
 ### GetBanks
 
-`func (o *GpioStateDefinition) GetBanks() [][]Bit`
+`func (o *GpioStateDefinition) GetBanks() [][]GpioStateDefinitionBanksInnerInner`
 
 GetBanks returns the Banks field if non-nil, zero value otherwise.
 
 ### GetBanksOk
 
-`func (o *GpioStateDefinition) GetBanksOk() (*[][]Bit, bool)`
+`func (o *GpioStateDefinition) GetBanksOk() (*[][]GpioStateDefinitionBanksInnerInner, bool)`
 
 GetBanksOk returns a tuple with the Banks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBanks
 
-`func (o *GpioStateDefinition) SetBanks(v [][]Bit)`
+`func (o *GpioStateDefinition) SetBanks(v [][]GpioStateDefinitionBanksInnerInner)`
 
 SetBanks sets Banks field to given value.
 

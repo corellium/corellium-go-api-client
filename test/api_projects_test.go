@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing ProjectsApiService
+Testing ProjectsAPIService
 
 */
 
@@ -14,21 +14,33 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_ProjectsApiService(t *testing.T) {
+func Test_corellium_ProjectsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ProjectsApiService V1AddProjectKey", func(t *testing.T) {
+	t.Run("Test ProjectsAPIService V3CreateProject", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3CreateProject(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3CreateProjectKey", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var projectId string
 
-		resp, httpRes, err := apiClient.ProjectsApi.V1AddProjectKey(context.Background(), projectId).Execute()
+		resp, httpRes, err := apiClient.ProjectsAPI.V3CreateProjectKey(context.Background(), projectId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,121 +48,40 @@ func Test_corellium_ProjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ProjectsApiService V1CreateProject", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.ProjectsApi.V1CreateProject(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProjectsApiService V1DeleteProject", func(t *testing.T) {
+	t.Run("Test ProjectsAPIService V3DeleteProject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var projectId string
 
-		httpRes, err := apiClient.ProjectsApi.V1DeleteProject(context.Background(), projectId).Execute()
+		httpRes, err := apiClient.ProjectsAPI.V3DeleteProject(context.Background(), projectId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ProjectsApiService V1GetProject", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var projectId string
-
-		resp, httpRes, err := apiClient.ProjectsApi.V1GetProject(context.Background(), projectId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProjectsApiService V1GetProjectInstances", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var projectId string
-
-		resp, httpRes, err := apiClient.ProjectsApi.V1GetProjectInstances(context.Background(), projectId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProjectsApiService V1GetProjectKeys", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var projectId string
-
-		resp, httpRes, err := apiClient.ProjectsApi.V1GetProjectKeys(context.Background(), projectId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProjectsApiService V1GetProjectVpnConfig", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var projectId string
-		var format string
-
-		resp, httpRes, err := apiClient.ProjectsApi.V1GetProjectVpnConfig(context.Background(), projectId, format).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProjectsApiService V1GetProjects", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.ProjectsApi.V1GetProjects(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProjectsApiService V1RemoveProjectKey", func(t *testing.T) {
+	t.Run("Test ProjectsAPIService V3DeleteProjectKey", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var projectId string
 		var keyId string
 
-		httpRes, err := apiClient.ProjectsApi.V1RemoveProjectKey(context.Background(), projectId, keyId).Execute()
+		httpRes, err := apiClient.ProjectsAPI.V3DeleteProjectKey(context.Background(), projectId, keyId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ProjectsApiService V1UpdateProject", func(t *testing.T) {
+	t.Run("Test ProjectsAPIService V3FetchProjectFirmwareAssets", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var projectId string
 
-		resp, httpRes, err := apiClient.ProjectsApi.V1UpdateProject(context.Background(), projectId).Execute()
+		resp, httpRes, err := apiClient.ProjectsAPI.V3FetchProjectFirmwareAssets(context.Background(), projectId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -158,15 +89,162 @@ func Test_corellium_ProjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ProjectsApiService V1UpdateProjectSettings", func(t *testing.T) {
+	t.Run("Test ProjectsAPIService V3GetProject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var projectId string
 
-		httpRes, err := apiClient.ProjectsApi.V1UpdateProjectSettings(context.Background(), projectId).Execute()
+		resp, httpRes, err := apiClient.ProjectsAPI.V3GetProject(context.Background(), projectId).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3GetProjectImageUpload", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+		var type_ string
+		var imageId string
+		var name string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3GetProjectImageUpload(context.Background(), projectId, type_, imageId, name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3GetProjectNetworkLog", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3GetProjectNetworkLog(context.Background(), projectId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3GetProjectNetworkStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3GetProjectNetworkStatus(context.Background(), projectId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3GetProjectVpnConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+		var format string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3GetProjectVpnConfig(context.Background(), projectId, format).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3ListProjectInstances", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3ListProjectInstances(context.Background(), projectId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3ListProjectKeys", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3ListProjectKeys(context.Background(), projectId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3ListProjects", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3ListProjects(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3PatchProject", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3PatchProject(context.Background(), projectId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3PreauthVpnConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+		var filename string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3PreauthVpnConfig(context.Background(), projectId, filename).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProjectsAPIService V3PutProjectImageUpload", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+		var type_ string
+		var imageId string
+		var name string
+
+		resp, httpRes, err := apiClient.ProjectsAPI.V3PutProjectImageUpload(context.Background(), projectId, type_, imageId, name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

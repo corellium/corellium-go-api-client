@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AgreedToTerms** | Pointer to **NullableTime** | Date agreed | [optional] 
+**AgreedToTerms** | **time.Time** | Timestamp the terms were agreed to. | 
 
 ## Methods
 
 ### NewAgreedAck
 
-`func NewAgreedAck() *AgreedAck`
+`func NewAgreedAck(agreedToTerms time.Time, ) *AgreedAck`
 
 NewAgreedAck instantiates a new AgreedAck object
 This constructor will assign default values to properties that have it defined,
@@ -44,22 +44,7 @@ and a boolean to check if the value has been set.
 
 SetAgreedToTerms sets AgreedToTerms field to given value.
 
-### HasAgreedToTerms
 
-`func (o *AgreedAck) HasAgreedToTerms() bool`
-
-HasAgreedToTerms returns a boolean if a field has been set.
-
-### SetAgreedToTermsNil
-
-`func (o *AgreedAck) SetAgreedToTermsNil(b bool)`
-
- SetAgreedToTermsNil sets the value for AgreedToTerms to be an explicit nil
-
-### UnsetAgreedToTerms
-`func (o *AgreedAck) UnsetAgreedToTerms()`
-
-UnsetAgreedToTerms ensures that no value is present for AgreedToTerms, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

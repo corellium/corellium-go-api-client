@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing AgentApiService
+Testing AgentAPIService
 
 */
 
@@ -14,50 +14,79 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_AgentApiService(t *testing.T) {
+func Test_corellium_AgentAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AgentApiService V1AgentAppReady", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.AgentApi.V1AgentAppReady(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentDeleteFile", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3DeleteFileAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var filePath string
 
-		httpRes, err := apiClient.AgentApi.V1AgentDeleteFile(context.Background(), instanceId, filePath).Execute()
+		httpRes, err := apiClient.AgentAPI.V3DeleteFileAgent(context.Background(), instanceId, filePath).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AgentApiService V1AgentGetFile", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3GetAdbAuthAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3GetAdbAuthAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3GetAppReadyAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3GetAppReadyAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3GetContainerHealthAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var containerId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3GetContainerHealthAgent(context.Background(), instanceId, containerId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3GetFileAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var filePath string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentGetFile(context.Background(), instanceId, filePath).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3GetFileAgent(context.Background(), instanceId, filePath).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +94,13 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentGetTempFilename", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3GetNetworkAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentGetTempFilename(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3GetNetworkAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,54 +108,122 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentInstallApp", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3GetPropAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.AgentApi.V1AgentInstallApp(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3GetPropAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3GetRemoteItStatusAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3GetRemoteItStatusAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3GetTempFileAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3GetTempFileAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3InstallAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.AgentAPI.V3InstallAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AgentApiService V1AgentInstallProfile", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3InstallOpenGappsAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.AgentApi.V1AgentInstallProfile(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.AgentAPI.V3InstallOpenGappsAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AgentApiService V1AgentKillApp", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3InstallProfileAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.AgentAPI.V3InstallProfileAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3InstallRemoteItAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3InstallRemoteItAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3KillAppAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var bundleId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentKillApp(context.Background(), instanceId, bundleId).Execute()
+		httpRes, err := apiClient.AgentAPI.V3KillAppAgent(context.Background(), instanceId, bundleId).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AgentApiService V1AgentListAppIcons", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3KillFridaAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentListAppIcons(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3KillFridaAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -134,13 +231,13 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentListApps", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3ListAppIconsAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentListApps(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3ListAppIconsAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,13 +245,13 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentListAppsStatus", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3ListAppsAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentListAppsStatus(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3ListAppsAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -162,13 +259,13 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentListProfiles", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3ListAppsStatusAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentListProfiles(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3ListAppsStatusAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -176,14 +273,13 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentRunApp", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3ListContainersAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
-		var bundleId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentRunApp(context.Background(), instanceId, bundleId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3ListContainersAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -191,27 +287,69 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentSetFileAttributes", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3ListFridaProcessesAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3ListFridaProcessesAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3ListProfilesAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3ListProfilesAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3LockAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.AgentAPI.V3LockAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3PreauthorizeFileArchiveDownloadAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3PreauthorizeFileArchiveDownloadAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3PreauthorizeFileDownloadAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var filePath string
 
-		httpRes, err := apiClient.AgentApi.V1AgentSetFileAttributes(context.Background(), instanceId, filePath).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemGetAdbAuth", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.AgentApi.V1AgentSystemGetAdbAuth(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.AgentAPI.V3PreauthorizeFileDownloadAgent(context.Background(), instanceId, filePath).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -219,120 +357,27 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentSystemGetNetwork", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.AgentApi.V1AgentSystemGetNetwork(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemGetProp", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.AgentApi.V1AgentSystemGetProp(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemInstallOpenGApps", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.AgentApi.V1AgentSystemInstallOpenGApps(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemLock", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.AgentApi.V1AgentSystemLock(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemSetAdbAuth", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.AgentApi.V1AgentSystemSetAdbAuth(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemSetHostname", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.AgentApi.V1AgentSystemSetHostname(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemShutdown", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.AgentApi.V1AgentSystemShutdown(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentSystemUnlock", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.AgentApi.V1AgentSystemUnlock(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AgentApiService V1AgentUninstallApp", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3RunAppAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var bundleId string
 
-		resp, httpRes, err := apiClient.AgentApi.V1AgentUninstallApp(context.Background(), instanceId, bundleId).Execute()
+		httpRes, err := apiClient.AgentAPI.V3RunAppAgent(context.Background(), instanceId, bundleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3RunFridaAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3RunFridaAgent(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -340,28 +385,211 @@ func Test_corellium_AgentApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AgentApiService V1AgentUninstallProfile", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3SetAdbAuthAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.AgentAPI.V3SetAdbAuthAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3SetDevicePropertiesAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3SetDevicePropertiesAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3SetFileAttributesAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var filePath string
+
+		httpRes, err := apiClient.AgentAPI.V3SetFileAttributesAgent(context.Background(), instanceId, filePath).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3SetHostnameAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3SetHostnameAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3ShutdownAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.AgentAPI.V3ShutdownAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3StartContainerAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var containerId string
+
+		httpRes, err := apiClient.AgentAPI.V3StartContainerAgent(context.Background(), instanceId, containerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3StartContainerAppAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var containerId string
+		var packageName string
+		var activityName string
+
+		httpRes, err := apiClient.AgentAPI.V3StartContainerAppAgent(context.Background(), instanceId, containerId, packageName, activityName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3StartContainerAppMonitoredAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var containerId string
+		var packageName string
+		var activityName string
+
+		httpRes, err := apiClient.AgentAPI.V3StartContainerAppMonitoredAgent(context.Background(), instanceId, containerId, packageName, activityName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3StopContainerAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var containerId string
+
+		httpRes, err := apiClient.AgentAPI.V3StopContainerAgent(context.Background(), instanceId, containerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3StopContainerAppAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var containerId string
+
+		httpRes, err := apiClient.AgentAPI.V3StopContainerAppAgent(context.Background(), instanceId, containerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3UninstallAppAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var bundleId string
+
+		httpRes, err := apiClient.AgentAPI.V3UninstallAppAgent(context.Background(), instanceId, bundleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3UninstallProfileAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var profileId string
 
-		httpRes, err := apiClient.AgentApi.V1AgentUninstallProfile(context.Background(), instanceId, profileId).Execute()
+		httpRes, err := apiClient.AgentAPI.V3UninstallProfileAgent(context.Background(), instanceId, profileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AgentApiService V1AgentUploadFile", func(t *testing.T) {
+	t.Run("Test AgentAPIService V3UninstallRemoteItAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.AgentAPI.V3UninstallRemoteItAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3UnlockAgent", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.AgentAPI.V3UnlockAgent(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AgentAPIService V3UploadFileAgent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var filePath string
 
-		httpRes, err := apiClient.AgentApi.V1AgentUploadFile(context.Background(), instanceId, filePath).Execute()
+		httpRes, err := apiClient.AgentAPI.V3UploadFileAgent(context.Background(), instanceId, filePath).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

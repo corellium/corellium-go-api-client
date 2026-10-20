@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Error** | **string** | Error text | 
-**ErrorID** | **string** | Error ID | 
-**Name** | Pointer to **NullableString** | Name of the object requested | [optional] 
-**Params** | Pointer to **map[string]interface{}** | params provided by user | [optional] 
+**Error** | **string** | Human-readable explanation of what was not found. | 
+**ErrorID** | **string** | Short machine-readable error name, usually &#x60;NotFound&#x60;. | 
+**Name** | Pointer to **string** | Kind of object that was not found, for example &#x60;instance&#x60;. | [optional] 
+**Params** | Pointer to **map[string]interface{}** | The identifiers from your request that were looked up. | [optional] 
 
 ## Methods
 
@@ -93,16 +93,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
-
-`func (o *ApiNotFoundError) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *ApiNotFoundError) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetParams
 
 `func (o *ApiNotFoundError) GetParams() map[string]interface{}`
@@ -128,16 +118,6 @@ SetParams sets Params field to given value.
 
 HasParams returns a boolean if a field has been set.
 
-### SetParamsNil
-
-`func (o *ApiNotFoundError) SetParamsNil(b bool)`
-
- SetParamsNil sets the value for Params to be an explicit nil
-
-### UnsetParams
-`func (o *ApiNotFoundError) UnsetParams()`
-
-UnsetParams ensures that no value is present for Params, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

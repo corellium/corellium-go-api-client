@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cores** | Pointer to **NullableFloat32** |  | [optional] 
-**Instances** | Pointer to **NullableFloat32** |  | [optional] 
-**Ram** | Pointer to **NullableFloat32** |  | [optional] 
-**Gpu** | Pointer to **NullableFloat32** |  | [optional] 
+**Cores** | Pointer to **float32** | CPU cores in use. | [optional] 
+**Instances** | Pointer to **float32** | Instances in use. | [optional] 
+**Ram** | Pointer to **float32** | RAM in use, in mebibytes. | [optional] 
+**Gpu** | Pointer to **float32** | GPU units in use. | [optional] 
 
 ## Methods
 
@@ -53,16 +53,6 @@ SetCores sets Cores field to given value.
 
 HasCores returns a boolean if a field has been set.
 
-### SetCoresNil
-
-`func (o *ProjectUsage) SetCoresNil(b bool)`
-
- SetCoresNil sets the value for Cores to be an explicit nil
-
-### UnsetCores
-`func (o *ProjectUsage) UnsetCores()`
-
-UnsetCores ensures that no value is present for Cores, not even an explicit nil
 ### GetInstances
 
 `func (o *ProjectUsage) GetInstances() float32`
@@ -88,16 +78,6 @@ SetInstances sets Instances field to given value.
 
 HasInstances returns a boolean if a field has been set.
 
-### SetInstancesNil
-
-`func (o *ProjectUsage) SetInstancesNil(b bool)`
-
- SetInstancesNil sets the value for Instances to be an explicit nil
-
-### UnsetInstances
-`func (o *ProjectUsage) UnsetInstances()`
-
-UnsetInstances ensures that no value is present for Instances, not even an explicit nil
 ### GetRam
 
 `func (o *ProjectUsage) GetRam() float32`
@@ -123,16 +103,6 @@ SetRam sets Ram field to given value.
 
 HasRam returns a boolean if a field has been set.
 
-### SetRamNil
-
-`func (o *ProjectUsage) SetRamNil(b bool)`
-
- SetRamNil sets the value for Ram to be an explicit nil
-
-### UnsetRam
-`func (o *ProjectUsage) UnsetRam()`
-
-UnsetRam ensures that no value is present for Ram, not even an explicit nil
 ### GetGpu
 
 `func (o *ProjectUsage) GetGpu() float32`
@@ -158,16 +128,6 @@ SetGpu sets Gpu field to given value.
 
 HasGpu returns a boolean if a field has been set.
 
-### SetGpuNil
-
-`func (o *ProjectUsage) SetGpuNil(b bool)`
-
- SetGpuNil sets the value for Gpu to be an explicit nil
-
-### UnsetGpu
-`func (o *ProjectUsage) UnsetGpu()`
-
-UnsetGpu ensures that no value is present for Gpu, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

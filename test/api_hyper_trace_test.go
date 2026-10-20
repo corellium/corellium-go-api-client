@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing HyperTraceApiService
+Testing HyperTraceAPIService
 
 */
 
@@ -14,21 +14,21 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_HyperTraceApiService(t *testing.T) {
+func Test_corellium_HyperTraceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test HyperTraceApiService V1BtracePreauthorize", func(t *testing.T) {
+	t.Run("Test HyperTraceAPIService V3BtracePreauthorize", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.HyperTraceApi.V1BtracePreauthorize(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.HyperTraceAPI.V3BtracePreauthorize(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,26 +36,26 @@ func Test_corellium_HyperTraceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HyperTraceApiService V1ClearHyperTrace", func(t *testing.T) {
+	t.Run("Test HyperTraceAPIService V3ClearHyperTrace", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.HyperTraceApi.V1ClearHyperTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.HyperTraceAPI.V3ClearHyperTrace(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test HyperTraceApiService V1Kcrange", func(t *testing.T) {
+	t.Run("Test HyperTraceAPIService V3GetInstanceKcrange", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.HyperTraceApi.V1Kcrange(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.HyperTraceAPI.V3GetInstanceKcrange(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -63,26 +63,26 @@ func Test_corellium_HyperTraceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HyperTraceApiService V1StartHyperTrace", func(t *testing.T) {
+	t.Run("Test HyperTraceAPIService V3StartHyperTrace", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.HyperTraceApi.V1StartHyperTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.HyperTraceAPI.V3StartHyperTrace(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test HyperTraceApiService V1StopHyperTrace", func(t *testing.T) {
+	t.Run("Test HyperTraceAPIService V3StopHyperTrace", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.HyperTraceApi.V1StopHyperTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.HyperTraceAPI.V3StopHyperTrace(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

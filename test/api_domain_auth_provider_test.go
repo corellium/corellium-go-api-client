@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing DomainAuthProviderApiService
+Testing DomainAuthProviderAPIService
 
 */
 
@@ -14,21 +14,21 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_DomainAuthProviderApiService(t *testing.T) {
+func Test_corellium_DomainAuthProviderAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DomainAuthProviderApiService V1CreateDomainAuthProvider", func(t *testing.T) {
+	t.Run("Test DomainAuthProviderAPIService V1CreateDomainAuthProvider", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var domainId string
 
-		resp, httpRes, err := apiClient.DomainAuthProviderApi.V1CreateDomainAuthProvider(context.Background(), domainId).Execute()
+		resp, httpRes, err := apiClient.DomainAuthProviderAPI.V1CreateDomainAuthProvider(context.Background(), domainId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,28 +36,27 @@ func Test_corellium_DomainAuthProviderApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DomainAuthProviderApiService V1DeleteDomainAuthProvider", func(t *testing.T) {
+	t.Run("Test DomainAuthProviderAPIService V1DeleteDomainAuthProvider", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var domainId string
 		var providerId string
 
-		resp, httpRes, err := apiClient.DomainAuthProviderApi.V1DeleteDomainAuthProvider(context.Background(), domainId, providerId).Execute()
+		httpRes, err := apiClient.DomainAuthProviderAPI.V1DeleteDomainAuthProvider(context.Background(), domainId, providerId).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DomainAuthProviderApiService V1GetDomainAuthProviders", func(t *testing.T) {
+	t.Run("Test DomainAuthProviderAPIService V1GetDomainAuthProviders", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var domainId string
 
-		resp, httpRes, err := apiClient.DomainAuthProviderApi.V1GetDomainAuthProviders(context.Background(), domainId).Execute()
+		resp, httpRes, err := apiClient.DomainAuthProviderAPI.V1GetDomainAuthProviders(context.Background(), domainId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,14 +64,14 @@ func Test_corellium_DomainAuthProviderApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DomainAuthProviderApiService V1UpdateDomainAuthProvider", func(t *testing.T) {
+	t.Run("Test DomainAuthProviderAPIService V1UpdateDomainAuthProvider", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var domainId string
 		var providerId string
 
-		resp, httpRes, err := apiClient.DomainAuthProviderApi.V1UpdateDomainAuthProvider(context.Background(), domainId, providerId).Execute()
+		resp, httpRes, err := apiClient.DomainAuthProviderAPI.V1UpdateDomainAuthProvider(context.Background(), domainId, providerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

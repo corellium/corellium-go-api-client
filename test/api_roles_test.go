@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing RolesApiService
+Testing RolesAPIService
 
 */
 
@@ -14,15 +14,30 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_RolesApiService(t *testing.T) {
+func Test_corellium_RolesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RolesApiService V1AddTeamRoleToProject", func(t *testing.T) {
+	t.Run("Test RolesAPIService V3AddTeamRoleToDeployment", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var deploymentId string
+		var teamId string
+		var roleId string
+
+		httpRes, err := apiClient.RolesAPI.V3AddTeamRoleToDeployment(context.Background(), deploymentId, teamId, roleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3AddTeamRoleToProject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -30,14 +45,29 @@ func Test_corellium_RolesApiService(t *testing.T) {
 		var teamId string
 		var roleId string
 
-		httpRes, err := apiClient.RolesApi.V1AddTeamRoleToProject(context.Background(), projectId, teamId, roleId).Execute()
+		httpRes, err := apiClient.RolesAPI.V3AddTeamRoleToProject(context.Background(), projectId, teamId, roleId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RolesApiService V1AddUserRoleToProject", func(t *testing.T) {
+	t.Run("Test RolesAPIService V3AddUserRoleToDeployment", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var deploymentId string
+		var userId string
+		var roleId string
+
+		httpRes, err := apiClient.RolesAPI.V3AddUserRoleToDeployment(context.Background(), deploymentId, userId, roleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3AddUserRoleToProject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -45,51 +75,93 @@ func Test_corellium_RolesApiService(t *testing.T) {
 		var userId string
 		var roleId string
 
-		httpRes, err := apiClient.RolesApi.V1AddUserRoleToProject(context.Background(), projectId, userId, roleId).Execute()
+		httpRes, err := apiClient.RolesAPI.V3AddUserRoleToProject(context.Background(), projectId, userId, roleId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RolesApiService V1RemoveTeamRoleFromProject", func(t *testing.T) {
+	t.Run("Test RolesAPIService V3ListDeploymentRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var projectId string
-		var teamId string
-		var roleId string
-
-		httpRes, err := apiClient.RolesApi.V1RemoveTeamRoleFromProject(context.Background(), projectId, teamId, roleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RolesApiService V1RemoveUserRoleFromProject", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var projectId string
-		var userId string
-		var roleId string
-
-		httpRes, err := apiClient.RolesApi.V1RemoveUserRoleFromProject(context.Background(), projectId, userId, roleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RolesApiService V1Roles", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.RolesApi.V1Roles(context.Background()).Execute()
+		resp, httpRes, err := apiClient.RolesAPI.V3ListDeploymentRoles(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3ListRoles", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.RolesAPI.V3ListRoles(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3RemoveTeamRoleFromDeployment", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var deploymentId string
+		var teamId string
+		var roleId string
+
+		httpRes, err := apiClient.RolesAPI.V3RemoveTeamRoleFromDeployment(context.Background(), deploymentId, teamId, roleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3RemoveTeamRoleFromProject", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+		var teamId string
+		var roleId string
+
+		httpRes, err := apiClient.RolesAPI.V3RemoveTeamRoleFromProject(context.Background(), projectId, teamId, roleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3RemoveUserRoleFromDeployment", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var deploymentId string
+		var userId string
+		var roleId string
+
+		httpRes, err := apiClient.RolesAPI.V3RemoveUserRoleFromDeployment(context.Background(), deploymentId, userId, roleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RolesAPIService V3RemoveUserRoleFromProject", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var projectId string
+		var userId string
+		var roleId string
+
+		httpRes, err := apiClient.RolesAPI.V3RemoveUserRoleFromProject(context.Background(), projectId, userId, roleId).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

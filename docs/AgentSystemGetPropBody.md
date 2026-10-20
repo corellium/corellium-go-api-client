@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Property** | **string** |  | 
+**Property** | **string** | The system property to retrieve. | 
 
 ## Methods
 

@@ -4,9 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Error** | **string** | Error text | 
-**ErrorID** | **string** | Error ID | 
-**Field** | Pointer to **NullableString** | Field associated with error | [optional] 
+**Error** | **string** | Human-readable explanation of what was wrong with the request. Show it to the user or log it; do not parse it, because the wording can change. | 
+**ErrorID** | **string** | Always &#x60;UserError&#x60;: the request itself was invalid. Fix the request before retrying; sending it again unchanged fails the same way. | 
+**Field** | Pointer to **string** | Name of the request field that was rejected, when the error is about one field. | [optional] 
+**Validator** | Pointer to **string** | Validator that rejected the field. | [optional] 
+**ProjectIds** | Pointer to **[]string** | Projects still using this resource, when the error is a usage conflict. | [optional] 
+**MissingFwAssets** | Pointer to **[]string** | Firmware asset URLs required by the target firmware but absent from the domain, when field is &#39;firmware_asset&#39;. | [optional] 
 
 ## Methods
 
@@ -92,16 +95,81 @@ SetField sets Field field to given value.
 
 HasField returns a boolean if a field has been set.
 
-### SetFieldNil
+### GetValidator
 
-`func (o *UserError) SetFieldNil(b bool)`
+`func (o *UserError) GetValidator() string`
 
- SetFieldNil sets the value for Field to be an explicit nil
+GetValidator returns the Validator field if non-nil, zero value otherwise.
 
-### UnsetField
-`func (o *UserError) UnsetField()`
+### GetValidatorOk
 
-UnsetField ensures that no value is present for Field, not even an explicit nil
+`func (o *UserError) GetValidatorOk() (*string, bool)`
+
+GetValidatorOk returns a tuple with the Validator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidator
+
+`func (o *UserError) SetValidator(v string)`
+
+SetValidator sets Validator field to given value.
+
+### HasValidator
+
+`func (o *UserError) HasValidator() bool`
+
+HasValidator returns a boolean if a field has been set.
+
+### GetProjectIds
+
+`func (o *UserError) GetProjectIds() []string`
+
+GetProjectIds returns the ProjectIds field if non-nil, zero value otherwise.
+
+### GetProjectIdsOk
+
+`func (o *UserError) GetProjectIdsOk() (*[]string, bool)`
+
+GetProjectIdsOk returns a tuple with the ProjectIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProjectIds
+
+`func (o *UserError) SetProjectIds(v []string)`
+
+SetProjectIds sets ProjectIds field to given value.
+
+### HasProjectIds
+
+`func (o *UserError) HasProjectIds() bool`
+
+HasProjectIds returns a boolean if a field has been set.
+
+### GetMissingFwAssets
+
+`func (o *UserError) GetMissingFwAssets() []string`
+
+GetMissingFwAssets returns the MissingFwAssets field if non-nil, zero value otherwise.
+
+### GetMissingFwAssetsOk
+
+`func (o *UserError) GetMissingFwAssetsOk() (*[]string, bool)`
+
+GetMissingFwAssetsOk returns a tuple with the MissingFwAssets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMissingFwAssets
+
+`func (o *UserError) SetMissingFwAssets(v []string)`
+
+SetMissingFwAssets sets MissingFwAssets field to given value.
+
+### HasMissingFwAssets
+
+`func (o *UserError) HasMissingFwAssets() bool`
+
+HasMissingFwAssets returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

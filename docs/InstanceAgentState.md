@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Hash** | Pointer to **NullableString** |  | [optional] 
-**Info** | Pointer to **NullableString** |  | [optional] 
+**Hash** | Pointer to **string** | Hash for agent authentication. | [optional] 
+**Info** | Pointer to **string** | Encrypted info for agent authentication. | [optional] 
 
 ## Methods
 
@@ -51,16 +51,6 @@ SetHash sets Hash field to given value.
 
 HasHash returns a boolean if a field has been set.
 
-### SetHashNil
-
-`func (o *InstanceAgentState) SetHashNil(b bool)`
-
- SetHashNil sets the value for Hash to be an explicit nil
-
-### UnsetHash
-`func (o *InstanceAgentState) UnsetHash()`
-
-UnsetHash ensures that no value is present for Hash, not even an explicit nil
 ### GetInfo
 
 `func (o *InstanceAgentState) GetInfo() string`
@@ -86,16 +76,6 @@ SetInfo sets Info field to given value.
 
 HasInfo returns a boolean if a field has been set.
 
-### SetInfoNil
-
-`func (o *InstanceAgentState) SetInfoNil(b bool)`
-
- SetInfoNil sets the value for Info to be an explicit nil
-
-### UnsetInfo
-`func (o *InstanceAgentState) UnsetInfo()`
-
-UnsetInfo ensures that no value is present for Info, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

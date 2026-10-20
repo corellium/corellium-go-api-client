@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Email** | **string** | User Email | 
 **Administrator** | Pointer to **NullableBool** | the flag that specifies whether user is Administrator or not | [optional] 
 **CanEditUserAttributes** | Pointer to **NullableBool** | Flag to determine if user attributes are editable. | [optional] 
+**ClusterAdministrator** | Pointer to **NullableBool** | the flag that specifies whether user is cluster administrator or not | [optional] 
 
 ## Methods
 
@@ -180,6 +181,41 @@ HasCanEditUserAttributes returns a boolean if a field has been set.
 `func (o *User) UnsetCanEditUserAttributes()`
 
 UnsetCanEditUserAttributes ensures that no value is present for CanEditUserAttributes, not even an explicit nil
+### GetClusterAdministrator
+
+`func (o *User) GetClusterAdministrator() bool`
+
+GetClusterAdministrator returns the ClusterAdministrator field if non-nil, zero value otherwise.
+
+### GetClusterAdministratorOk
+
+`func (o *User) GetClusterAdministratorOk() (*bool, bool)`
+
+GetClusterAdministratorOk returns a tuple with the ClusterAdministrator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterAdministrator
+
+`func (o *User) SetClusterAdministrator(v bool)`
+
+SetClusterAdministrator sets ClusterAdministrator field to given value.
+
+### HasClusterAdministrator
+
+`func (o *User) HasClusterAdministrator() bool`
+
+HasClusterAdministrator returns a boolean if a field has been set.
+
+### SetClusterAdministratorNil
+
+`func (o *User) SetClusterAdministratorNil(b bool)`
+
+ SetClusterAdministratorNil sets the value for ClusterAdministrator to be an explicit nil
+
+### UnsetClusterAdministrator
+`func (o *User) UnsetClusterAdministrator()`
+
+UnsetClusterAdministrator ensures that no value is present for ClusterAdministrator, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

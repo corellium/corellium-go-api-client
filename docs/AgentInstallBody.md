@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Path** | Pointer to **NullableString** | path to app to install | [optional] 
+**Path** | **string** | Path to the app to install on the VM filesystem. | 
 
 ## Methods
 
 ### NewAgentInstallBody
 
-`func NewAgentInstallBody() *AgentInstallBody`
+`func NewAgentInstallBody(path string, ) *AgentInstallBody`
 
 NewAgentInstallBody instantiates a new AgentInstallBody object
 This constructor will assign default values to properties that have it defined,
@@ -44,22 +44,7 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
-### HasPath
 
-`func (o *AgentInstallBody) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
-
-### SetPathNil
-
-`func (o *AgentInstallBody) SetPathNil(b bool)`
-
- SetPathNil sets the value for Path to be an explicit nil
-
-### UnsetPath
-`func (o *AgentInstallBody) UnsetPath()`
-
-UnsetPath ensures that no value is present for Path, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

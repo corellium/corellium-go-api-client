@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing UsersApiService
+Testing UsersAPIService
 
 */
 
@@ -14,19 +14,19 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_UsersApiService(t *testing.T) {
+func Test_corellium_UsersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UsersApiService V1CreateUser", func(t *testing.T) {
+	t.Run("Test UsersAPIService V3AgreeToTerms", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.V1CreateUser(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.V3AgreeToTerms(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,13 +34,47 @@ func Test_corellium_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService V1DeleteUser", func(t *testing.T) {
+	t.Run("Test UsersAPIService V3ChangePassword", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.UsersAPI.V3ChangePassword(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService V3CreateUser", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.UsersAPI.V3CreateUser(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService V3DeleteUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
-		resp, httpRes, err := apiClient.UsersApi.V1DeleteUser(context.Background(), userId).Execute()
+		httpRes, err := apiClient.UsersAPI.V3DeleteUser(context.Background(), userId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService V3GetResetLinkInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.UsersAPI.V3GetResetLinkInfo(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -48,85 +82,48 @@ func Test_corellium_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService V1GetResetLinkInfo", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.UsersApi.V1GetResetLinkInfo(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService V1ResetUserPassword", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.UsersApi.V1ResetUserPassword(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService V1SendUserResetLink", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.UsersApi.V1SendUserResetLink(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService V1UpdateUser", func(t *testing.T) {
+	t.Run("Test UsersAPIService V3PatchUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
-		resp, httpRes, err := apiClient.UsersApi.V1UpdateUser(context.Background(), userId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService V1UserAgreeTerms", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.UsersApi.V1UserAgreeTerms(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService V1UsersChangePasswordPost", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.UsersApi.V1UsersChangePasswordPost(context.Background()).Execute()
+		httpRes, err := apiClient.UsersAPI.V3PatchUser(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService V1UsersLogin", func(t *testing.T) {
+	t.Run("Test UsersAPIService V3ResetPassword", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.V1UsersLogin(context.Background()).Execute()
+		httpRes, err := apiClient.UsersAPI.V3ResetPassword(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService V3SendResetLink", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.UsersAPI.V3SendResetLink(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService V3UpdateOwnProfile", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.UsersAPI.V3UpdateOwnProfile(context.Background()).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

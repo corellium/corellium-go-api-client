@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cores** | Pointer to **NullableFloat32** |  | [optional] 
-**Instances** | Pointer to **NullableFloat32** |  | [optional] 
-**Ram** | Pointer to **NullableFloat32** |  | [optional] 
+**Cores** | Pointer to **float32** | Allocated CPU cores. | [optional] 
+**Instances** | Pointer to **float32** | Allocated instance count. | [optional] 
+**Ram** | Pointer to **float32** | Allocated RAM in mebibytes. | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetCores sets Cores field to given value.
 
 HasCores returns a boolean if a field has been set.
 
-### SetCoresNil
-
-`func (o *ProjectQuota) SetCoresNil(b bool)`
-
- SetCoresNil sets the value for Cores to be an explicit nil
-
-### UnsetCores
-`func (o *ProjectQuota) UnsetCores()`
-
-UnsetCores ensures that no value is present for Cores, not even an explicit nil
 ### GetInstances
 
 `func (o *ProjectQuota) GetInstances() float32`
@@ -87,16 +77,6 @@ SetInstances sets Instances field to given value.
 
 HasInstances returns a boolean if a field has been set.
 
-### SetInstancesNil
-
-`func (o *ProjectQuota) SetInstancesNil(b bool)`
-
- SetInstancesNil sets the value for Instances to be an explicit nil
-
-### UnsetInstances
-`func (o *ProjectQuota) UnsetInstances()`
-
-UnsetInstances ensures that no value is present for Instances, not even an explicit nil
 ### GetRam
 
 `func (o *ProjectQuota) GetRam() float32`
@@ -122,16 +102,6 @@ SetRam sets Ram field to given value.
 
 HasRam returns a boolean if a field has been set.
 
-### SetRamNil
-
-`func (o *ProjectQuota) SetRamNil(b bool)`
-
- SetRamNil sets the value for Ram to be an explicit nil
-
-### UnsetRam
-`func (o *ProjectQuota) UnsetRam()`
-
-UnsetRam ensures that no value is present for Ram, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,0 +1,51 @@
+# DomainInfo
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**DomainInfo** | [**DomainListItem**](DomainListItem.md) | Domain information. | 
+
+## Methods
+
+### NewDomainInfo
+
+`func NewDomainInfo(domainInfo DomainListItem, ) *DomainInfo`
+
+NewDomainInfo instantiates a new DomainInfo object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewDomainInfoWithDefaults
+
+`func NewDomainInfoWithDefaults() *DomainInfo`
+
+NewDomainInfoWithDefaults instantiates a new DomainInfo object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetDomainInfo
+
+`func (o *DomainInfo) GetDomainInfo() DomainListItem`
+
+GetDomainInfo returns the DomainInfo field if non-nil, zero value otherwise.
+
+### GetDomainInfoOk
+
+`func (o *DomainInfo) GetDomainInfoOk() (*DomainListItem, bool)`
+
+GetDomainInfoOk returns a tuple with the DomainInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomainInfo
+
+`func (o *DomainInfo) SetDomainInfo(v DomainListItem)`
+
+SetDomainInfo sets DomainInfo field to given value.
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

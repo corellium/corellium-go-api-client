@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Error** | **string** | Error text | 
-**ErrorID** | **string** | Error ID | 
-**Object** | Pointer to **map[string]interface{}** | Object that is conflicted with | [optional] 
+**Error** | **string** | Human-readable explanation of the conflict. | 
+**ErrorID** | **string** | Always &#x60;Conflict&#x60;: the request clashes with the current state, for example the resource already exists or is in a state that does not allow this action. Check the current state before retrying. | 
+**Object** | Pointer to **map[string]interface{}** | The existing object the request conflicted with, when there is one. | [optional] 
 
 ## Methods
 
@@ -92,16 +92,6 @@ SetObject sets Object field to given value.
 
 HasObject returns a boolean if a field has been set.
 
-### SetObjectNil
-
-`func (o *ApiConflictError) SetObjectNil(b bool)`
-
- SetObjectNil sets the value for Object to be an explicit nil
-
-### UnsetObject
-`func (o *ApiConflictError) UnsetObject()`
-
-UnsetObject ensures that no value is present for Object, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

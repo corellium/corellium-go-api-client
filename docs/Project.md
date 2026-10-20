@@ -4,17 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Project Identifier | 
-**Name** | Pointer to **NullableString** | Project Name | [optional] 
-**Settings** | Pointer to [**ProjectSettings**](ProjectSettings.md) |  | [optional] 
-**Quotas** | Pointer to [**ProjectQuota**](ProjectQuota.md) |  | [optional] 
-**QuotasUsed** | Pointer to [**ProjectUsage**](ProjectUsage.md) |  | [optional] 
+**Id** | **string** | Project identifier. | 
+**Name** | **string** | Project name. | 
+**Settings** | [**ProjectSettings**](ProjectSettings.md) |  | 
+**Quotas** | [**ProjectQuota**](ProjectQuota.md) |  | 
+**QuotasUsed** | [**ProjectUsage**](ProjectUsage.md) |  | 
+**NetworkStatus** | Pointer to [**NetworkStatus**](NetworkStatus.md) |  | [optional] 
+**Config** | Pointer to [**ProjectConfig**](ProjectConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewProject
 
-`func NewProject(id string, ) *Project`
+`func NewProject(id string, name string, settings ProjectSettings, quotas ProjectQuota, quotasUsed ProjectUsage, ) *Project`
 
 NewProject instantiates a new Project object
 This constructor will assign default values to properties that have it defined,
@@ -68,22 +70,7 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
 
-`func (o *Project) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *Project) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *Project) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetSettings
 
 `func (o *Project) GetSettings() ProjectSettings`
@@ -103,11 +90,6 @@ and a boolean to check if the value has been set.
 
 SetSettings sets Settings field to given value.
 
-### HasSettings
-
-`func (o *Project) HasSettings() bool`
-
-HasSettings returns a boolean if a field has been set.
 
 ### GetQuotas
 
@@ -128,11 +110,6 @@ and a boolean to check if the value has been set.
 
 SetQuotas sets Quotas field to given value.
 
-### HasQuotas
-
-`func (o *Project) HasQuotas() bool`
-
-HasQuotas returns a boolean if a field has been set.
 
 ### GetQuotasUsed
 
@@ -153,11 +130,56 @@ and a boolean to check if the value has been set.
 
 SetQuotasUsed sets QuotasUsed field to given value.
 
-### HasQuotasUsed
 
-`func (o *Project) HasQuotasUsed() bool`
+### GetNetworkStatus
 
-HasQuotasUsed returns a boolean if a field has been set.
+`func (o *Project) GetNetworkStatus() NetworkStatus`
+
+GetNetworkStatus returns the NetworkStatus field if non-nil, zero value otherwise.
+
+### GetNetworkStatusOk
+
+`func (o *Project) GetNetworkStatusOk() (*NetworkStatus, bool)`
+
+GetNetworkStatusOk returns a tuple with the NetworkStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkStatus
+
+`func (o *Project) SetNetworkStatus(v NetworkStatus)`
+
+SetNetworkStatus sets NetworkStatus field to given value.
+
+### HasNetworkStatus
+
+`func (o *Project) HasNetworkStatus() bool`
+
+HasNetworkStatus returns a boolean if a field has been set.
+
+### GetConfig
+
+`func (o *Project) GetConfig() ProjectConfig`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *Project) GetConfigOk() (*ProjectConfig, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *Project) SetConfig(v ProjectConfig)`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *Project) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DiscoveryUrl** | Pointer to **NullableString** | Service Discovery URL | [optional] 
-**ClientId** | Pointer to **NullableString** | Service Client ID | [optional] 
-**ClientSecret** | Pointer to **NullableString** | Service Client Secret | [optional] 
-**InvitedOnly** | Pointer to **NullableBool** | Only accept individuals with invitations | [optional] 
+**DiscoveryUrl** | **string** | Service Discovery URL. | 
+**ClientId** | **string** | Service Client ID. | 
+**ClientSecret** | **string** | Service Client Secret. | 
+**InvitedOnly** | Pointer to **bool** | Only accept individuals with invitations. | [optional] 
 
 ## Methods
 
 ### NewOpenIDConfig
 
-`func NewOpenIDConfig() *OpenIDConfig`
+`func NewOpenIDConfig(discoveryUrl string, clientId string, clientSecret string, ) *OpenIDConfig`
 
 NewOpenIDConfig instantiates a new OpenIDConfig object
 This constructor will assign default values to properties that have it defined,
@@ -47,22 +47,7 @@ and a boolean to check if the value has been set.
 
 SetDiscoveryUrl sets DiscoveryUrl field to given value.
 
-### HasDiscoveryUrl
 
-`func (o *OpenIDConfig) HasDiscoveryUrl() bool`
-
-HasDiscoveryUrl returns a boolean if a field has been set.
-
-### SetDiscoveryUrlNil
-
-`func (o *OpenIDConfig) SetDiscoveryUrlNil(b bool)`
-
- SetDiscoveryUrlNil sets the value for DiscoveryUrl to be an explicit nil
-
-### UnsetDiscoveryUrl
-`func (o *OpenIDConfig) UnsetDiscoveryUrl()`
-
-UnsetDiscoveryUrl ensures that no value is present for DiscoveryUrl, not even an explicit nil
 ### GetClientId
 
 `func (o *OpenIDConfig) GetClientId() string`
@@ -82,22 +67,7 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
 
-`func (o *OpenIDConfig) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
-
-### SetClientIdNil
-
-`func (o *OpenIDConfig) SetClientIdNil(b bool)`
-
- SetClientIdNil sets the value for ClientId to be an explicit nil
-
-### UnsetClientId
-`func (o *OpenIDConfig) UnsetClientId()`
-
-UnsetClientId ensures that no value is present for ClientId, not even an explicit nil
 ### GetClientSecret
 
 `func (o *OpenIDConfig) GetClientSecret() string`
@@ -117,22 +87,7 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
-### HasClientSecret
 
-`func (o *OpenIDConfig) HasClientSecret() bool`
-
-HasClientSecret returns a boolean if a field has been set.
-
-### SetClientSecretNil
-
-`func (o *OpenIDConfig) SetClientSecretNil(b bool)`
-
- SetClientSecretNil sets the value for ClientSecret to be an explicit nil
-
-### UnsetClientSecret
-`func (o *OpenIDConfig) UnsetClientSecret()`
-
-UnsetClientSecret ensures that no value is present for ClientSecret, not even an explicit nil
 ### GetInvitedOnly
 
 `func (o *OpenIDConfig) GetInvitedOnly() bool`
@@ -158,16 +113,6 @@ SetInvitedOnly sets InvitedOnly field to given value.
 
 HasInvitedOnly returns a boolean if a field has been set.
 
-### SetInvitedOnlyNil
-
-`func (o *OpenIDConfig) SetInvitedOnlyNil(b bool)`
-
- SetInvitedOnlyNil sets the value for InvitedOnly to be an explicit nil
-
-### UnsetInvitedOnly
-`func (o *OpenIDConfig) UnsetInvitedOnly()`
-
-UnsetInvitedOnly ensures that no value is present for InvitedOnly, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

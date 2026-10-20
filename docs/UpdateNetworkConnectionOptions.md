@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | User specified name for this network connection. e.g. My Network Connection | 
-**Config** | Pointer to **map[string]interface{}** | An object containing network connection configuration data. Will vary based on network provider type. See examples. | [optional] 
+**Config** | Pointer to [**NullableUpdateNetworkConnectionOptionsConfig**](UpdateNetworkConnectionOptionsConfig.md) |  | [optional] 
+**Force** | Pointer to **NullableBool** | Force the update through constraint checks (e.g. stopping active instances). Defaults to false. | [optional] 
 
 ## Methods
 
@@ -48,20 +49,20 @@ SetName sets Name field to given value.
 
 ### GetConfig
 
-`func (o *UpdateNetworkConnectionOptions) GetConfig() map[string]interface{}`
+`func (o *UpdateNetworkConnectionOptions) GetConfig() UpdateNetworkConnectionOptionsConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *UpdateNetworkConnectionOptions) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *UpdateNetworkConnectionOptions) GetConfigOk() (*UpdateNetworkConnectionOptionsConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *UpdateNetworkConnectionOptions) SetConfig(v map[string]interface{})`
+`func (o *UpdateNetworkConnectionOptions) SetConfig(v UpdateNetworkConnectionOptionsConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -81,6 +82,41 @@ HasConfig returns a boolean if a field has been set.
 `func (o *UpdateNetworkConnectionOptions) UnsetConfig()`
 
 UnsetConfig ensures that no value is present for Config, not even an explicit nil
+### GetForce
+
+`func (o *UpdateNetworkConnectionOptions) GetForce() bool`
+
+GetForce returns the Force field if non-nil, zero value otherwise.
+
+### GetForceOk
+
+`func (o *UpdateNetworkConnectionOptions) GetForceOk() (*bool, bool)`
+
+GetForceOk returns a tuple with the Force field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForce
+
+`func (o *UpdateNetworkConnectionOptions) SetForce(v bool)`
+
+SetForce sets Force field to given value.
+
+### HasForce
+
+`func (o *UpdateNetworkConnectionOptions) HasForce() bool`
+
+HasForce returns a boolean if a field has been set.
+
+### SetForceNil
+
+`func (o *UpdateNetworkConnectionOptions) SetForceNil(b bool)`
+
+ SetForceNil sets the value for Force to be an explicit nil
+
+### UnsetForce
+`func (o *UpdateNetworkConnectionOptions) UnsetForce()`
+
+UnsetForce ensures that no value is present for Force, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

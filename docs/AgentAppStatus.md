@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Running** | Pointer to **NullableBool** |  | [optional] 
-**BundleID** | Pointer to **NullableString** |  | [optional] 
+**Running** | **bool** | Whether the app is currently running. | 
+**BundleId** | **string** | App bundle identifier. | 
 
 ## Methods
 
 ### NewAgentAppStatus
 
-`func NewAgentAppStatus() *AgentAppStatus`
+`func NewAgentAppStatus(running bool, bundleId string, ) *AgentAppStatus`
 
 NewAgentAppStatus instantiates a new AgentAppStatus object
 This constructor will assign default values to properties that have it defined,
@@ -45,57 +45,27 @@ and a boolean to check if the value has been set.
 
 SetRunning sets Running field to given value.
 
-### HasRunning
 
-`func (o *AgentAppStatus) HasRunning() bool`
+### GetBundleId
 
-HasRunning returns a boolean if a field has been set.
+`func (o *AgentAppStatus) GetBundleId() string`
 
-### SetRunningNil
+GetBundleId returns the BundleId field if non-nil, zero value otherwise.
 
-`func (o *AgentAppStatus) SetRunningNil(b bool)`
+### GetBundleIdOk
 
- SetRunningNil sets the value for Running to be an explicit nil
+`func (o *AgentAppStatus) GetBundleIdOk() (*string, bool)`
 
-### UnsetRunning
-`func (o *AgentAppStatus) UnsetRunning()`
-
-UnsetRunning ensures that no value is present for Running, not even an explicit nil
-### GetBundleID
-
-`func (o *AgentAppStatus) GetBundleID() string`
-
-GetBundleID returns the BundleID field if non-nil, zero value otherwise.
-
-### GetBundleIDOk
-
-`func (o *AgentAppStatus) GetBundleIDOk() (*string, bool)`
-
-GetBundleIDOk returns a tuple with the BundleID field if it's non-nil, zero value otherwise
+GetBundleIdOk returns a tuple with the BundleId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBundleID
+### SetBundleId
 
-`func (o *AgentAppStatus) SetBundleID(v string)`
+`func (o *AgentAppStatus) SetBundleId(v string)`
 
-SetBundleID sets BundleID field to given value.
+SetBundleId sets BundleId field to given value.
 
-### HasBundleID
 
-`func (o *AgentAppStatus) HasBundleID() bool`
-
-HasBundleID returns a boolean if a field has been set.
-
-### SetBundleIDNil
-
-`func (o *AgentAppStatus) SetBundleIDNil(b bool)`
-
- SetBundleIDNil sets the value for BundleID to be an explicit nil
-
-### UnsetBundleID
-`func (o *AgentAppStatus) UnsetBundleID()`
-
-UnsetBundleID ensures that no value is present for BundleID, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

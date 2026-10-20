@@ -4,15 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Acceleration** | Pointer to **[]float32** |  | [optional] 
-**Gyroscope** | Pointer to **[]float32** |  | [optional] 
-**Magnetic** | Pointer to **[]float32** |  | [optional] 
-**Orientation** | Pointer to **[]float32** |  | [optional] 
-**Temperature** | Pointer to **NullableFloat32** |  | [optional] 
-**Proximity** | Pointer to **NullableFloat32** |  | [optional] 
-**Light** | Pointer to **NullableFloat32** |  | [optional] 
-**Pressure** | Pointer to **NullableFloat32** |  | [optional] 
-**Humidity** | Pointer to **NullableFloat32** |  | [optional] 
+**Acceleration** | Pointer to **[]float32** | Accelerometer reading as [x, y, z]. | [optional] 
+**Gyroscope** | Pointer to **[]float32** | Gyroscope reading as [x, y, z]. | [optional] 
+**Magnetic** | Pointer to **[]float32** | Magnetometer reading as [x, y, z]. | [optional] 
+**Orientation** | Pointer to **[]float32** | Device orientation vector. | [optional] 
+**Temperature** | Pointer to **float32** | Ambient temperature reading. | [optional] 
+**Proximity** | Pointer to **float32** | Proximity sensor reading. | [optional] 
+**Light** | Pointer to **float32** | Ambient light sensor reading. | [optional] 
+**Pressure** | Pointer to **float32** | Barometric pressure reading. | [optional] 
+**Humidity** | Pointer to **float32** | Relative humidity reading. | [optional] 
+**GpsLat** | Pointer to **float32** | GPS latitude in decimal degrees. | [optional] 
+**GpsLon** | Pointer to **float32** | GPS longitude in decimal degrees. | [optional] 
+**GpsAlt** | Pointer to **float32** | GPS altitude in meters. | [optional] 
+**GpsToffs** | Pointer to **float32** | GPS time offset in seconds. | [optional] 
+**AcOnline** | Pointer to **float32** | AC power connection: 0 &#x3D; disconnected, 1 &#x3D; connected. | [optional] 
+**BatteryPresent** | Pointer to **float32** | Battery presence: 0 &#x3D; absent, 1 &#x3D; present. | [optional] 
+**BatteryStatus** | Pointer to **string** | Battery charging status. | [optional] 
+**BatteryHealth** | Pointer to **string** | Battery health. | [optional] 
+**BatteryCapacity** | Pointer to **float32** | Battery charge level as a percentage. | [optional] 
+**BiometricPass** | Pointer to **float32** | Biometric bypass: 0 &#x3D; disabled, 1 &#x3D; enabled. | [optional] 
 
 ## Methods
 
@@ -58,16 +68,6 @@ SetAcceleration sets Acceleration field to given value.
 
 HasAcceleration returns a boolean if a field has been set.
 
-### SetAccelerationNil
-
-`func (o *PeripheralsData) SetAccelerationNil(b bool)`
-
- SetAccelerationNil sets the value for Acceleration to be an explicit nil
-
-### UnsetAcceleration
-`func (o *PeripheralsData) UnsetAcceleration()`
-
-UnsetAcceleration ensures that no value is present for Acceleration, not even an explicit nil
 ### GetGyroscope
 
 `func (o *PeripheralsData) GetGyroscope() []float32`
@@ -93,16 +93,6 @@ SetGyroscope sets Gyroscope field to given value.
 
 HasGyroscope returns a boolean if a field has been set.
 
-### SetGyroscopeNil
-
-`func (o *PeripheralsData) SetGyroscopeNil(b bool)`
-
- SetGyroscopeNil sets the value for Gyroscope to be an explicit nil
-
-### UnsetGyroscope
-`func (o *PeripheralsData) UnsetGyroscope()`
-
-UnsetGyroscope ensures that no value is present for Gyroscope, not even an explicit nil
 ### GetMagnetic
 
 `func (o *PeripheralsData) GetMagnetic() []float32`
@@ -128,16 +118,6 @@ SetMagnetic sets Magnetic field to given value.
 
 HasMagnetic returns a boolean if a field has been set.
 
-### SetMagneticNil
-
-`func (o *PeripheralsData) SetMagneticNil(b bool)`
-
- SetMagneticNil sets the value for Magnetic to be an explicit nil
-
-### UnsetMagnetic
-`func (o *PeripheralsData) UnsetMagnetic()`
-
-UnsetMagnetic ensures that no value is present for Magnetic, not even an explicit nil
 ### GetOrientation
 
 `func (o *PeripheralsData) GetOrientation() []float32`
@@ -163,16 +143,6 @@ SetOrientation sets Orientation field to given value.
 
 HasOrientation returns a boolean if a field has been set.
 
-### SetOrientationNil
-
-`func (o *PeripheralsData) SetOrientationNil(b bool)`
-
- SetOrientationNil sets the value for Orientation to be an explicit nil
-
-### UnsetOrientation
-`func (o *PeripheralsData) UnsetOrientation()`
-
-UnsetOrientation ensures that no value is present for Orientation, not even an explicit nil
 ### GetTemperature
 
 `func (o *PeripheralsData) GetTemperature() float32`
@@ -198,16 +168,6 @@ SetTemperature sets Temperature field to given value.
 
 HasTemperature returns a boolean if a field has been set.
 
-### SetTemperatureNil
-
-`func (o *PeripheralsData) SetTemperatureNil(b bool)`
-
- SetTemperatureNil sets the value for Temperature to be an explicit nil
-
-### UnsetTemperature
-`func (o *PeripheralsData) UnsetTemperature()`
-
-UnsetTemperature ensures that no value is present for Temperature, not even an explicit nil
 ### GetProximity
 
 `func (o *PeripheralsData) GetProximity() float32`
@@ -233,16 +193,6 @@ SetProximity sets Proximity field to given value.
 
 HasProximity returns a boolean if a field has been set.
 
-### SetProximityNil
-
-`func (o *PeripheralsData) SetProximityNil(b bool)`
-
- SetProximityNil sets the value for Proximity to be an explicit nil
-
-### UnsetProximity
-`func (o *PeripheralsData) UnsetProximity()`
-
-UnsetProximity ensures that no value is present for Proximity, not even an explicit nil
 ### GetLight
 
 `func (o *PeripheralsData) GetLight() float32`
@@ -268,16 +218,6 @@ SetLight sets Light field to given value.
 
 HasLight returns a boolean if a field has been set.
 
-### SetLightNil
-
-`func (o *PeripheralsData) SetLightNil(b bool)`
-
- SetLightNil sets the value for Light to be an explicit nil
-
-### UnsetLight
-`func (o *PeripheralsData) UnsetLight()`
-
-UnsetLight ensures that no value is present for Light, not even an explicit nil
 ### GetPressure
 
 `func (o *PeripheralsData) GetPressure() float32`
@@ -303,16 +243,6 @@ SetPressure sets Pressure field to given value.
 
 HasPressure returns a boolean if a field has been set.
 
-### SetPressureNil
-
-`func (o *PeripheralsData) SetPressureNil(b bool)`
-
- SetPressureNil sets the value for Pressure to be an explicit nil
-
-### UnsetPressure
-`func (o *PeripheralsData) UnsetPressure()`
-
-UnsetPressure ensures that no value is present for Pressure, not even an explicit nil
 ### GetHumidity
 
 `func (o *PeripheralsData) GetHumidity() float32`
@@ -338,16 +268,256 @@ SetHumidity sets Humidity field to given value.
 
 HasHumidity returns a boolean if a field has been set.
 
-### SetHumidityNil
+### GetGpsLat
 
-`func (o *PeripheralsData) SetHumidityNil(b bool)`
+`func (o *PeripheralsData) GetGpsLat() float32`
 
- SetHumidityNil sets the value for Humidity to be an explicit nil
+GetGpsLat returns the GpsLat field if non-nil, zero value otherwise.
 
-### UnsetHumidity
-`func (o *PeripheralsData) UnsetHumidity()`
+### GetGpsLatOk
 
-UnsetHumidity ensures that no value is present for Humidity, not even an explicit nil
+`func (o *PeripheralsData) GetGpsLatOk() (*float32, bool)`
+
+GetGpsLatOk returns a tuple with the GpsLat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGpsLat
+
+`func (o *PeripheralsData) SetGpsLat(v float32)`
+
+SetGpsLat sets GpsLat field to given value.
+
+### HasGpsLat
+
+`func (o *PeripheralsData) HasGpsLat() bool`
+
+HasGpsLat returns a boolean if a field has been set.
+
+### GetGpsLon
+
+`func (o *PeripheralsData) GetGpsLon() float32`
+
+GetGpsLon returns the GpsLon field if non-nil, zero value otherwise.
+
+### GetGpsLonOk
+
+`func (o *PeripheralsData) GetGpsLonOk() (*float32, bool)`
+
+GetGpsLonOk returns a tuple with the GpsLon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGpsLon
+
+`func (o *PeripheralsData) SetGpsLon(v float32)`
+
+SetGpsLon sets GpsLon field to given value.
+
+### HasGpsLon
+
+`func (o *PeripheralsData) HasGpsLon() bool`
+
+HasGpsLon returns a boolean if a field has been set.
+
+### GetGpsAlt
+
+`func (o *PeripheralsData) GetGpsAlt() float32`
+
+GetGpsAlt returns the GpsAlt field if non-nil, zero value otherwise.
+
+### GetGpsAltOk
+
+`func (o *PeripheralsData) GetGpsAltOk() (*float32, bool)`
+
+GetGpsAltOk returns a tuple with the GpsAlt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGpsAlt
+
+`func (o *PeripheralsData) SetGpsAlt(v float32)`
+
+SetGpsAlt sets GpsAlt field to given value.
+
+### HasGpsAlt
+
+`func (o *PeripheralsData) HasGpsAlt() bool`
+
+HasGpsAlt returns a boolean if a field has been set.
+
+### GetGpsToffs
+
+`func (o *PeripheralsData) GetGpsToffs() float32`
+
+GetGpsToffs returns the GpsToffs field if non-nil, zero value otherwise.
+
+### GetGpsToffsOk
+
+`func (o *PeripheralsData) GetGpsToffsOk() (*float32, bool)`
+
+GetGpsToffsOk returns a tuple with the GpsToffs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGpsToffs
+
+`func (o *PeripheralsData) SetGpsToffs(v float32)`
+
+SetGpsToffs sets GpsToffs field to given value.
+
+### HasGpsToffs
+
+`func (o *PeripheralsData) HasGpsToffs() bool`
+
+HasGpsToffs returns a boolean if a field has been set.
+
+### GetAcOnline
+
+`func (o *PeripheralsData) GetAcOnline() float32`
+
+GetAcOnline returns the AcOnline field if non-nil, zero value otherwise.
+
+### GetAcOnlineOk
+
+`func (o *PeripheralsData) GetAcOnlineOk() (*float32, bool)`
+
+GetAcOnlineOk returns a tuple with the AcOnline field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcOnline
+
+`func (o *PeripheralsData) SetAcOnline(v float32)`
+
+SetAcOnline sets AcOnline field to given value.
+
+### HasAcOnline
+
+`func (o *PeripheralsData) HasAcOnline() bool`
+
+HasAcOnline returns a boolean if a field has been set.
+
+### GetBatteryPresent
+
+`func (o *PeripheralsData) GetBatteryPresent() float32`
+
+GetBatteryPresent returns the BatteryPresent field if non-nil, zero value otherwise.
+
+### GetBatteryPresentOk
+
+`func (o *PeripheralsData) GetBatteryPresentOk() (*float32, bool)`
+
+GetBatteryPresentOk returns a tuple with the BatteryPresent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatteryPresent
+
+`func (o *PeripheralsData) SetBatteryPresent(v float32)`
+
+SetBatteryPresent sets BatteryPresent field to given value.
+
+### HasBatteryPresent
+
+`func (o *PeripheralsData) HasBatteryPresent() bool`
+
+HasBatteryPresent returns a boolean if a field has been set.
+
+### GetBatteryStatus
+
+`func (o *PeripheralsData) GetBatteryStatus() string`
+
+GetBatteryStatus returns the BatteryStatus field if non-nil, zero value otherwise.
+
+### GetBatteryStatusOk
+
+`func (o *PeripheralsData) GetBatteryStatusOk() (*string, bool)`
+
+GetBatteryStatusOk returns a tuple with the BatteryStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatteryStatus
+
+`func (o *PeripheralsData) SetBatteryStatus(v string)`
+
+SetBatteryStatus sets BatteryStatus field to given value.
+
+### HasBatteryStatus
+
+`func (o *PeripheralsData) HasBatteryStatus() bool`
+
+HasBatteryStatus returns a boolean if a field has been set.
+
+### GetBatteryHealth
+
+`func (o *PeripheralsData) GetBatteryHealth() string`
+
+GetBatteryHealth returns the BatteryHealth field if non-nil, zero value otherwise.
+
+### GetBatteryHealthOk
+
+`func (o *PeripheralsData) GetBatteryHealthOk() (*string, bool)`
+
+GetBatteryHealthOk returns a tuple with the BatteryHealth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatteryHealth
+
+`func (o *PeripheralsData) SetBatteryHealth(v string)`
+
+SetBatteryHealth sets BatteryHealth field to given value.
+
+### HasBatteryHealth
+
+`func (o *PeripheralsData) HasBatteryHealth() bool`
+
+HasBatteryHealth returns a boolean if a field has been set.
+
+### GetBatteryCapacity
+
+`func (o *PeripheralsData) GetBatteryCapacity() float32`
+
+GetBatteryCapacity returns the BatteryCapacity field if non-nil, zero value otherwise.
+
+### GetBatteryCapacityOk
+
+`func (o *PeripheralsData) GetBatteryCapacityOk() (*float32, bool)`
+
+GetBatteryCapacityOk returns a tuple with the BatteryCapacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatteryCapacity
+
+`func (o *PeripheralsData) SetBatteryCapacity(v float32)`
+
+SetBatteryCapacity sets BatteryCapacity field to given value.
+
+### HasBatteryCapacity
+
+`func (o *PeripheralsData) HasBatteryCapacity() bool`
+
+HasBatteryCapacity returns a boolean if a field has been set.
+
+### GetBiometricPass
+
+`func (o *PeripheralsData) GetBiometricPass() float32`
+
+GetBiometricPass returns the BiometricPass field if non-nil, zero value otherwise.
+
+### GetBiometricPassOk
+
+`func (o *PeripheralsData) GetBiometricPassOk() (*float32, bool)`
+
+GetBiometricPassOk returns a tuple with the BiometricPass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBiometricPass
+
+`func (o *PeripheralsData) SetBiometricPass(v float32)`
+
+SetBiometricPass sets BiometricPass field to given value.
+
+### HasBiometricPass
+
+`func (o *PeripheralsData) HasBiometricPass() bool`
+
+HasBiometricPass returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

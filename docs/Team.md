@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Team ID | 
-**Label** | **string** | Team Label | 
-**Users** | Pointer to [**[]User**](User.md) | Users | [optional] 
+**Id** | **string** | Team identifier (or \&quot;all-users\&quot; for the implicit team). | 
+**Label** | **NullableString** | Team label; null when the team has no name set. | 
+**Users** | [**[]TeamUser**](TeamUser.md) | Members of the team. | 
 
 ## Methods
 
 ### NewTeam
 
-`func NewTeam(id string, label string, ) *Team`
+`func NewTeam(id string, label NullableString, users []TeamUser, ) *Team`
 
 NewTeam instantiates a new Team object
 This constructor will assign default values to properties that have it defined,
@@ -67,41 +67,36 @@ and a boolean to check if the value has been set.
 SetLabel sets Label field to given value.
 
 
+### SetLabelNil
+
+`func (o *Team) SetLabelNil(b bool)`
+
+ SetLabelNil sets the value for Label to be an explicit nil
+
+### UnsetLabel
+`func (o *Team) UnsetLabel()`
+
+UnsetLabel ensures that no value is present for Label, not even an explicit nil
 ### GetUsers
 
-`func (o *Team) GetUsers() []User`
+`func (o *Team) GetUsers() []TeamUser`
 
 GetUsers returns the Users field if non-nil, zero value otherwise.
 
 ### GetUsersOk
 
-`func (o *Team) GetUsersOk() (*[]User, bool)`
+`func (o *Team) GetUsersOk() (*[]TeamUser, bool)`
 
 GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsers
 
-`func (o *Team) SetUsers(v []User)`
+`func (o *Team) SetUsers(v []TeamUser)`
 
 SetUsers sets Users field to given value.
 
-### HasUsers
 
-`func (o *Team) HasUsers() bool`
-
-HasUsers returns a boolean if a field has been set.
-
-### SetUsersNil
-
-`func (o *Team) SetUsersNil(b bool)`
-
- SetUsersNil sets the value for Users to be an explicit nil
-
-### UnsetUsers
-`func (o *Team) UnsetUsers()`
-
-UnsetUsers ensures that no value is present for Users, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

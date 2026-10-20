@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing ModelsApiService
+Testing ModelsAPIService
 
 */
 
@@ -14,21 +14,21 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_ModelsApiService(t *testing.T) {
+func Test_corellium_ModelsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ModelsApiService V1GetModelSoftware", func(t *testing.T) {
+	t.Run("Test ModelsAPIService V3GetModelSoftware", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var model string
 
-		resp, httpRes, err := apiClient.ModelsApi.V1GetModelSoftware(context.Background(), model).Execute()
+		resp, httpRes, err := apiClient.ModelsAPI.V3GetModelSoftware(context.Background(), model).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,11 +36,11 @@ func Test_corellium_ModelsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ModelsApiService V1GetModels", func(t *testing.T) {
+	t.Run("Test ModelsAPIService V3GetModels", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ModelsApi.V1GetModels(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ModelsAPI.V3GetModels(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

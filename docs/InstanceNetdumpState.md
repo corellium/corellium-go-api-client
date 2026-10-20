@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Hash** | Pointer to **NullableString** |  | [optional] 
-**Info** | Pointer to **NullableString** |  | [optional] 
-**Enabled** | Pointer to **NullableBool** |  | [optional] 
+**Hash** | Pointer to **string** | Hash for netdump authentication. | [optional] 
+**Info** | Pointer to **string** | Encrypted info for netdump authentication. | [optional] 
+**Enabled** | Pointer to **bool** | Whether netdump is enabled. | [optional] 
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetHash sets Hash field to given value.
 
 HasHash returns a boolean if a field has been set.
 
-### SetHashNil
-
-`func (o *InstanceNetdumpState) SetHashNil(b bool)`
-
- SetHashNil sets the value for Hash to be an explicit nil
-
-### UnsetHash
-`func (o *InstanceNetdumpState) UnsetHash()`
-
-UnsetHash ensures that no value is present for Hash, not even an explicit nil
 ### GetInfo
 
 `func (o *InstanceNetdumpState) GetInfo() string`
@@ -87,16 +77,6 @@ SetInfo sets Info field to given value.
 
 HasInfo returns a boolean if a field has been set.
 
-### SetInfoNil
-
-`func (o *InstanceNetdumpState) SetInfoNil(b bool)`
-
- SetInfoNil sets the value for Info to be an explicit nil
-
-### UnsetInfo
-`func (o *InstanceNetdumpState) UnsetInfo()`
-
-UnsetInfo ensures that no value is present for Info, not even an explicit nil
 ### GetEnabled
 
 `func (o *InstanceNetdumpState) GetEnabled() bool`
@@ -122,16 +102,6 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
-### SetEnabledNil
-
-`func (o *InstanceNetdumpState) SetEnabledNil(b bool)`
-
- SetEnabledNil sets the value for Enabled to be an explicit nil
-
-### UnsetEnabled
-`func (o *InstanceNetdumpState) UnsetEnabled()`
-
-UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

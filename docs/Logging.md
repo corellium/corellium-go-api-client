@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Development** | Pointer to **NullableBool** | Denotes whether it&#39;s in development | [optional] 
-**ThrowWarnings** | Pointer to **NullableBool** | Denotes whether to throw warnings | [optional] 
+**Development** | **bool** | Denotes whether it&#39;s in development. | 
+**ThrowWarnings** | **bool** | Denotes whether to throw warnings. | 
 
 ## Methods
 
 ### NewLogging
 
-`func NewLogging() *Logging`
+`func NewLogging(development bool, throwWarnings bool, ) *Logging`
 
 NewLogging instantiates a new Logging object
 This constructor will assign default values to properties that have it defined,
@@ -45,22 +45,7 @@ and a boolean to check if the value has been set.
 
 SetDevelopment sets Development field to given value.
 
-### HasDevelopment
 
-`func (o *Logging) HasDevelopment() bool`
-
-HasDevelopment returns a boolean if a field has been set.
-
-### SetDevelopmentNil
-
-`func (o *Logging) SetDevelopmentNil(b bool)`
-
- SetDevelopmentNil sets the value for Development to be an explicit nil
-
-### UnsetDevelopment
-`func (o *Logging) UnsetDevelopment()`
-
-UnsetDevelopment ensures that no value is present for Development, not even an explicit nil
 ### GetThrowWarnings
 
 `func (o *Logging) GetThrowWarnings() bool`
@@ -80,22 +65,7 @@ and a boolean to check if the value has been set.
 
 SetThrowWarnings sets ThrowWarnings field to given value.
 
-### HasThrowWarnings
 
-`func (o *Logging) HasThrowWarnings() bool`
-
-HasThrowWarnings returns a boolean if a field has been set.
-
-### SetThrowWarningsNil
-
-`func (o *Logging) SetThrowWarningsNil(b bool)`
-
- SetThrowWarningsNil sets the value for ThrowWarnings to be an explicit nil
-
-### UnsetThrowWarnings
-`func (o *Logging) UnsetThrowWarnings()`
-
-UnsetThrowWarnings ensures that no value is present for ThrowWarnings, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

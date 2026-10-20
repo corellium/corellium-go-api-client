@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TotpRequired** | Pointer to **NullableBool** | if true, totp is required | [optional] 
-**TrialExtension** | Pointer to [**TrialExtension**](TrialExtension.md) |  | [optional] 
+**TrialExtension** | Pointer to [**TrialExtensionV1**](TrialExtensionV1.md) |  | [optional] 
 **SnapshotSharingPermissions** | Pointer to [**SnapshotSharingPermissions**](SnapshotSharingPermissions.md) |  | [optional] 
 
 ## Methods
@@ -64,20 +64,20 @@ HasTotpRequired returns a boolean if a field has been set.
 UnsetTotpRequired ensures that no value is present for TotpRequired, not even an explicit nil
 ### GetTrialExtension
 
-`func (o *DomainOptions) GetTrialExtension() TrialExtension`
+`func (o *DomainOptions) GetTrialExtension() TrialExtensionV1`
 
 GetTrialExtension returns the TrialExtension field if non-nil, zero value otherwise.
 
 ### GetTrialExtensionOk
 
-`func (o *DomainOptions) GetTrialExtensionOk() (*TrialExtension, bool)`
+`func (o *DomainOptions) GetTrialExtensionOk() (*TrialExtensionV1, bool)`
 
 GetTrialExtensionOk returns a tuple with the TrialExtension field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrialExtension
 
-`func (o *DomainOptions) SetTrialExtension(v TrialExtension)`
+`func (o *DomainOptions) SetTrialExtension(v TrialExtensionV1)`
 
 SetTrialExtension sets TrialExtension field to given value.
 

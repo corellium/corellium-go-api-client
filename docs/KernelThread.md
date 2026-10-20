@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KernelId** | Pointer to **NullableString** | Kernel Thread ID | [optional] 
-**Tid** | Pointer to **NullableFloat32** | Task ID | [optional] 
-**Stack** | Pointer to **[]string** | Array of stack addresses | [optional] 
+**KernelId** | **string** | Kernel thread ID (uint64_t). | 
+**TaskId** | **float32** | Task ID. | 
+**Stack** | **[]string** | Array of stack addresses. | 
 
 ## Methods
 
 ### NewKernelThread
 
-`func NewKernelThread() *KernelThread`
+`func NewKernelThread(kernelId string, taskId float32, stack []string, ) *KernelThread`
 
 NewKernelThread instantiates a new KernelThread object
 This constructor will assign default values to properties that have it defined,
@@ -46,57 +46,27 @@ and a boolean to check if the value has been set.
 
 SetKernelId sets KernelId field to given value.
 
-### HasKernelId
 
-`func (o *KernelThread) HasKernelId() bool`
+### GetTaskId
 
-HasKernelId returns a boolean if a field has been set.
+`func (o *KernelThread) GetTaskId() float32`
 
-### SetKernelIdNil
+GetTaskId returns the TaskId field if non-nil, zero value otherwise.
 
-`func (o *KernelThread) SetKernelIdNil(b bool)`
+### GetTaskIdOk
 
- SetKernelIdNil sets the value for KernelId to be an explicit nil
+`func (o *KernelThread) GetTaskIdOk() (*float32, bool)`
 
-### UnsetKernelId
-`func (o *KernelThread) UnsetKernelId()`
-
-UnsetKernelId ensures that no value is present for KernelId, not even an explicit nil
-### GetTid
-
-`func (o *KernelThread) GetTid() float32`
-
-GetTid returns the Tid field if non-nil, zero value otherwise.
-
-### GetTidOk
-
-`func (o *KernelThread) GetTidOk() (*float32, bool)`
-
-GetTidOk returns a tuple with the Tid field if it's non-nil, zero value otherwise
+GetTaskIdOk returns a tuple with the TaskId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTid
+### SetTaskId
 
-`func (o *KernelThread) SetTid(v float32)`
+`func (o *KernelThread) SetTaskId(v float32)`
 
-SetTid sets Tid field to given value.
+SetTaskId sets TaskId field to given value.
 
-### HasTid
 
-`func (o *KernelThread) HasTid() bool`
-
-HasTid returns a boolean if a field has been set.
-
-### SetTidNil
-
-`func (o *KernelThread) SetTidNil(b bool)`
-
- SetTidNil sets the value for Tid to be an explicit nil
-
-### UnsetTid
-`func (o *KernelThread) UnsetTid()`
-
-UnsetTid ensures that no value is present for Tid, not even an explicit nil
 ### GetStack
 
 `func (o *KernelThread) GetStack() []string`
@@ -116,22 +86,7 @@ and a boolean to check if the value has been set.
 
 SetStack sets Stack field to given value.
 
-### HasStack
 
-`func (o *KernelThread) HasStack() bool`
-
-HasStack returns a boolean if a field has been set.
-
-### SetStackNil
-
-`func (o *KernelThread) SetStackNil(b bool)`
-
- SetStackNil sets the value for Stack to be an explicit nil
-
-### UnsetStack
-`func (o *KernelThread) UnsetStack()`
-
-UnsetStack ensures that no value is present for Stack, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

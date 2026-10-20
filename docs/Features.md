@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Apps** | Pointer to **NullableBool** |  | [optional] 
 **Connect** | Pointer to **NullableBool** |  | [optional] 
 **Console** | Pointer to **NullableBool** |  | [optional] 
-**Coretrace** | Pointer to **NullableBool** |  | [optional] 
+**CoreTrace** | Pointer to **NullableBool** |  | [optional] 
 **DeviceControl** | Pointer to **NullableBool** |  | [optional] 
 **DeviceDelete** | Pointer to **NullableBool** |  | [optional] 
 **Files** | Pointer to **NullableBool** |  | [optional] 
@@ -149,41 +149,41 @@ HasConsole returns a boolean if a field has been set.
 `func (o *Features) UnsetConsole()`
 
 UnsetConsole ensures that no value is present for Console, not even an explicit nil
-### GetCoretrace
+### GetCoreTrace
 
-`func (o *Features) GetCoretrace() bool`
+`func (o *Features) GetCoreTrace() bool`
 
-GetCoretrace returns the Coretrace field if non-nil, zero value otherwise.
+GetCoreTrace returns the CoreTrace field if non-nil, zero value otherwise.
 
-### GetCoretraceOk
+### GetCoreTraceOk
 
-`func (o *Features) GetCoretraceOk() (*bool, bool)`
+`func (o *Features) GetCoreTraceOk() (*bool, bool)`
 
-GetCoretraceOk returns a tuple with the Coretrace field if it's non-nil, zero value otherwise
+GetCoreTraceOk returns a tuple with the CoreTrace field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCoretrace
+### SetCoreTrace
 
-`func (o *Features) SetCoretrace(v bool)`
+`func (o *Features) SetCoreTrace(v bool)`
 
-SetCoretrace sets Coretrace field to given value.
+SetCoreTrace sets CoreTrace field to given value.
 
-### HasCoretrace
+### HasCoreTrace
 
-`func (o *Features) HasCoretrace() bool`
+`func (o *Features) HasCoreTrace() bool`
 
-HasCoretrace returns a boolean if a field has been set.
+HasCoreTrace returns a boolean if a field has been set.
 
-### SetCoretraceNil
+### SetCoreTraceNil
 
-`func (o *Features) SetCoretraceNil(b bool)`
+`func (o *Features) SetCoreTraceNil(b bool)`
 
- SetCoretraceNil sets the value for Coretrace to be an explicit nil
+ SetCoreTraceNil sets the value for CoreTrace to be an explicit nil
 
-### UnsetCoretrace
-`func (o *Features) UnsetCoretrace()`
+### UnsetCoreTrace
+`func (o *Features) UnsetCoreTrace()`
 
-UnsetCoretrace ensures that no value is present for Coretrace, not even an explicit nil
+UnsetCoreTrace ensures that no value is present for CoreTrace, not even an explicit nil
 ### GetDeviceControl
 
 `func (o *Features) GetDeviceControl() bool`

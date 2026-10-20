@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Available** | **bool** | Indicates whether the subdomain is available or not | 
+**Available** | **bool** | Whether the subdomain is available. | 
 
 ## Methods
 

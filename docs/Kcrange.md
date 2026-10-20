@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Kext** | Pointer to **NullableString** | Kernel Extension | [optional] 
-**Range** | Pointer to **[]string** | Range | [optional] 
+**KernelExtension** | **string** | Kernel extension. | 
+**Range** | **[]string** | Start and end address of the kernel extension range. | 
 
 ## Methods
 
 ### NewKcrange
 
-`func NewKcrange() *Kcrange`
+`func NewKcrange(kernelExtension string, range_ []string, ) *Kcrange`
 
 NewKcrange instantiates a new Kcrange object
 This constructor will assign default values to properties that have it defined,
@@ -26,41 +26,26 @@ NewKcrangeWithDefaults instantiates a new Kcrange object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKext
+### GetKernelExtension
 
-`func (o *Kcrange) GetKext() string`
+`func (o *Kcrange) GetKernelExtension() string`
 
-GetKext returns the Kext field if non-nil, zero value otherwise.
+GetKernelExtension returns the KernelExtension field if non-nil, zero value otherwise.
 
-### GetKextOk
+### GetKernelExtensionOk
 
-`func (o *Kcrange) GetKextOk() (*string, bool)`
+`func (o *Kcrange) GetKernelExtensionOk() (*string, bool)`
 
-GetKextOk returns a tuple with the Kext field if it's non-nil, zero value otherwise
+GetKernelExtensionOk returns a tuple with the KernelExtension field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKext
+### SetKernelExtension
 
-`func (o *Kcrange) SetKext(v string)`
+`func (o *Kcrange) SetKernelExtension(v string)`
 
-SetKext sets Kext field to given value.
+SetKernelExtension sets KernelExtension field to given value.
 
-### HasKext
 
-`func (o *Kcrange) HasKext() bool`
-
-HasKext returns a boolean if a field has been set.
-
-### SetKextNil
-
-`func (o *Kcrange) SetKextNil(b bool)`
-
- SetKextNil sets the value for Kext to be an explicit nil
-
-### UnsetKext
-`func (o *Kcrange) UnsetKext()`
-
-UnsetKext ensures that no value is present for Kext, not even an explicit nil
 ### GetRange
 
 `func (o *Kcrange) GetRange() []string`
@@ -80,22 +65,7 @@ and a boolean to check if the value has been set.
 
 SetRange sets Range field to given value.
 
-### HasRange
 
-`func (o *Kcrange) HasRange() bool`
-
-HasRange returns a boolean if a field has been set.
-
-### SetRangeNil
-
-`func (o *Kcrange) SetRangeNil(b bool)`
-
- SetRangeNil sets the value for Range to be an explicit nil
-
-### UnsetRange
-`func (o *Kcrange) UnsetRange()`
-
-UnsetRange ensures that no value is present for Range, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

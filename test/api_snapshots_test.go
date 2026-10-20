@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing SnapshotsApiService
+Testing SnapshotsAPIService
 
 */
 
@@ -14,21 +14,21 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_SnapshotsApiService(t *testing.T) {
+func Test_corellium_SnapshotsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SnapshotsApiService V1CreateSnapshot", func(t *testing.T) {
+	t.Run("Test SnapshotsAPIService V3CreateInstanceSnapshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.SnapshotsApi.V1CreateSnapshot(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.SnapshotsAPI.V3CreateInstanceSnapshot(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,110 +36,41 @@ func Test_corellium_SnapshotsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SnapshotsApiService V1DeleteInstanceSnapshot", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-		var snapshotId string
-
-		httpRes, err := apiClient.SnapshotsApi.V1DeleteInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SnapshotsApiService V1DeleteSnapshot", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var snapshotId string
-
-		httpRes, err := apiClient.SnapshotsApi.V1DeleteSnapshot(context.Background(), snapshotId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SnapshotsApiService V1DeleteSnapshotPermissions", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var snapshotId string
-
-		resp, httpRes, err := apiClient.SnapshotsApi.V1DeleteSnapshotPermissions(context.Background(), snapshotId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SnapshotsApiService V1GetInstanceSnapshot", func(t *testing.T) {
+	t.Run("Test SnapshotsAPIService V3DeleteInstanceSnapshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var snapshotId string
 
-		resp, httpRes, err := apiClient.SnapshotsApi.V1GetInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
+		httpRes, err := apiClient.SnapshotsAPI.V3DeleteInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SnapshotsApiService V1GetInstanceSnapshots", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.SnapshotsApi.V1GetInstanceSnapshots(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SnapshotsApiService V1GetSharedSnapshots", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SnapshotsApi.V1GetSharedSnapshots(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SnapshotsApiService V1GetSnapshot", func(t *testing.T) {
+	t.Run("Test SnapshotsAPIService V3DeleteSnapshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var snapshotId string
 
-		resp, httpRes, err := apiClient.SnapshotsApi.V1GetSnapshot(context.Background(), snapshotId).Execute()
+		httpRes, err := apiClient.SnapshotsAPI.V3DeleteSnapshot(context.Background(), snapshotId).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SnapshotsApiService V1RenameInstanceSnapshot", func(t *testing.T) {
+	t.Run("Test SnapshotsAPIService V3GetInstanceSnapshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var snapshotId string
 
-		resp, httpRes, err := apiClient.SnapshotsApi.V1RenameInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
+		resp, httpRes, err := apiClient.SnapshotsAPI.V3GetInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -147,27 +78,42 @@ func Test_corellium_SnapshotsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SnapshotsApiService V1RestoreInstanceSnapshot", func(t *testing.T) {
+	t.Run("Test SnapshotsAPIService V3GetSnapshot", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var snapshotId string
+
+		resp, httpRes, err := apiClient.SnapshotsAPI.V3GetSnapshot(context.Background(), snapshotId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SnapshotsAPIService V3ListInstanceSnapshots", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.SnapshotsAPI.V3ListInstanceSnapshots(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SnapshotsAPIService V3PatchInstanceSnapshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var snapshotId string
 
-		httpRes, err := apiClient.SnapshotsApi.V1RestoreInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SnapshotsApiService V1SetSnapshotPermissions", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var snapshotId string
-
-		resp, httpRes, err := apiClient.SnapshotsApi.V1SetSnapshotPermissions(context.Background(), snapshotId).Execute()
+		resp, httpRes, err := apiClient.SnapshotsAPI.V3PatchInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -175,13 +121,27 @@ func Test_corellium_SnapshotsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SnapshotsApiService V1SnapshotRename", func(t *testing.T) {
+	t.Run("Test SnapshotsAPIService V3RestoreInstanceSnapshot", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+		var snapshotId string
+
+		httpRes, err := apiClient.SnapshotsAPI.V3RestoreInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SnapshotsAPIService V3UpdateSnapshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var snapshotId string
 
-		resp, httpRes, err := apiClient.SnapshotsApi.V1SnapshotRename(context.Background(), snapshotId).Execute()
+		resp, httpRes, err := apiClient.SnapshotsAPI.V3UpdateSnapshot(context.Background(), snapshotId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

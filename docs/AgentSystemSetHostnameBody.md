@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Hostname** | **string** |  | 
+**Hostname** | **string** | New hostname for the instance. | 
 
 ## Methods
 

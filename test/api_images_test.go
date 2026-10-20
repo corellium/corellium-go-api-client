@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing ImagesApiService
+Testing ImagesAPIService
 
 */
 
@@ -14,19 +14,19 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_ImagesApiService(t *testing.T) {
+func Test_corellium_ImagesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ImagesApiService V1CreateImage", func(t *testing.T) {
+	t.Run("Test ImagesAPIService V3CreateImage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ImagesApi.V1CreateImage(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ImagesAPI.V3CreateImage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,38 +34,26 @@ func Test_corellium_ImagesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ImagesApiService V1DeleteImage", func(t *testing.T) {
+	t.Run("Test ImagesAPIService V3DeleteImage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var imageId string
 
-		httpRes, err := apiClient.ImagesApi.V1DeleteImage(context.Background(), imageId).Execute()
+		httpRes, err := apiClient.ImagesAPI.V3DeleteImage(context.Background(), imageId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ImagesApiService V1GetImage", func(t *testing.T) {
+	t.Run("Test ImagesAPIService V3GetImage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var imageId string
 
-		resp, httpRes, err := apiClient.ImagesApi.V1GetImage(context.Background(), imageId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ImagesApiService V1GetImages", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.ImagesApi.V1GetImages(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ImagesAPI.V3GetImage(context.Background(), imageId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -73,13 +61,104 @@ func Test_corellium_ImagesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ImagesApiService V1UploadImageData", func(t *testing.T) {
+	t.Run("Test ImagesAPIService V3GetImageChunk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var imageId string
 
-		resp, httpRes, err := apiClient.ImagesApi.V1UploadImageData(context.Background(), imageId).Execute()
+		resp, httpRes, err := apiClient.ImagesAPI.V3GetImageChunk(context.Background(), imageId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3GetImageFirmwareInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var imageId string
+
+		resp, httpRes, err := apiClient.ImagesAPI.V3GetImageFirmwareInfo(context.Background(), imageId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3GetInstallFirmwareStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var taskId string
+
+		resp, httpRes, err := apiClient.ImagesAPI.V3GetInstallFirmwareStatus(context.Background(), taskId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3InstallFirmware", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ImagesAPI.V3InstallFirmware(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3InstallFirmwareAssets", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ImagesAPI.V3InstallFirmwareAssets(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3ListImages", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ImagesAPI.V3ListImages(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3UploadImageChunk", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var imageId string
+
+		httpRes, err := apiClient.ImagesAPI.V3UploadImageChunk(context.Background(), imageId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ImagesAPIService V3UploadImageData", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var imageId string
+
+		resp, httpRes, err := apiClient.ImagesAPI.V3UploadImageData(context.Background(), imageId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

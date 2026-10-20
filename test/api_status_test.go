@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing StatusApiService
+Testing StatusAPIService
 
 */
 
@@ -14,19 +14,19 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_StatusApiService(t *testing.T) {
+func Test_corellium_StatusAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StatusApiService V1Ready", func(t *testing.T) {
+	t.Run("Test StatusAPIService V3Ready", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.StatusApi.V1Ready(context.Background()).Execute()
+		httpRes, err := apiClient.StatusAPI.V3Ready(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

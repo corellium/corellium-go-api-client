@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing InstancesApiService
+Testing InstancesAPIService
 
 */
 
@@ -14,21 +14,45 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_InstancesApiService(t *testing.T) {
+func Test_corellium_InstancesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test InstancesApiService V1BtracePreauthorize", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3AttachInstanceInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1BtracePreauthorize(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3AttachInstanceInterface(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3ClearInstancePanics", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.InstancesAPI.V3ClearInstancePanics(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3CreateInstance", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3CreateInstance(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,63 +60,53 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1ClearCoreTrace", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3DeleteInstance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1ClearCoreTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3DeleteInstance(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1ClearHyperTrace", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3DetachInstanceInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
+		var interfaceId string
 
-		httpRes, err := apiClient.InstancesApi.V1ClearHyperTrace(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3DetachInstanceInterface(context.Background(), instanceId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1ClearHyperTraceHooks", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3DisableExposePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1ClearHyperTraceHooks(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3DisableExposePort(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1ClearInstancePanics", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3DownloadNetdumpPcap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1ClearInstancePanics(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1CreateInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.InstancesApi.V1CreateInstance(context.Background()).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3DownloadNetdumpPcap(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -100,13 +114,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1CreateSnapshot", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3DownloadNetworkMonitorPcap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1CreateSnapshot(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3DownloadNetworkMonitorPcap(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -114,79 +128,26 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1DeleteInstance", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3EnableExposePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1DeleteInstance(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3EnableExposePort(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1DeleteInstanceSnapshot", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-		var snapshotId string
-
-		httpRes, err := apiClient.InstancesApi.V1DeleteInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1DisableExposePort", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1DisableExposePort(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1EnableExposePort", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1EnableExposePort(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1ExecuteHyperTraceHooks", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1ExecuteHyperTraceHooks(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1GetInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstance(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstance(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -194,13 +155,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceConsole", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstanceConsole", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceConsole(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceConsole(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -208,13 +169,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceConsoleLog", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstanceConsoleLog", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceConsoleLog(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceConsoleLog(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -222,13 +183,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceGpios", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstanceGpios", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceGpios(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceGpios(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -236,13 +197,16 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstancePanics", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstanceImageUpload", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var instanceId string
+		var instance string
+		var type_ string
+		var imageId string
+		var name string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstancePanics(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceImageUpload(context.Background(), instance, type_, imageId, name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -250,13 +214,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstancePeripherals", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstancePanics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstancePeripherals(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstancePanics(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -264,13 +228,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceRate", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstancePeripherals", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceRate(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstancePeripherals(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -278,14 +242,28 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceScreenshot", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstanceQuickConnectCommand", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceQuickConnectCommand(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3GetInstanceScreenshot", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 		var format string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceScreenshot(context.Background(), instanceId, format).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceScreenshot(context.Background(), instanceId, format).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -293,14 +271,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceSnapshot", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3GetInstanceState", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
-		var snapshotId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3GetInstanceState(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -308,13 +285,26 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstanceSnapshots", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3InjectMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstanceSnapshots(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3InjectMessage(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3KernelPreauthorize", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3KernelPreauthorize(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -322,11 +312,11 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1GetInstances", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3ListInstances", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.InstancesApi.V1GetInstances(context.Background()).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3ListInstances(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -334,26 +324,39 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1InstancesInstanceIdMessagePost", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3MediaPlay", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1InstancesInstanceIdMessagePost(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3MediaPlay(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1InstancesInstanceIdNetdumpPcapGet", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3MediaStop", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1InstancesInstanceIdNetdumpPcapGet(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3MediaStop(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3PatchInstance", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3PatchInstance(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -361,13 +364,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1InstancesInstanceIdNetworkMonitorPcapGet", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3PatchInstanceReadOnly", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1InstancesInstanceIdNetworkMonitorPcapGet(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3PatchInstanceReadOnly(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -375,13 +378,26 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1Kcrange", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3PauseInstance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1Kcrange(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3PauseInstance(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3PostInstanceInput", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3PostInstanceInput(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -389,13 +405,16 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1ListThreads", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3PutInstanceImageUpload", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var instanceId string
+		var instance string
+		var type_ string
+		var imageId string
+		var name string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1ListThreads(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3PutInstanceImageUpload(context.Background(), instance, type_, imageId, name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -403,39 +422,52 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1MediaPlay", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3RebootInstance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1MediaPlay(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3RebootInstance(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1MediaStop", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3RestoreBackup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1MediaStop(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3RestoreBackup(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1PatchInstance", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3RotateInstance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1PatchInstance(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3RotateInstance(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3SetInstanceGpios", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3SetInstanceGpios(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -443,26 +475,13 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1PauseInstance", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3SetInstancePeripherals", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1PauseInstance(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1PostInstanceInput", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.InstancesApi.V1PostInstanceInput(context.Background(), instanceId).Execute()
+		resp, httpRes, err := apiClient.InstancesAPI.V3SetInstancePeripherals(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -470,27 +489,104 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1RebootInstance", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3StartInstance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1RebootInstance(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3StartInstance(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test InstancesApiService V1RenameInstanceSnapshot", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3StartNetdump", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
-		var snapshotId string
 
-		resp, httpRes, err := apiClient.InstancesApi.V1RenameInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3StartNetdump(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3StartNetworkMonitor", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.InstancesAPI.V3StartNetworkMonitor(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3StopInstance", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.InstancesAPI.V3StopInstance(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3StopNetdump", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.InstancesAPI.V3StopNetdump(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3StopNetworkMonitor", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.InstancesAPI.V3StopNetworkMonitor(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3UnpauseInstance", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		httpRes, err := apiClient.InstancesAPI.V3UnpauseInstance(context.Background(), instanceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstancesAPIService V3UpgradeInstance", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var instanceId string
+
+		resp, httpRes, err := apiClient.InstancesAPI.V3UpgradeInstance(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -498,267 +594,15 @@ func Test_corellium_InstancesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InstancesApiService V1RestoreBackup", func(t *testing.T) {
+	t.Run("Test InstancesAPIService V3ValidateInstanceToken", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var instanceId string
 
-		httpRes, err := apiClient.InstancesApi.V1RestoreBackup(context.Background(), instanceId).Execute()
+		httpRes, err := apiClient.InstancesAPI.V3ValidateInstanceToken(context.Background(), instanceId).Execute()
 
 		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1RestoreInstanceSnapshot", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-		var snapshotId string
-
-		httpRes, err := apiClient.InstancesApi.V1RestoreInstanceSnapshot(context.Background(), instanceId, snapshotId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1RotateInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1RotateInstance(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1SetInstanceGpios", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.InstancesApi.V1SetInstanceGpios(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1SetInstancePeripherals", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.InstancesApi.V1SetInstancePeripherals(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1SetInstanceState", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1SetInstanceState(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StartCoreTrace", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StartCoreTrace(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StartHyperTrace", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StartHyperTrace(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StartInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StartInstance(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StartNetdump", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StartNetdump(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StartNetworkMonitor", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StartNetworkMonitor(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StopCoreTrace", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StopCoreTrace(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StopHyperTrace", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StopHyperTrace(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StopInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StopInstance(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StopNetdump", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StopNetdump(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1StopNetworkMonitor", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1StopNetworkMonitor(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1UnpauseInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1UnpauseInstance(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V1UpgradeInstance", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		httpRes, err := apiClient.InstancesApi.V1UpgradeInstance(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V2GetInstanceQuickConnectCommand", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.InstancesApi.V2GetInstanceQuickConnectCommand(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test InstancesApiService V2GetInstanceState", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var instanceId string
-
-		resp, httpRes, err := apiClient.InstancesApi.V2GetInstanceState(context.Background(), instanceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | The email of the member | 
-**InviteSentAt** | **float32** | The date when the invite was sent | 
-**SharedOn** | **float32** | UNIX Date of when the snapshot was first shared with member | 
-**UserId** | Pointer to **NullableString** | The member&#39;s user ID | [optional] 
-**Label** | Pointer to **NullableString** | The user&#39;s label or name | [optional] 
+**Email** | **string** | The email of the member. | 
+**InviteSentAt** | **NullableTime** | The date when the invite was sent. | 
+**SharedOn** | Pointer to **time.Time** | Date of when the snapshot was first shared with member. | [optional] 
+**UserId** | Pointer to **NullableString** | The member&#39;s user ID. | [optional] 
+**Name** | Pointer to **NullableString** | The user&#39;s label or name. | [optional] 
 
 ## Methods
 
 ### NewSnapshotMember
 
-`func NewSnapshotMember(email string, inviteSentAt float32, sharedOn float32, ) *SnapshotMember`
+`func NewSnapshotMember(email string, inviteSentAt NullableTime, ) *SnapshotMember`
 
 NewSnapshotMember instantiates a new SnapshotMember object
 This constructor will assign default values to properties that have it defined,
@@ -51,43 +51,58 @@ SetEmail sets Email field to given value.
 
 ### GetInviteSentAt
 
-`func (o *SnapshotMember) GetInviteSentAt() float32`
+`func (o *SnapshotMember) GetInviteSentAt() time.Time`
 
 GetInviteSentAt returns the InviteSentAt field if non-nil, zero value otherwise.
 
 ### GetInviteSentAtOk
 
-`func (o *SnapshotMember) GetInviteSentAtOk() (*float32, bool)`
+`func (o *SnapshotMember) GetInviteSentAtOk() (*time.Time, bool)`
 
 GetInviteSentAtOk returns a tuple with the InviteSentAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInviteSentAt
 
-`func (o *SnapshotMember) SetInviteSentAt(v float32)`
+`func (o *SnapshotMember) SetInviteSentAt(v time.Time)`
 
 SetInviteSentAt sets InviteSentAt field to given value.
 
 
+### SetInviteSentAtNil
+
+`func (o *SnapshotMember) SetInviteSentAtNil(b bool)`
+
+ SetInviteSentAtNil sets the value for InviteSentAt to be an explicit nil
+
+### UnsetInviteSentAt
+`func (o *SnapshotMember) UnsetInviteSentAt()`
+
+UnsetInviteSentAt ensures that no value is present for InviteSentAt, not even an explicit nil
 ### GetSharedOn
 
-`func (o *SnapshotMember) GetSharedOn() float32`
+`func (o *SnapshotMember) GetSharedOn() time.Time`
 
 GetSharedOn returns the SharedOn field if non-nil, zero value otherwise.
 
 ### GetSharedOnOk
 
-`func (o *SnapshotMember) GetSharedOnOk() (*float32, bool)`
+`func (o *SnapshotMember) GetSharedOnOk() (*time.Time, bool)`
 
 GetSharedOnOk returns a tuple with the SharedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSharedOn
 
-`func (o *SnapshotMember) SetSharedOn(v float32)`
+`func (o *SnapshotMember) SetSharedOn(v time.Time)`
 
 SetSharedOn sets SharedOn field to given value.
 
+### HasSharedOn
+
+`func (o *SnapshotMember) HasSharedOn() bool`
+
+HasSharedOn returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -124,41 +139,41 @@ HasUserId returns a boolean if a field has been set.
 `func (o *SnapshotMember) UnsetUserId()`
 
 UnsetUserId ensures that no value is present for UserId, not even an explicit nil
-### GetLabel
+### GetName
 
-`func (o *SnapshotMember) GetLabel() string`
+`func (o *SnapshotMember) GetName() string`
 
-GetLabel returns the Label field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetLabelOk
+### GetNameOk
 
-`func (o *SnapshotMember) GetLabelOk() (*string, bool)`
+`func (o *SnapshotMember) GetNameOk() (*string, bool)`
 
-GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabel
+### SetName
 
-`func (o *SnapshotMember) SetLabel(v string)`
+`func (o *SnapshotMember) SetName(v string)`
 
-SetLabel sets Label field to given value.
+SetName sets Name field to given value.
 
-### HasLabel
+### HasName
 
-`func (o *SnapshotMember) HasLabel() bool`
+`func (o *SnapshotMember) HasName() bool`
 
-HasLabel returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
 
-### SetLabelNil
+### SetNameNil
 
-`func (o *SnapshotMember) SetLabelNil(b bool)`
+`func (o *SnapshotMember) SetNameNil(b bool)`
 
- SetLabelNil sets the value for Label to be an explicit nil
+ SetNameNil sets the value for Name to be an explicit nil
 
-### UnsetLabel
-`func (o *SnapshotMember) UnsetLabel()`
+### UnsetName
+`func (o *SnapshotMember) UnsetName()`
 
-UnsetLabel ensures that no value is present for Label, not even an explicit nil
+UnsetName ensures that no value is present for Name, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

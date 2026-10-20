@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiToken** | **string** |  | 
+**ApiToken** | **string** | Persistent API key created by the user (in the web UI or via POST /v3/auth/apitoken), used as an alternative to username/password. An opaque string, sent back verbatim. Also accepted as an Authorization Bearer credential and stored by the CLI as --token. Distinct from the session token. | 
 
 ## Methods
 

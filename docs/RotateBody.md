@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Orientation** | **float32** | Desired orientation | 
+**Orientation** | **float32** | Desired orientation. 1&#x3D;Portrait, 2&#x3D;Portrait inverted, 3&#x3D;Landscape (top left), 4&#x3D;Landscape (top right). | 
 
 ## Methods
 

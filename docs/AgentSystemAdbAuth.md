@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enabled** | Pointer to **NullableBool** |  | [optional] 
+**Enabled** | **bool** | Whether ADB authorization is enabled. | 
 
 ## Methods
 
 ### NewAgentSystemAdbAuth
 
-`func NewAgentSystemAdbAuth() *AgentSystemAdbAuth`
+`func NewAgentSystemAdbAuth(enabled bool, ) *AgentSystemAdbAuth`
 
 NewAgentSystemAdbAuth instantiates a new AgentSystemAdbAuth object
 This constructor will assign default values to properties that have it defined,
@@ -44,22 +44,7 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
-### HasEnabled
 
-`func (o *AgentSystemAdbAuth) HasEnabled() bool`
-
-HasEnabled returns a boolean if a field has been set.
-
-### SetEnabledNil
-
-`func (o *AgentSystemAdbAuth) SetEnabledNil(b bool)`
-
- SetEnabledNil sets the value for Enabled to be an explicit nil
-
-### UnsetEnabled
-`func (o *AgentSystemAdbAuth) UnsetEnabled()`
-
-UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

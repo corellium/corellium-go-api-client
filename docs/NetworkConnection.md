@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Identifier** | **string** | UUIDv4 | 
-**Provider** | **string** | One of the registered [network provider types](#get-/v1/network/providers) | 
+**Provider** | **string** | Type of network connection. | 
 **Name** | **string** | User specified name for this network connection. e.g., \&quot;My Network Connection\&quot; | 
-**Config** | **map[string]interface{}** | An object containing network connection configuration data. Will vary based on network provider type. | 
-**Projects** | Pointer to [**[]ProjectNetworkState**](ProjectNetworkState.md) | An object where the keys are project IDs and the values are {@link ProjectNetworkState} objects representing the state of each project. | [optional] 
+**Config** | Pointer to [**VLANConfigV1**](VLANConfigV1.md) |  | [optional] 
+**Projects** | Pointer to [**map[string]ProjectNetworkState**](ProjectNetworkState.md) | An object where the keys are project IDs and the values are {@link ProjectNetworkState} objects representing the state of each project. | [optional] 
 **CreatedAt** | **string** | Created Date in ISO-8601 format e.g., \&quot;2022-05-06T02:39:23.000Z\&quot; | 
 **UpdatedAt** | **string** | Updated Date in ISO-8601 format e.g., \&quot;2022-05-06T02:39:23.000Z\&quot; | 
 **CreatedBy** | **string** | UUIDv4 of the user who created this record. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewNetworkConnection
 
-`func NewNetworkConnection(identifier string, provider string, name string, config map[string]interface{}, createdAt string, updatedAt string, createdBy string, updatedBy string, ) *NetworkConnection`
+`func NewNetworkConnection(identifier string, provider string, name string, createdAt string, updatedAt string, createdBy string, updatedBy string, ) *NetworkConnection`
 
 NewNetworkConnection instantiates a new NetworkConnection object
 This constructor will assign default values to properties that have it defined,
@@ -95,40 +95,45 @@ SetName sets Name field to given value.
 
 ### GetConfig
 
-`func (o *NetworkConnection) GetConfig() map[string]interface{}`
+`func (o *NetworkConnection) GetConfig() VLANConfigV1`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *NetworkConnection) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *NetworkConnection) GetConfigOk() (*VLANConfigV1, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *NetworkConnection) SetConfig(v map[string]interface{})`
+`func (o *NetworkConnection) SetConfig(v VLANConfigV1)`
 
 SetConfig sets Config field to given value.
 
+### HasConfig
+
+`func (o *NetworkConnection) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
 
 ### GetProjects
 
-`func (o *NetworkConnection) GetProjects() []ProjectNetworkState`
+`func (o *NetworkConnection) GetProjects() map[string]ProjectNetworkState`
 
 GetProjects returns the Projects field if non-nil, zero value otherwise.
 
 ### GetProjectsOk
 
-`func (o *NetworkConnection) GetProjectsOk() (*[]ProjectNetworkState, bool)`
+`func (o *NetworkConnection) GetProjectsOk() (*map[string]ProjectNetworkState, bool)`
 
 GetProjectsOk returns a tuple with the Projects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProjects
 
-`func (o *NetworkConnection) SetProjects(v []ProjectNetworkState)`
+`func (o *NetworkConnection) SetProjects(v map[string]ProjectNetworkState)`
 
 SetProjects sets Projects field to given value.
 

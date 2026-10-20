@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ready** | **bool** |  | 
+**Ready** | **bool** | Whether the app subsystem is ready. | 
 
 ## Methods
 

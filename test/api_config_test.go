@@ -1,7 +1,7 @@
 /*
 Corellium API
 
-Testing ConfigApiService
+Testing ConfigAPIService
 
 */
 
@@ -14,19 +14,31 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/corellium/go-corellium-api-client"
+	openapiclient "github.com/corellium/corellium-go-api-client"
 )
 
-func Test_corellium_ConfigApiService(t *testing.T) {
+func Test_corellium_ConfigAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ConfigApiService V1GetConfig", func(t *testing.T) {
+	t.Run("Test ConfigAPIService V3GetConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ConfigApi.V1GetConfig(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ConfigAPI.V3GetConfig(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigAPIService V3GetVersion", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ConfigAPI.V3GetVersion(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

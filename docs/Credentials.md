@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Username** | **string** | Authentication Username | 
-**Password** | **string** | Authentication Password | 
+**Username** | **string** | Account username. Send together with password. | 
+**Password** | **string** | Account password. Send together with username. | 
 
 ## Methods
 

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Instance ID | 
-**State** | [**InstanceState**](InstanceState.md) |  | 
+**State** | [**InstanceStateV1**](InstanceStateV1.md) |  | 
 
 ## Methods
 
 ### NewInstanceReturn
 
-`func NewInstanceReturn(id string, state InstanceState, ) *InstanceReturn`
+`func NewInstanceReturn(id string, state InstanceStateV1, ) *InstanceReturn`
 
 NewInstanceReturn instantiates a new InstanceReturn object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetId sets Id field to given value.
 
 ### GetState
 
-`func (o *InstanceReturn) GetState() InstanceState`
+`func (o *InstanceReturn) GetState() InstanceStateV1`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *InstanceReturn) GetStateOk() (*InstanceState, bool)`
+`func (o *InstanceReturn) GetStateOk() (*InstanceStateV1, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *InstanceReturn) SetState(v InstanceState)`
+`func (o *InstanceReturn) SetState(v InstanceStateV1)`
 
 SetState sets State field to given value.
 

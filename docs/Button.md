@@ -13,8 +13,6 @@
 
 * `VOLUME_DOWN` (value: `"volumeDown"`)
 
-* `RINGER_SWITCH` (value: `"ringerSwitch"`)
-
 * `BACK_BUTTON` (value: `"backButton"`)
 
 * `OVERVIEW_BUTTON` (value: `"overviewButton"`)

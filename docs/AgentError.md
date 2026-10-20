@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Error** | **string** | The error encountered by the agent | 
-**ErrorID** | **string** | AgentError | 
-**OriginalError** | Pointer to **map[string]interface{}** | The full error encountered by the agent | [optional] 
+**Error** | **string** | The error encountered by the agent. | 
+**ErrorID** | **string** | Error ID. | 
+**OriginalError** | Pointer to **map[string]interface{}** | The full error object encountered by the agent. | [optional] 
 
 ## Methods
 
@@ -92,16 +92,6 @@ SetOriginalError sets OriginalError field to given value.
 
 HasOriginalError returns a boolean if a field has been set.
 
-### SetOriginalErrorNil
-
-`func (o *AgentError) SetOriginalErrorNil(b bool)`
-
- SetOriginalErrorNil sets the value for OriginalError to be an explicit nil
-
-### UnsetOriginalError
-`func (o *AgentError) UnsetOriginalError()`
-
-UnsetOriginalError ensures that no value is present for OriginalError, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
